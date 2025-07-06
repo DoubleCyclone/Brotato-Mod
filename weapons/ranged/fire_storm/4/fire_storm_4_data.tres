@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=8 format=2]
 
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/fire_storm_ico.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/4/fire_storm_4_burning_effect.tres" type="Resource" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/4/fire_storm_4_stats.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/fire_storm.tscn" type="PackedScene" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/4/fire_storm_4_effect_2.tres" type="Resource" id=7]
 
 [resource]
 script = ExtResource( 1 )
@@ -15,7 +16,7 @@ icon = ExtResource( 2 )
 name = "WEAPON_FIRE_STORM"
 tier = 3
 value = 148
-effects = [ ExtResource( 4 ) ]
+effects = [ ExtResource( 4 ), ExtResource( 7 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false

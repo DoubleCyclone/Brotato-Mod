@@ -1,7 +1,6 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/FireStorm1.wav" type="AudioStream" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/fire_storm_reloading.png" type="Texture" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/FireStorm2.wav" type="AudioStream" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/fire_storm_projectile/fire_storm_projectile.tscn" type="PackedScene" id=5]
@@ -22,7 +21,7 @@ can_have_negative_knockback = false
 effect_scale = 1.0
 scaling_stats = [ [ "stat_elemental_damage", 1.05 ] ]
 lifesteal = 0.0
-shooting_sounds = [ ExtResource( 2 ), ExtResource( 4 ) ]
+shooting_sounds = [ ExtResource( 4 ) ]
 sound_db_mod = -5
 is_healing = false
 custom_on_cooldown_sprite = ExtResource( 3 )
