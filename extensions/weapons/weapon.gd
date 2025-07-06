@@ -12,7 +12,7 @@ func shoot() -> void :
 	for effect in effects:
 		if effect.key == "reload_turrets_on_shoot":
 			emit_signal("wanted_to_reset_turrets_cooldown")
-		elif effect.key == "effect_projectile_rotate_on_shoot":			
+		elif effect.key == "projectile_rotate_on_shoot":			
 			var spawn_projectile_args = WeaponServiceSpawnProjectileArgs.new()
 			var from = _hitbox.from if is_instance_valid(_hitbox.from) else null
 			var from_player_index = from.player_index if (from != null and "player_index" in from) else RunData.DUMMY_PLAYER_INDEX

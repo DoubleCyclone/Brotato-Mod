@@ -5,12 +5,11 @@
 
 [resource]
 script = ExtResource( 2 )
-key = "effect_projectile_rotate_on_shoot"
-text_key = ""
+key = "projectile_rotate_on_shoot"
+text_key = "effect_projectile_rotate_on_shoot"
 value = 1
 custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
 weapon_stats = ExtResource( 1 )
-auto_target_enemy = false
