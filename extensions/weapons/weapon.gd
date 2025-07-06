@@ -18,8 +18,7 @@ func shoot() -> void :
 			var from_player_index = from.player_index if (from != null and "player_index" in from) else RunData.DUMMY_PLAYER_INDEX
 			spawn_projectile_args.from_player_index = from_player_index
 			var init_stats_args = WeaponServiceInitStatsArgs.new()
-			# TODO: make effects dynamic
-			init_stats_args.effects.append(effect.burning_effect)
+			init_stats_args.effects = self.effects
 			var rotating_weapon_stats = WeaponService.init_ranged_stats(effect.weapon_stats, player_index, true, init_stats_args)
 			print("args",spawn_projectile_args)
 			print("scale",rotating_weapon_stats.scaling_stats[0][1])

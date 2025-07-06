@@ -2,7 +2,6 @@ class_name ProjectileRotateOnShootEffect
 extends NullEffect
 
 export (Resource) var weapon_stats
-export (Resource) var burning_effect
 export (bool) var auto_target_enemy = false
 
 
