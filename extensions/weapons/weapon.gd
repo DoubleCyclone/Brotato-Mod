@@ -20,8 +20,6 @@ func shoot() -> void :
 			var init_stats_args = WeaponServiceInitStatsArgs.new()
 			init_stats_args.effects = self.effects
 			var rotating_weapon_stats = WeaponService.init_ranged_stats(effect.weapon_stats, player_index, true, init_stats_args)
-			print("args",spawn_projectile_args)
-			print("scale",rotating_weapon_stats.scaling_stats[0][1])
 			WeaponService.manage_special_spawn_projectile(
 				self,
 				rotating_weapon_stats,
