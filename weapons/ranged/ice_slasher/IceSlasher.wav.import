@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IceSlasher.wav-8a68c14c6c74bf1118b663b2473a787f.sample"
+
+[deps]
+
+source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/IceSlasher.wav"
+dest_files=[ "res://.import/IceSlasher.wav-8a68c14c6c74bf1118b663b2473a787f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
