@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/ThunderBeam.wav" type="AudioStream" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/thunder_beam_reloading.png" type="Texture" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/thunder_beam_projectile/thunder_beam_projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/IceSlasher.wav" type="AudioStream" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/ice_slasher_reloading.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/ice_slasher_projectile/ice_slasher_projectile.tscn" type="PackedScene" id=4]
 
 [resource]
 script = ExtResource( 1 )
@@ -22,7 +22,7 @@ effect_scale = 1.0
 scaling_stats = [ [ "stat_elemental_damage", 0.6 ], [ "stat_crit_chance", 0.1 ] ]
 lifesteal = 0.0
 shooting_sounds = [ ExtResource( 2 ) ]
-sound_db_mod = -5
+sound_db_mod = -3
 is_healing = false
 custom_on_cooldown_sprite = ExtResource( 3 )
 recoil = 25

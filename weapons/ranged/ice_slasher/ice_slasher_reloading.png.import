@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thunder_beam_ico.png-2ffb3f7f50f03065afc0985fced05dca.stex"
+path="res://.import/ice_slasher_reloading.png-893e038cdddb019a69fa8ca19237ba86.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/thunder_beam_ico.png"
-dest_files=[ "res://.import/thunder_beam_ico.png-2ffb3f7f50f03065afc0985fced05dca.stex" ]
+source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/ice_slasher_reloading.png"
+dest_files=[ "res://.import/ice_slasher_reloading.png-893e038cdddb019a69fa8ca19237ba86.stex" ]
 
 [params]
 
