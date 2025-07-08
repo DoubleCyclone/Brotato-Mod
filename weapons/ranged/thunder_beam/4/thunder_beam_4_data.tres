@@ -1,10 +1,11 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/thunder_beam_ico.png" type="Texture" id=2]
 [ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/4/thunder_beam_4_stats.tres" type="Resource" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/thunder_beam.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/4/thunder_beam_4_effect.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 1 )
@@ -14,7 +15,7 @@ icon = ExtResource( 2 )
 name = "WEAPON_THUNDER_BEAM"
 tier = 3
 value = 148
-effects = [  ]
+effects = [ ExtResource( 6 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false

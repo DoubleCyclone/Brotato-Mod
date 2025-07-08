@@ -28,6 +28,23 @@ func shoot() -> void :
 				_parent,
 				self,
 				spawn_projectile_args)
+		elif effect.key == "sideways_projectiles_on_shoot":
+			var random = rand_range(0,1)
+			var spawn_projectile_args = WeaponServiceSpawnProjectileArgs.new()
+			var from = _hitbox.from if is_instance_valid(_hitbox.from) else null
+			var from_player_index = from.player_index if (from != null and "player_index" in from) else RunData.DUMMY_PLAYER_INDEX
+			spawn_projectile_args.from_player_index = from_player_index
+			if(random < effect.chance):
+				for projectile in 2 * self.current_stats.nb_projectiles :
+					WeaponService.manage_special_spawn_projectile(
+					self,
+					effect.weapon_stats,
+					self.rotation + pow(-1,projectile) * (1.57),
+					false,
+					_parent,
+					self,
+					spawn_projectile_args)				
+			
 
 	update_current_spread()
 	update_knockback()
