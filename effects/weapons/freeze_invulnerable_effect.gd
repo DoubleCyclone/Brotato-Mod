@@ -5,7 +5,7 @@ export(String) var source_id = ""
 export (float, 0.0, 1.0, 0.01) var chance: = 1.0
 export(int) var duration_secs = 1
 export(int) var max_stacks = 1
-export(int) var max_procs = -1
+#export(int) var max_procs = -1
 export(Color) var outline_color = Color("42c8f5")
 export(Color) var effect_color = Color("aadae6")
 
@@ -22,7 +22,8 @@ func unapply(_player_index: int) -> void :
 	pass
 
 func to_array() -> Array:
-	return [source_id, key, value, chance, duration_secs, max_stacks, max_procs, outline_color.to_html(), effect_color.to_html()]
+	return [source_id, key, value, chance, duration_secs, max_stacks, outline_color.to_html(), effect_color.to_html()]
+#	return [source_id, key, value, chance, duration_secs, max_stacks, max_procs, outline_color.to_html(), effect_color.to_html()]
 
 func serialize() -> Dictionary:
 	var serialized = .serialize()
@@ -31,7 +32,7 @@ func serialize() -> Dictionary:
 	serialized.chance = chance
 	serialized.duration_secs = duration_secs
 	serialized.max_stacks = max_stacks
-	serialized.max_procs = max_procs
+#	serialized.max_procs = max_procs
 	serialized.outline_color = outline_color.to_html()
 	serialized.effect_color = effect_color.to_html()
 
@@ -45,6 +46,6 @@ func deserialize_and_merge(serialized: Dictionary) -> void:
 	chance = serialized.chance
 	duration_secs = serialized.duration_secs
 	max_stacks = serialized.max_stacks
-	max_procs = serialized.max_procs if "max_procs" in serialized else -1
+#	max_procs = serialized.max_procs if "max_procs" in serialized else -1
 	outline_color = Color(serialized.outline_color)
 	effect_color = Color(serialized.effect_color)

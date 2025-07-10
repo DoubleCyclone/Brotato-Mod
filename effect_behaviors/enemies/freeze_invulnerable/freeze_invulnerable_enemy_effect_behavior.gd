@@ -1,4 +1,4 @@
-# TODO : Implement Ice Slasher here
+# TODO : When the weapon having this also burns, they do not unfreeze properly, Behavior Scene does not have timer like lute
 
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
@@ -14,14 +14,13 @@ class ActiveEffect:
 	var duration_secs: float = 0.0
 	var timer: float = 0.0
 	var source_id: String = ""
-	var current_stacks: int = 1
+	var current_stacks: int = 0
 	var max_stacks: int = 1
 	var outline_color: Color
 	var effect_color: Color
 
 func _process(delta):
 	for active_effect in _active_effects:
-		
 		active_effect.timer -= delta
 		if active_effect.timer <= 0.0:
 			on_active_effect_timer_timed_out(active_effect)
@@ -40,6 +39,7 @@ func should_add_on_spawn() -> bool:
 
 func on_hurt(hitbox: Hitbox) -> void :
 	var from = hitbox.from # get from (weapon) because it is ranged
+	
 	if (is_instance_valid(from) and not "player_index" in from) or not is_instance_valid(from):
 		return
 
@@ -63,10 +63,8 @@ func on_burned(burning_data: BurningData, from_player_index: int) -> void :
 
 func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 	for effect in effects:
-		add_active_effect(effect)
-		#TODO : Not sure what below means
-#		if WeaponService.find_scaling_stat(effect[1], scaling_stats) or effect[1] == "stat_all":
-#			add_active_effect(effect)
+		if WeaponService.find_scaling_stat(effect[1], scaling_stats) or effect[1] == "stat_all":
+			add_active_effect(effect)
 
 
 func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
@@ -78,62 +76,41 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 		var source_id = from_weapon_freeze_invulnerable_effect[0]
 		var duration = from_weapon_freeze_invulnerable_effect[4]
 		var max_stacks = from_weapon_freeze_invulnerable_effect[5]
-		var max_procs = from_weapon_freeze_invulnerable_effect[6]
-		var outline_color = from_weapon_freeze_invulnerable_effect[7]
-		var effect_color = from_weapon_freeze_invulnerable_effect[8]
+		var outline_color = from_weapon_freeze_invulnerable_effect[6]
+		var effect_color = from_weapon_freeze_invulnerable_effect[7]
 
-		if max_procs != - 1 and _effects_proc_count.has(source_id) and _effects_proc_count[source_id] >= max_procs:
-			return
-
-		var already_exists: bool = false
 		var active_effect: ActiveEffect = null
 
-		for existing_active_effect in _active_effects:
-			if existing_active_effect.source_id == source_id:
-				already_exists = true
-				active_effect = existing_active_effect
-				break
-		if already_exists:
-			active_effect.max_stacks = max(active_effect.max_stacks, max_stacks) as int
-			active_effect.duration_secs = max(active_effect.duration_secs, duration)
-			active_effect.timer = active_effect.duration_secs
+		active_effect = ActiveEffect.new()
 
-			if active_effect.current_stacks >= active_effect.max_stacks:
-				return
+		active_effect.source_id = source_id
+		active_effect.timer = duration
+		active_effect.duration_secs = duration
+		active_effect.max_stacks = max_stacks
+		active_effect.outline_color = Color(outline_color)
+		active_effect.effect_color = Color(effect_color)
+		
+		original_speed = _parent.current_stats.speed
+		
+		_parent.get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
+		_parent.get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
+		_parent.get_node("AnimationPlayer").current_animation = "[stop]" # freeze the animation
+		_parent._hurtbox.call_deferred("disable") # to make invulnerable
+		_parent.current_stats.set_deferred("speed", 0) # in case we need to process speed
+		_parent.set_deferred("mirror_sprite_with_movement", false) # prevent them from turning while frozen
+		_parent.sprite.set_deferred("self_modulate", active_effect.effect_color)
 
-			active_effect.current_stacks += 1
-			_effects_proc_count[source_id] += 1
-		else:
-			active_effect = ActiveEffect.new()
+		_active_effects.push_back(active_effect)
 
-			active_effect.source_id = source_id
-			active_effect.timer = duration
-			active_effect.duration_secs = duration
-			active_effect.max_stacks = max_stacks
-			active_effect.outline_color = Color(outline_color)
-			active_effect.effect_color = Color(effect_color)
-			
-			original_speed = _parent.current_stats.speed
-			
-			_parent.get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
-			_parent.get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
-			_parent.get_node("AnimationPlayer").current_animation = "[stop]" # freeze the animation
-			_parent._hurtbox.disable() # to make invulnerable
-			_parent.current_stats.speed = 0 # in case we need to process speed
-			_parent.mirror_sprite_with_movement = false # prevent them from turning while frozen
-			_parent.sprite.self_modulate = active_effect.effect_color
+		if not _parent.has_outline(active_effect.outline_color):
+			_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
 
-			_active_effects.push_back(active_effect)
-
-			if not _parent.has_outline(active_effect.outline_color):
-				_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
-
-			_effects_proc_count[source_id] = 1
+		_effects_proc_count[source_id] = 1
 
 
 func on_active_effect_timer_timed_out(active_effect: ActiveEffect):
-	_parent.get_node("Collision").set_deferred("disabled",false)
-	_parent.get_node("Hitbox").set_deferred("deals_damage",true)
+	_parent.get_node("Collision").disabled = false
+	_parent.get_node("Hitbox").deals_damage = true
 	_parent.get_node("AnimationPlayer").current_animation = "idle"
 	_parent._hurtbox.enable()
 	_parent.current_stats.speed = original_speed
