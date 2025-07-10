@@ -4,9 +4,9 @@ class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
 var _current_stacks: int = 0
-
 var _active_effects: Array = []
 var _effects_proc_count: Dictionary = {}
+var original_speed: int = 0
 
 
 class ActiveEffect:
@@ -64,6 +64,7 @@ func on_burned(burning_data: BurningData, from_player_index: int) -> void :
 func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 	for effect in effects:
 		add_active_effect(effect)
+		#TODO : Not sure what below means
 #		if WeaponService.find_scaling_stat(effect[1], scaling_stats) or effect[1] == "stat_all":
 #			add_active_effect(effect)
 
@@ -103,13 +104,22 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 		else:
 			active_effect = ActiveEffect.new()
 
-			active_effect.chance = chance
 			active_effect.source_id = source_id
 			active_effect.timer = duration
 			active_effect.duration_secs = duration
 			active_effect.max_stacks = max_stacks
 			active_effect.outline_color = Color(outline_color)
 			active_effect.effect_color = Color(effect_color)
+			
+			original_speed = _parent.current_stats.speed
+			
+			_parent.get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
+			_parent.get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
+			_parent.get_node("AnimationPlayer").current_animation = "[stop]" # freeze the animation
+			_parent._hurtbox.disable() # to make invulnerable
+			_parent.current_stats.speed = 0 # in case we need to process speed
+			_parent.mirror_sprite_with_movement = false # prevent them from turning while frozen
+			_parent.sprite.self_modulate = active_effect.effect_color
 
 			_active_effects.push_back(active_effect)
 
@@ -120,6 +130,13 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 
 
 func on_active_effect_timer_timed_out(active_effect: ActiveEffect):
+	_parent.get_node("Collision").set_deferred("disabled",false)
+	_parent.get_node("Hitbox").set_deferred("deals_damage",true)
+	_parent.get_node("AnimationPlayer").current_animation = "idle"
+	_parent._hurtbox.enable()
+	_parent.current_stats.speed = original_speed
+	_parent.mirror_sprite_with_movement = true
+	_parent.sprite.self_modulate = Color.white
 
 	for i in _active_effects.size():
 		if _active_effects[i].source_id == active_effect.source_id:

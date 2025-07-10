@@ -16,5 +16,5 @@ chance = 1.0
 duration_secs = 3
 max_stacks = 1
 max_procs = -1
-outline_color = Color( 0.258824, 0.784314, 0.960784, 1 )
-effect_color = Color( 0.666667, 0.854902, 0.901961, 1 )
+outline_color = Color( 1, 1, 1, 1 )
+effect_color = Color( 0.133333, 0.611765, 0.729412, 1 )

@@ -37,18 +37,18 @@ func _on_Hurtbox_area_entered(hitbox: Area2D) -> void :
 					is_exploding = true
 			elif effect is PlayerHealthStatEffect and effect.key == "stat_damage":
 				dmg += effect.get_bonus_damage(from_player_index)
-			elif effect is FreezeInvulnerableEffect : # Freeze the enemy and make it invulnerable	
-				break # ignore for now
-				var random = rand_range(0,1)
-				if(random < effect.chance):
-					get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
-					get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
-					get_node("AnimationPlayer").current_animation = "[stop]" # freeze the animation
-					_hurtbox.disable() # to make invulnerable
-					current_stats.speed = 0 # in case we need to process speed
-					mirror_sprite_with_movement = false # prevent them from turning while frozen
-					# TODO : flash blue in this state, add a timer for the effect, add chance
-					# take PercentDamageTakenEnemyEffectBehavior as basis perhaps
+#			elif effect is FreezeInvulnerableEffect : # Freeze the enemy and make it invulnerable	
+#				break # ignore for now
+#				var random = rand_range(0,1)
+#				if(random < effect.chance):
+#					get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
+#					get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
+#					get_node("AnimationPlayer").current_animation = "[stop]" # freeze the animation
+#					_hurtbox.disable() # to make invulnerable
+#					current_stats.speed = 0 # in case we need to process speed
+#					mirror_sprite_with_movement = false # prevent them from turning while frozen
+#					# TODO : flash blue in this state, add a timer for the effect, add chance
+#					# take PercentDamageTakenEnemyEffectBehavior as basis perhaps
 
 		
 		if not is_exploding:
