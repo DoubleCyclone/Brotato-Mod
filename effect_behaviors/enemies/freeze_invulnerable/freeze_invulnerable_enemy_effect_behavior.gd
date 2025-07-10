@@ -1,5 +1,4 @@
-# TODO : Implement Ice Slasher here?
-#EffectBehaviorService.enemy_effect_behaviors.append_array(self)
+# TODO : Implement Ice Slasher here
 
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
@@ -17,8 +16,6 @@ class ActiveEffect:
 	var source_id: String = ""
 	var current_stacks: int = 1
 	var max_stacks: int = 1
-#	var total_percent_damage_added: int = 0
-#	var percent_damage: int = 0
 	var outline_color: Color
 	var effect_color: Color
 
@@ -42,8 +39,7 @@ func should_add_on_spawn() -> bool:
 
 
 func on_hurt(hitbox: Hitbox) -> void :
-	var from = hitbox
-	print((is_instance_valid(from) and not "player_index" in from) or not is_instance_valid(from))
+	var from = hitbox.from # get from (weapon) because it is ranged
 	if (is_instance_valid(from) and not "player_index" in from) or not is_instance_valid(from):
 		return
 
@@ -56,7 +52,7 @@ func on_hurt(hitbox: Hitbox) -> void :
 	for effect in hitbox.effects:
 		if effect.custom_key == "weapon_freeze_invulnerable":
 			effects.push_back(effect.to_array())
-	print("addeff")
+
 	try_add_effects(effects, hitbox.scaling_stats)
 
 
@@ -67,12 +63,12 @@ func on_burned(burning_data: BurningData, from_player_index: int) -> void :
 
 func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 	for effect in effects:
-		if WeaponService.find_scaling_stat(effect[1], scaling_stats) or effect[1] == "stat_all":
-			add_active_effect(effect)
+		add_active_effect(effect)
+#		if WeaponService.find_scaling_stat(effect[1], scaling_stats) or effect[1] == "stat_all":
+#			add_active_effect(effect)
 
 
 func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
-	print("amogus")
 	var chance = from_weapon_freeze_invulnerable_effect[3]
 	var random = rand_range(0,1)
 	if(random < chance):
@@ -94,7 +90,6 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 				already_exists = true
 				active_effect = existing_active_effect
 				break
-		print(already_exists)
 		if already_exists:
 			active_effect.max_stacks = max(active_effect.max_stacks, max_stacks) as int
 			active_effect.duration_secs = max(active_effect.duration_secs, duration)
@@ -104,7 +99,6 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 				return
 
 			active_effect.current_stacks += 1
-#			active_effect.total_percent_damage_added += active_effect.percent_damage
 			_effects_proc_count[source_id] += 1
 		else:
 			active_effect = ActiveEffect.new()
@@ -122,7 +116,6 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 			if not _parent.has_outline(active_effect.outline_color):
 				_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
 
-			active_effect.total_percent_damage_added += active_effect.percent_damage
 			_effects_proc_count[source_id] = 1
 
 

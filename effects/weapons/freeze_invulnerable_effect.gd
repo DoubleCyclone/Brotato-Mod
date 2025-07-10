@@ -10,16 +10,15 @@ export(Color) var outline_color = Color("42c8f5")
 export(Color) var effect_color = Color("aadae6")
 
 static func get_id() -> String:
-	return "weapon_freeze_invulnerable"
+	return "weapon_freeze_invulnerable_effect"
 
-func apply(player_index: int) -> void:
-	var effects = RunData.get_player_effects(player_index)
-	effects[custom_key].push_back(to_array())
+func apply(_player_index: int) -> void :
+	pass
 
 
-func unapply(player_index: int) -> void:
-	var effects = RunData.get_player_effects(player_index)
-	effects[custom_key].erase(to_array())
+func unapply(_player_index: int) -> void :
+	pass
+
 
 func to_array() -> Array:
 	return [source_id, key, value, chance, duration_secs, max_stacks, max_procs, outline_color.to_html(), effect_color.to_html()]
