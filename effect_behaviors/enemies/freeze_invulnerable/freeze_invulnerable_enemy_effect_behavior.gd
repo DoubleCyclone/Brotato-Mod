@@ -1,5 +1,3 @@
-# TODO : When the weapon having this also burns, they do not unfreeze properly, Behavior Scene does not have timer like lute
-
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
@@ -7,6 +5,7 @@ var _current_stacks: int = 0
 var _active_effects: Array = []
 var _effects_proc_count: Dictionary = {}
 var original_speed: int = 0
+var original_attack_cd: int = 0
 
 
 class ActiveEffect:
@@ -91,6 +90,8 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 		active_effect.effect_color = Color(effect_color)
 		
 		original_speed = _parent.current_stats.speed
+		if _parent.get_node("AttackBehavior").get("_current_cd") != null:
+			original_attack_cd = _parent.get_node("AttackBehavior")._current_cd
 		
 		_parent.get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
 		_parent.get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
@@ -99,7 +100,10 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 		_parent.current_stats.set_deferred("speed", 0) # in case we need to process speed
 		_parent.set_deferred("mirror_sprite_with_movement", false) # prevent them from turning while frozen
 		_parent.sprite.set_deferred("self_modulate", active_effect.effect_color)
-
+		if _parent._current_attack_behavior.get("_current_cd") != null:
+			_parent._current_attack_behavior._current_cd = 9999
+			print(_parent._current_attack_behavior._current_cd)
+		
 		_active_effects.push_back(active_effect)
 
 		if not _parent.has_outline(active_effect.outline_color):
@@ -116,6 +120,8 @@ func on_active_effect_timer_timed_out(active_effect: ActiveEffect):
 	_parent.current_stats.speed = original_speed
 	_parent.mirror_sprite_with_movement = true
 	_parent.sprite.self_modulate = Color.white
+	if _parent._current_attack_behavior.get("_current_cd") != null:
+		_parent._current_attack_behavior._current_cd = original_attack_cd
 
 	for i in _active_effects.size():
 		if _active_effects[i].source_id == active_effect.source_id:
