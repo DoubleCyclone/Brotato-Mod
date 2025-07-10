@@ -3,7 +3,7 @@ extends Effect
 
 export(String) var source_id = ""
 export (float, 0.0, 1.0, 0.01) var chance: = 1.0
-export(int) var duration_secs = 3
+export(int) var duration_secs = 1
 export(int) var max_stacks = 1
 export(int) var max_procs = -1
 export(Color) var outline_color = Color("42c8f5")
@@ -11,14 +11,15 @@ export(Color) var effect_color = Color("aadae6")
 
 static func get_id() -> String:
 	return "weapon_freeze_invulnerable_effect"
+	
+func get_args(player_index: int) -> Array:
+	return [str(chance*100), str(duration_secs), str(chance*20)]
 
 func apply(_player_index: int) -> void :
 	pass
 
-
 func unapply(_player_index: int) -> void :
 	pass
-
 
 func to_array() -> Array:
 	return [source_id, key, value, chance, duration_secs, max_stacks, max_procs, outline_color.to_html(), effect_color.to_html()]

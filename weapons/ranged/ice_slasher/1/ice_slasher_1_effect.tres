@@ -5,15 +5,15 @@
 [resource]
 script = ExtResource( 1 )
 key = ""
-text_key = ""
+text_key = "effect_freeze_invulnerable"
 value = 0
 custom_key = "weapon_freeze_invulnerable"
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
 source_id = "weapon_ice_slasher"
-chance = 1.0
-duration_secs = 3
+chance = 0.25
+duration_secs = 1
 max_stacks = 1
 max_procs = -1
 outline_color = Color( 1, 1, 1, 1 )

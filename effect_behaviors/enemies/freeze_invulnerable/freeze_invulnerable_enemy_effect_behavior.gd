@@ -71,6 +71,8 @@ func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 
 func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 	var chance = from_weapon_freeze_invulnerable_effect[3]
+	if _parent.get("is_elite") != null:
+		chance /= 5
 	var random = rand_range(0,1)
 	if(random < chance):
 		var source_id = from_weapon_freeze_invulnerable_effect[0]
