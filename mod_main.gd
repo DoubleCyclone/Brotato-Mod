@@ -44,6 +44,7 @@ func install_script_extensions() -> void:
 	#ModLoaderMod.install_script_extension("res://mods-unpacked/AuthorName-ModName/extensions/entities/units/player/player.gd")
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("weapons/weapon.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/units/unit/unit.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/player_run_data.gd"))
 
 	
 
@@ -69,5 +70,11 @@ func _ready() -> void:
 
 	# Add content. These .tres files are ContentData resources
 	ContentLoader.load_data(content_dir + "firstmodtrial_contents.tres", mod_log)
+	get_effect_behaviors()
 
+func get_effect_behaviors() -> void:
+	var enemy_effect_behaviors = []
+	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/freeze_invulnerable/freeze_invulnerable_enemy_behavior_data.tres"))
+	
+	EffectBehaviorService.enemy_effect_behaviors.append_array(enemy_effect_behaviors)
 
