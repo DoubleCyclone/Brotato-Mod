@@ -1,7 +1,7 @@
 class_name RadialWeaponShootingBehavior
 extends WeaponShootingBehavior
 
-signal projectile_shot(projectile)
+#signal projectile_shot(projectile)
 
 
 func shoot(_distance: float) -> void :
@@ -10,13 +10,32 @@ func shoot(_distance: float) -> void :
 	var initial_position: Vector2 = _parent.sprite.position
 
 	_parent.set_shooting(true)
+	
+	var exploding_effect = null
+	for effect in _parent.effects :
+		if effect is ExplodingEffect:
+			exploding_effect = effect
+	
+	var args: = WeaponServiceExplodeArgs.new()
+	args.pos = global_position
+	args.damage = _parent.current_stats.damage
+	args.accuracy = _parent.current_stats.accuracy
+	args.crit_chance = _parent.current_stats.crit_chance
+	args.crit_damage = _parent.current_stats.crit_damage
+	args.burning_data = _parent.current_stats.burning_data
+	args.scaling_stats = _parent.current_stats.scaling_stats
+	args.from_player_index = _parent._get_player_index()
+#	args.damage_tracking_key = _parent.current_stats.explosion_effect.tracking_key
+	args.from = self
 
 	var attack_id: = _get_next_attack_id()
 	for i in _parent.current_stats.nb_projectiles:
-		var proj_rotation = rand_range(_parent.rotation - _parent.current_stats.projectile_spread, _parent.rotation + _parent.current_stats.projectile_spread)
-		var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
-		var projectile = shoot_projectile(proj_rotation, knockback_direction)
-		projectile._hitbox.player_attack_id = attack_id
+		if exploding_effect != null :
+			var proj_rotation = rand_range(_parent.rotation - _parent.current_stats.projectile_spread, _parent.rotation + _parent.current_stats.projectile_spread)
+			var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
+			WeaponService.explode(exploding_effect, args)
+#			var projectile = shoot_projectile(proj_rotation, knockback_direction)
+#			projectile._hitbox.player_attack_id = attack_id
 
 	_parent.tween.interpolate_property(
 		_parent.sprite, 
@@ -47,19 +66,19 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 
 
-func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
-	var args: = WeaponServiceSpawnProjectileArgs.new()
-	args.knockback_direction = knockback
-	args.effects = _parent.effects
-	args.from_player_index = _parent.player_index
-
-	var projectile = WeaponService.spawn_projectile(
-		_parent.muzzle.global_position, 
-		_parent.current_stats, 
-		rotation, 
-		_parent, 
-		args
-	)
-
-	emit_signal("projectile_shot", projectile)
-	return projectile
+#func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
+#	var args: = WeaponServiceSpawnProjectileArgs.new()
+#	args.knockback_direction = knockback
+#	args.effects = _parent.effects
+#	args.from_player_index = _parent.player_index
+#
+#	var projectile = WeaponService.spawn_projectile(
+#		_parent.muzzle.global_position, 
+#		_parent.current_stats, 
+#		rotation, 
+#		_parent, 
+#		args
+#	)
+#
+#	emit_signal("projectile_shot", projectile)
+#	return projectile

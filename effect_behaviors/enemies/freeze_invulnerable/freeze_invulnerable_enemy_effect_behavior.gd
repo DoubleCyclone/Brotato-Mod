@@ -1,3 +1,4 @@
+# TODO: Use Utils.get_chance_success?? on random stuff
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 

@@ -1,2 +1,2 @@
 class_name RadialWeapon
-extends RangedWeapon
+extends Weapon
