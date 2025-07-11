@@ -1,4 +1,4 @@
-class_name RangedWeaponShootingBehavior
+class_name RadialWeaponShootingBehavior
 extends WeaponShootingBehavior
 
 signal projectile_shot(projectile)
