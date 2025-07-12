@@ -170,7 +170,8 @@ static func init_effects() -> Dictionary:
 		"stronger_elites_on_kill": 0, 
 		"stronger_loot_aliens_on_kill": 0, 
 		"hp_regen_bonus": [],
-		"weapon_freeze_invulnerable" : []
+		"weapon_freeze_invulnerable" : [],
+		"effect_weapon_time_slow" : []
 	}
 
 	all_effects.merge(all_stats)

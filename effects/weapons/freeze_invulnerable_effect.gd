@@ -5,7 +5,7 @@ export(String) var source_id = ""
 export (float, 0.0, 1.0, 0.01) var chance: = 1.0
 export(int) var duration_secs = 1
 export(int) var max_stacks = 1
-export(Color) var outline_color = Color("42c8f5")
+export(Color) var outline_color = Color.white
 export(Color) var effect_color = Color("aadae6")
 
 static func get_id() -> String:

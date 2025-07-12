@@ -75,6 +75,6 @@ func _ready() -> void:
 func get_effect_behaviors() -> void:
 	var enemy_effect_behaviors = []
 	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/freeze_invulnerable/freeze_invulnerable_enemy_behavior_data.tres"))
-	
+	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/time_slow/time_slow_enemy_behavior_data.tres"))
 	EffectBehaviorService.enemy_effect_behaviors.append_array(enemy_effect_behaviors)
 

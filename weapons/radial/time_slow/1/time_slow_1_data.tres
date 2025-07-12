@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/time_slow_ico.png" type="Texture" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/time_slow.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/1/time_slow_1_explosion.tres" type="Resource" id=5]
 [ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/time_slow_effect_1.tres" type="Resource" id=7]
 
 [resource]
 script = ExtResource( 4 )
@@ -16,7 +15,7 @@ icon = ExtResource( 1 )
 name = "WEAPON_TIME_SLOW"
 tier = 0
 value = 19
-effects = [ ExtResource( 5 ), ExtResource( 7 ) ]
+effects = [ ExtResource( 5 ) ]
 tracking_text = "weapon_time_slow"
 is_lockable = true
 is_cursed = false
