@@ -11,6 +11,7 @@ var original_speed: int = 0
 class ActiveEffect:
 	var chance: float = 0.0
 	var amount: float = 0.0
+	var total_amount: float = 0.0
 	var duration_secs: float = 0.0
 	var timer: float = 0.0
 	var source_id: String = ""
@@ -33,16 +34,16 @@ func should_add_on_spawn() -> bool:
 
 	if RunData.existing_weapon_has_effect("effect_weapon_time_slow"):
 		return true
+	print("moas")
 	return false
 
 
 func on_hurt(hitbox: Hitbox) -> void :
-	print(hitbox)
-	var from = hitbox.from
-	print(from.parent)
 	
-#	if (is_instance_valid(from) and not "player_index" in from) or not is_instance_valid(from):
-#		return
+	var from = hitbox.from
+
+	if (is_instance_valid(from) and not "player_index" in from) or not is_instance_valid(from):
+		return
 
 	var from_player_index = from.player_index
 	var effects = []
@@ -54,7 +55,6 @@ func on_hurt(hitbox: Hitbox) -> void :
 	for effect in hitbox.effects:
 		if effect.custom_key == "effect_weapon_time_slow":
 			effects.push_back(effect.to_array())
-	print(effects)
 
 	try_add_effects(effects, hitbox.scaling_stats)
 
@@ -80,35 +80,56 @@ func add_active_effect(from_weapon_time_slow_effect: Array) -> void :
 		var max_stacks = from_weapon_time_slow_effect[6]
 		var outline_color = from_weapon_time_slow_effect[7]
 		var effect_color = from_weapon_time_slow_effect[8]
-
+		
+		var already_exists: bool = false
 		var active_effect: ActiveEffect = null
-
-		active_effect = ActiveEffect.new()
-
-		active_effect.source_id = source_id
-		active_effect.amount = amount
-		active_effect.timer = duration
-		active_effect.duration_secs = duration
-		active_effect.max_stacks = max_stacks
-		active_effect.outline_color = Color(outline_color)
-		active_effect.effect_color = Color(effect_color)
 		
-		original_speed = _parent.current_stats.speed
-		
-		_parent.current_stats.set_deferred("speed", _parent.current_stats.speed * (1 - amount) * _current_stacks) # in case we need to process speed
-		_parent.sprite.set_deferred("self_modulate", active_effect.effect_color)
-		
-		_active_effects.push_back(active_effect)
+		for existing_active_effect in _active_effects:
+			if existing_active_effect.source_id == source_id:
+				already_exists = true
+				active_effect = existing_active_effect
+				break
+				
+		if already_exists:
+			
+			active_effect.max_stacks = max(active_effect.max_stacks, max_stacks) as int
+			active_effect.duration_secs = max(active_effect.duration_secs, duration)
+			active_effect.amount = max(active_effect.amount, amount)
+			active_effect.timer = active_effect.duration_secs
 
-		if not _parent.has_outline(active_effect.outline_color):
-			_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
+			if active_effect.current_stacks >= active_effect.max_stacks:
+				return
 
-		_effects_proc_count[source_id] = 1
+			active_effect.current_stacks += 1
+			_parent.current_stats.set_deferred("speed", _parent.current_stats.speed * (1 - active_effect.amount * active_effect.current_stacks)) 
+			_effects_proc_count[source_id] += 1
+		else:
+			active_effect = ActiveEffect.new()
+
+			active_effect.source_id = source_id
+			active_effect.amount = amount
+			active_effect.timer = duration
+			active_effect.duration_secs = duration
+			active_effect.max_stacks = max_stacks
+			active_effect.outline_color = Color(outline_color)
+			active_effect.effect_color = Color(effect_color)
+			active_effect.current_stacks = 1
+			
+			original_speed = _parent.current_stats.speed
+			
+			_parent.current_stats.set_deferred("speed", _parent.current_stats.speed * (1 - active_effect.amount * active_effect.current_stacks)) 
+			_parent.sprite.set_deferred("self_modulate", active_effect.effect_color)
+			
+			_active_effects.push_back(active_effect)
+
+			if not _parent.has_outline(active_effect.outline_color):
+				_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
+
+			_effects_proc_count[source_id] = 1
 
 
 func on_active_effect_timer_timed_out(active_effect: ActiveEffect):
 	_parent.current_stats.speed = original_speed
-	_parent.mirror_sprite_with_movement = true
 	_parent.sprite.self_modulate = Color.white
 
 	for i in _active_effects.size():
