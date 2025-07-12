@@ -15,5 +15,5 @@ custom_args = [  ]
 chance = 1.0
 explosion_scene = ExtResource( 2 )
 scale = 1.0
-base_smoke_amount = 40
-sound_db_mod = -10
+base_smoke_amount = 1
+sound_db_mod = -51

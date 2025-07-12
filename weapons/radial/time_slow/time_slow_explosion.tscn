@@ -93,7 +93,7 @@ anims/explode = SubResource( 3 )
 
 [node name="ExplosionSmoke" parent="." instance=ExtResource( 4 )]
 unique_name_in_owner = true
-amount = 20
+amount = 1
 
 [connection signal="hit_something" from="Hitbox" to="." method="_on_Hitbox_hit_something"]
 [connection signal="killed_something" from="Hitbox" to="." method="_on_Hitbox_killed_something"]
