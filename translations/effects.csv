@@ -2,3 +2,4 @@
 EFFECT_PROJECTILE_ROTATE_ON_SHOOT;Spawns an extra projectile with infinite penetration that rotates around you when this weapon is fired, dealing {0} ({1}) damage.
 EFFECT_SIDEWAYS_PROJECTILE_ON_SHOOT;Has a {0}% chance to shoot 2 extra projectiles perpendicular to the original projectile which deal {1} ({2}) damage when this weapon is fired.
 EFFECT_FREEZE_INVULNERABLE;Has a {0}% chance to freeze enemies for {1} second(s). (Bosses and Elites have a {2}% chance of getting frozen instead. Frozen enemies cannot be interacted with)
+EFFECT_TIME_SLOW;Creates fields around you that deal damage and has a {0}% chance to slow the enemies by {1}% with every stack (up to {3}% on max stacks) for {2} seconds.
