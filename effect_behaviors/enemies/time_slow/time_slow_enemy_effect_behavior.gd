@@ -1,4 +1,3 @@
-# TODO: Use Utils.get_chance_success?? on random stuff
 class_name TimeSlowEnemyEffectBehavior
 extends EnemyEffectBehavior
 
@@ -72,8 +71,8 @@ func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 
 func add_active_effect(from_weapon_time_slow_effect: Array) -> void :
 	var chance = from_weapon_time_slow_effect[3]
-	var random = rand_range(0,1)
-	if(random < chance):
+
+	if Utils.get_chance_success(chance):
 		var source_id = from_weapon_time_slow_effect[0]
 		var amount = from_weapon_time_slow_effect[4]
 		var duration = from_weapon_time_slow_effect[5]

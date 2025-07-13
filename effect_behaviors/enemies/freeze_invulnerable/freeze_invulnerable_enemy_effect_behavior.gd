@@ -1,4 +1,3 @@
-# TODO: Use Utils.get_chance_success?? on random stuff
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
@@ -72,8 +71,7 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 	var chance = from_weapon_freeze_invulnerable_effect[3]
 	if _parent.get("is_elite") != null:
 		chance /= 5
-	var random = rand_range(0,1)
-	if(random < chance):
+	if Utils.get_chance_success(chance):
 		var source_id = from_weapon_freeze_invulnerable_effect[0]
 		var duration = from_weapon_freeze_invulnerable_effect[4]
 		var max_stacks = from_weapon_freeze_invulnerable_effect[5]
