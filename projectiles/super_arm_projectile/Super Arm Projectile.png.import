@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thunder_beam_ico.png-43b8a08f6206df5a229fc56f89487a3e.stex"
+path="res://.import/Super Arm Projectile.png-18ffa60f388c0eb1d953a85e2ab6e90f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/thunder_beam_ico.png"
-dest_files=[ "res://.import/thunder_beam_ico.png-43b8a08f6206df5a229fc56f89487a3e.stex" ]
+source_file="res://mods-unpacked/8bithero-FirstModTrial/projectiles/super_arm_projectile/Super Arm Projectile.png"
+dest_files=[ "res://.import/Super Arm Projectile.png-18ffa60f388c0eb1d953a85e2ab6e90f.stex" ]
 
 [params]
 
