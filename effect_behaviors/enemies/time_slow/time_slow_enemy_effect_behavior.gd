@@ -33,7 +33,7 @@ func should_add_on_spawn() -> bool:
 
 	if RunData.existing_weapon_has_effect("effect_weapon_time_slow"):
 		return true
-	print("moas")
+
 	return false
 
 
