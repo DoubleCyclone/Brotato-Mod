@@ -29,6 +29,8 @@ func _init() -> void:
 
 	# Add translations
 	add_translations()
+	
+	_add_child_class()
 
 
 func install_script_extensions() -> void:
@@ -81,3 +83,8 @@ func get_effect_behaviors() -> void:
 #	var consumables = []
 #	consumables.append(load("res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/super_arm_stone_data.tres"))
 #	ItemService.consumables.append_array(consumables)
+
+func _add_child_class():
+	var ModService = load("res://mods-unpacked/8bithero-FirstModTrial/singletons/mod_service.gd").new()
+	ModService.name = "8BitHeroModService"
+	add_child(ModService)
