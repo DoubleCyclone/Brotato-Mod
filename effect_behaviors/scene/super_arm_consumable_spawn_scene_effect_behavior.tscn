@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/super_arm_consumable_spawn_scene_effect_behavior.gd" type="Script" id=1]
-[ext_resource path="res://dlcs/dlc_1/effect_behaviors/enemy/curse_enemy_effect_behavior_data.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/super_arm_stone_data.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm_holding.png" type="Texture" id=3]
 
 [node name="SuperArmConsumableSpawnSceneEffectBehavior" type="Node"]
 script = ExtResource( 1 )
-hp_boost = 150
-damage_boost = 25
-speed_boost = 15
-curse_enemy_effect_behavior_data = ExtResource( 2 )
+super_arm_stone = ExtResource( 2 )
+ready_sprite = ExtResource( 3 )

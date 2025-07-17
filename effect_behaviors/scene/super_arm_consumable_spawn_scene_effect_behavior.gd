@@ -1,20 +1,25 @@
-# TODO WHY DOES THIS WEAPAON DISABLE SOUND EFFECTS RANDOMLY
 class_name SuperArmConsumableSpawnSceneEffectBehavior
 extends SceneEffectBehavior
 
 export (Resource) var super_arm_stone
-var drop_chance = 0.1
+export (Texture) var ready_sprite
+var drop_chance = 0
 
 func _ready() -> void :
-	super_arm_stone = load("res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/super_arm_stone_data.tres")
 	if should_check():
 		var _err = _entity_spawner_ref.connect("enemy_spawned",self,"_on_EntitySpawner_enemy_spawned")
 		
 func should_check() -> bool:
-	for player_index in RunData.get_player_count():
-		if RunData.get_player_effect("reload_when_pickup_super_arm_stone", player_index) > 0:
-			return true
 	if RunData.existing_weapon_has_effect("reload_when_pickup_super_arm_stone"):
+		var highest_tier = Weapon.new()
+		for player in RunData.players_data:
+			for weapon in player.weapons:
+				for effect in weapon.effects:
+					if effect.key == "reload_when_pickup_super_arm_stone":
+						highest_tier = weapon if weapon.tier >= highest_tier.tier else highest_tier
+		for effect in highest_tier.effects:
+			if effect.key == "reload_when_pickup_super_arm_stone":
+				drop_chance = effect.consumable_drop_chance
 		return true
 	return false
 
@@ -52,4 +57,7 @@ func on_consumable_picked_up(item, player_index) -> void:
 					highest_cd_weapon_that_should_reload = weapon
 					
 	if highest_cd_weapon_that_should_reload:
+		highest_cd_weapon_that_should_reload.get_node("Sprite").texture = ready_sprite
 		highest_cd_weapon_that_should_reload._current_cooldown = 0
+		
+	
