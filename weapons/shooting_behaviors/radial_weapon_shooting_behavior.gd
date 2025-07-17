@@ -4,7 +4,6 @@ extends WeaponShootingBehavior
 signal projectile_shot(projectile)
 
 
-# TODO? : for some reason enemies getting hit produces sound with a delay and sometimes never
 func shoot(_distance: float) -> void :
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 

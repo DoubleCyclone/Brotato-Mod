@@ -1,4 +1,3 @@
-# TODO: never goes back to ready sprite listen to it?
 class_name ThrowWeaponShootingBehavior
 extends WeaponShootingBehavior
 
