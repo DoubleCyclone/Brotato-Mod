@@ -1,23 +1,23 @@
 [gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm.tscn" type="PackedScene" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/1/super_arm_1_stats.tres" type="Resource" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/1/super_arm_1_effect_1.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/2/super_arm_2_stats.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/2/super_arm_2_effect_2.tres" type="Resource" id=3]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=4]
 [ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/1/super_arm_1_effect_2.tres" type="Resource" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/2/super_arm_2_effect_1.tres" type="Resource" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm_ico.png" type="Texture" id=7]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/2/super_arm_2_data.tres" type="Resource" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/3/super_arm_3_data.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 4 )
-my_id = "weapon_super_arm_1"
+my_id = "weapon_super_arm_2"
 unlocked_by_default = true
 icon = ExtResource( 7 )
 name = "WEAPON_SUPER_ARM"
-tier = 0
-value = 19
-effects = [ ExtResource( 6 ), ExtResource( 3 ) ]
+tier = 1
+value = 42
+effects = [ ExtResource( 3 ), ExtResource( 6 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
