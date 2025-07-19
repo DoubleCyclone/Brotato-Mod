@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource( 1 )
-key = ""
-text_key = "effect_hyper_bomb_spawn"
+key = "effect_hyper_bomb_spawn"
+text_key = ""
 value = 1
 custom_key = ""
 storage_method = 0
@@ -18,6 +18,6 @@ spawn_cooldown = 2
 scene = ExtResource( 2 )
 stats = ExtResource( 3 )
 effects = [ ExtResource( 4 ) ]
-spawn_in_center = -1
-spawn_around_player = -1
+spawn_in_center = 1
+spawn_around_player = 1
 can_be_grouped = true

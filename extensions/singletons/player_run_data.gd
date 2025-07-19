@@ -174,7 +174,8 @@ static func init_effects() -> Dictionary:
 		"effect_weapon_time_slow" : [],
 		"reload_when_pickup_super_arm_stone" : 0,
 		"projectile_rotate_on_shoot": [],
-		"sideways_projectiles_on_shoot": []
+		"sideways_projectiles_on_shoot": [],
+		"effect_hyper_bomb_spawn": []
 	}
 
 	all_effects.merge(all_stats)

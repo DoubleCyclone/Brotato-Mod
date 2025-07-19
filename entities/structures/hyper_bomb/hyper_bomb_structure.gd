@@ -2,13 +2,20 @@ class_name HyperBombStructure
 extends Structure
 
 var cooldown = 1
+onready var _sprite = $Animation / Sprite
+onready var _original_texture = _sprite.texture
+onready var _original_scale = Vector2(2,2)
 
 func _ready() -> void :
 	._ready()
+	_sprite.texture = _original_texture
+	_sprite.scale = _original_scale
 	get_tree().create_timer(cooldown,false).connect("timeout",self,"on_explosion_timer_run_out")
 	
 func respawn() -> void :
 	.respawn()
+	_sprite.texture = _original_texture
+	_sprite.scale = _original_scale
 	get_tree().create_timer(cooldown,false).connect("timeout",self,"on_explosion_timer_run_out")
 
 func on_explosion_timer_run_out() -> void:
