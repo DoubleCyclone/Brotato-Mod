@@ -5,8 +5,8 @@
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/Hyper Bomb Hold.png" type="Texture" id=3]
 [ext_resource path="res://resources/shaders/outline.gdshader" type="Shader" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/shooting_behaviors/throw_weapon_shooting_behavior.gd" type="Script" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm.png" type="Texture" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm_reloading.png" type="Texture" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/Hyper Bomb.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/Hyper Bomb Reload.png" type="Texture" id=7]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
