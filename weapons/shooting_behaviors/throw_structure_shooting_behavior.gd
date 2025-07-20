@@ -1,4 +1,3 @@
-# TODO Make a custom signal for projectile so when it stops spawn bomb?
 class_name ThrowStructureShootingBehavior
 extends WeaponShootingBehavior
 
@@ -6,9 +5,15 @@ signal projectile_shot(projectile)
 
 export (Texture) var throw_sprite
 export (Texture) var cooldown_sprite
-export (PackedScene) var structure_scene
+var structure_scene
+var structure_spawn_effect
 
 func shoot(_distance: float) -> void :
+	for effect in _parent.effects:
+		if effect.key == "effect_hyper_bomb_spawn":
+			structure_spawn_effect = effect
+			structure_scene = effect.structure_scene
+			
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 	_parent.get_node("Sprite").texture = throw_sprite
 
@@ -60,6 +65,7 @@ func on_projectile_stopped(projectile):
 	instance.stats = _parent.current_stats
 	instance.effects = _parent.effects[0].effects
 	instance.rotation = projectile.rotation
+	instance.cooldown = structure_spawn_effect.timer_cooldown
 	Utils.get_scene_node().get_node("Entities").add_child(instance)
 	
 
