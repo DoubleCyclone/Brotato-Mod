@@ -1,4 +1,4 @@
-class_name ThrownBomb2Effect
+class_name ThrownBombEffect
 extends NullEffect
 
 export (Array,Resource) var effects
