@@ -1,7 +1,7 @@
 class_name HyperBombStructure
 extends Structure
 
-var cooldown = 1
+var cooldown = 0.25
 onready var _sprite = $Animation / Sprite
 onready var _original_texture = _sprite.texture
 onready var _original_scale = Vector2(2,2)

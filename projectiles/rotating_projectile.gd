@@ -11,7 +11,7 @@ func _ready():
 	rotation = randf() * TAU
 
 func _physics_process(delta: float) -> void :
-	._physics_process(delta)
+#	._physics_process(delta)
 	
 	var max_range = PI * 2 * radius * max_rotation
 	var previous_position = global_position

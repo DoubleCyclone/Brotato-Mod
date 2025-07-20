@@ -3,7 +3,12 @@ extends PlayerProjectile
 
 signal projectile_stopped(projectile)
 
-func _physics_process(_delta: float) -> void :
+export(float) var radius = 1
+export(int) var max_rotation = 1
+var d = 0
+var distance_taken = 0 #should be a better way with this one
+
+func _physics_process(_delta: float) -> void :		
 	if velocity.x > 0:
 		velocity.x -= _weapon_stats.projectile_speed * _delta
 	elif velocity.x < 0:
