@@ -6,6 +6,7 @@ export (Texture) var ready_sprite
 var current_weapon
 var current_effect
 var current_player_index
+var projectile_reference
 
 func _ready() -> void :
 	_entity_spawner_ref = Utils.get_scene_node().get_node("EntitySpawner")
@@ -26,9 +27,11 @@ func should_check() -> bool:
 	return false
 
 func on_enemy_spawned(enemy:Enemy):
-	enemy.connect("took_damage",self,"on_body_entered")
+#	enemy.connect("took_damage",self,"on_took_damage")
+	enemy.connect("body_entered",self,"on_took_damage")
 
-func on_body_entered(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type):
+func on_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type):
+	print(args)
 	var instance = structure_scene.instance()
 	instance.player_index = current_player_index
 	instance.position = unit.position

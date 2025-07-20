@@ -1,3 +1,4 @@
+# TODO Make a custom signal for projectile so when it stops spawn bomb?
 class_name ThrowStructureShootingBehavior
 extends WeaponShootingBehavior
 
@@ -21,8 +22,7 @@ func shoot(_distance: float) -> void :
 		var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
 		var projectile = shoot_projectile(proj_rotation, knockback_direction)
 		projectile._hitbox.player_attack_id = attack_id
-#		if not is_connected("projectile_shot",self,"on_projectile_shot"):
-#			connect("projectile_shot",self,"on_projectile_shot")
+		projectile.connect("projectile_stopped",self,"on_projectile_stopped")
 
 	_parent.tween.interpolate_property(
 		_parent.sprite, 
@@ -53,14 +53,14 @@ func shoot(_distance: float) -> void :
 	_parent.get_node("Sprite").texture = cooldown_sprite
 	_parent.set_shooting(false)
 	
-#func on_projectile_shot(projectile:PlayerProjectile) -> void:
-#	if not projectile.is_connected("hit_something",self,"on_hit_something"):
-#		projectile.connect("hit_something",self,"on_hit_something")
-#
-#func on_hit_something(thing_hit, damage_dealt) -> void:
-#	var instance = structure_scene.instance()
-#	instance.position = thing_hit.position
-#	Utils.get_scene_node().add_entity(instance)
+func on_projectile_stopped(projectile):
+	var instance = structure_scene.instance()
+	instance.player_index = _parent.player_index
+	instance.position = projectile.position
+	instance.stats = _parent.current_stats
+	instance.effects = _parent.effects[0].effects
+	instance.rotation = projectile.rotation
+	Utils.get_scene_node().get_node("Entities").add_child(instance)
 	
 
 func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
