@@ -31,7 +31,7 @@ func on_explosion_timer_run_out() -> void:
 	args.burning_data = stats.burning_data
 	args.scaling_stats = stats.scaling_stats
 	args.from_player_index = player_index
-	args.damage_tracking_key = explosion_effect.tracking_key
+#	args.damage_tracking_key = explosion_effect.tracking_key
 	args.from = self
 	var _inst = WeaponService.explode(explosion_effect, args)
 	die()

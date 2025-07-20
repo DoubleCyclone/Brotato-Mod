@@ -64,6 +64,5 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 		_parent, 
 		args
 	)
-
 	emit_signal("projectile_shot", projectile)
 	return projectile

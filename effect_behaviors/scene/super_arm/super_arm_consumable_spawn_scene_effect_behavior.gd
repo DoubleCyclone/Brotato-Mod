@@ -8,7 +8,7 @@ var drop_chance = 0
 func _ready() -> void :
 	if should_check():
 		var _err = _entity_spawner_ref.connect("enemy_spawned",self,"_on_EntitySpawner_enemy_spawned")
-		
+
 func should_check() -> bool:
 	if RunData.existing_weapon_has_effect("reload_when_pickup_super_arm_stone"):
 		var highest_tier = Weapon.new()
