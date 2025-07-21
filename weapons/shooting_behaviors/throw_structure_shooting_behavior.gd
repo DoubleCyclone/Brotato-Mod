@@ -61,7 +61,8 @@ func shoot(_distance: float) -> void :
 func on_projectile_stopped(projectile):
 	var instance = structure_scene.instance()
 	instance.player_index = _parent.player_index
-	instance.position = projectile.position
+	var offset_pos = Vector2(projectile.position.x,projectile.position.y+22)
+	instance.position = offset_pos
 	instance.stats = _parent.current_stats
 	instance.effects = _parent.effects[0].effects
 	instance.rotation = projectile.rotation
@@ -82,6 +83,7 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 		_parent, 
 		args
 	)
+	projectile.rotation = 0
 
 	emit_signal("projectile_shot", projectile)
 	return projectile

@@ -3,28 +3,16 @@ extends PlayerProjectile
 
 signal projectile_stopped(projectile)
 
-export(float) var radius = 1
-export(int) var max_rotation = 1
-var d = 0
-var distance_taken = 0 #should be a better way with this one
-
-func _physics_process(_delta: float) -> void :		
+func _physics_process(delta):
 	if velocity.x > 0:
-		velocity.x -= _weapon_stats.projectile_speed * _delta
+		velocity.x -= _weapon_stats.projectile_speed * delta
 	elif velocity.x < 0:
-		velocity.x += _weapon_stats.projectile_speed * _delta
+		velocity.x += _weapon_stats.projectile_speed * delta
 	if velocity.y > 0:
-		velocity.y -= _weapon_stats.projectile_speed * _delta
+		velocity.y -= _weapon_stats.projectile_speed * delta
 	elif velocity.y < 0:
-		velocity.y += _weapon_stats.projectile_speed * _delta
+		velocity.y += _weapon_stats.projectile_speed * delta
 	if velocity.length() < 10:
 		emit_signal("projectile_stopped",self)
 		queue_free()
-		
-#func spawn_bomb(structure_scene):
-#	var instance = structure_scene.instance()
-#	instance.player_index = player_index
-#	instance.position = position
-#	instance.stats = _weapon_stats
-#	instance.effects = _hitbox.effects[0].effects
-#	Utils.get_scene_node().get_node("Entities").add_child(instance)
+

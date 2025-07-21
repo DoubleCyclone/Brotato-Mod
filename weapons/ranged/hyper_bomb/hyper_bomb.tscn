@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://weapons/weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://weapons/ranged/ranged_weapon.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/shooting_behaviors/throw_structure_shooting_behavior.gd" type="Script" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/Hyper Bomb.png" type="Texture" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/Hyper Bomb Reload.png" type="Texture" id=7]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/hyper_bomb/hyper_bomb_structure.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -49,6 +48,5 @@ shape = SubResource( 1 )
 script = ExtResource( 5 )
 throw_sprite = ExtResource( 6 )
 cooldown_sprite = ExtResource( 7 )
-structure_scene = ExtResource( 8 )
 
 [editable path="Sprite/Hitbox"]

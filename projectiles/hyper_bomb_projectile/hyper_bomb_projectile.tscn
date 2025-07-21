@@ -6,8 +6,6 @@
 
 [node name="HyperBombProjectile" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-radius = 1.0
-max_rotation = 1
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 0 )
