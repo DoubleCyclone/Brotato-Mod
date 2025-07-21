@@ -4,9 +4,20 @@ extends PlayerProjectile
 signal projectile_stopped(projectile)
 
 var speed_multiplier
+var max_scale = Vector2(1.75,1.75)
+var min_scale = Vector2(1,1)
+var max_scale_reached = false
 
 func _physics_process(delta):
 	speed_multiplier = _weapon_stats.projectile_speed / 2
+	if not max_scale_reached and scale < max_scale:
+		scale.x += delta
+		scale.y += delta
+		if scale >= max_scale:
+			max_scale_reached = true
+	elif max_scale_reached and scale > min_scale:
+		scale.x -= delta
+		scale.y -= delta
 	# Prevent the projectile from leaving the screen
 	if position.x < ZoneService.current_zone_min_position.x or position.x > ZoneService.current_zone_max_position.x:
 		velocity.x = 0
