@@ -3,6 +3,7 @@ extends Structure
 
 var cooldown = 0.25
 onready var _sprite = $Animation / Sprite
+onready var _shadow = $Animation / Shadow
 onready var _original_texture = _sprite.texture
 onready var _original_scale = Vector2(2,2)
 
@@ -33,6 +34,7 @@ func on_explosion_timer_run_out() -> void:
 	args.from_player_index = player_index
 #	args.damage_tracking_key = explosion_effect.tracking_key
 	args.from = self
+	_shadow.visible = false
 	var _inst = WeaponService.explode(explosion_effect, args)
 	die()
 

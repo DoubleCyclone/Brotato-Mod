@@ -20,7 +20,7 @@ position = Vector2( 0, 0 )
 [node name="Sprite" parent="Animation" index="0"]
 texture = ExtResource( 2 )
 
-[node name="Shadow" type="Sprite" parent="Animation" index="2"]
+[node name="Shadow" type="Sprite" parent="Animation" index="1"]
 modulate = Color( 0, 0, 0, 0.392157 )
 show_behind_parent = true
 position = Vector2( 0, 30 )
