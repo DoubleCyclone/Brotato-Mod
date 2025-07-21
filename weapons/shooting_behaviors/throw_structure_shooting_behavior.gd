@@ -64,7 +64,9 @@ func on_projectile_stopped(projectile):
 	var offset_pos = Vector2(projectile.position.x,projectile.position.y+22)
 	instance.position = offset_pos
 	instance.stats = _parent.current_stats
-	instance.effects = _parent.effects[0].effects
+	for effect in _parent.effects:
+		if effect.key == "effect_hyper_bomb_spawn":
+			instance.effects = effect.effects
 	instance.rotation = projectile.rotation
 	instance.cooldown = structure_spawn_effect.timer_cooldown
 	Utils.get_scene_node().get_node("Entities").add_child(instance)
