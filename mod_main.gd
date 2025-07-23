@@ -80,6 +80,7 @@ func get_effect_behaviors() -> void:
 	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/freeze_invulnerable/freeze_invulnerable_enemy_effect_behavior_data.tres"))
 	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/time_slow/time_slow_enemy_effect_behavior_data.tres"))
 	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior_data.tres"))
+	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/oil_slider/oil_slider_structure_spawn_scene_effect_behavior_data.tres"))
 	EffectBehaviorService.enemy_effect_behaviors.append_array(enemy_effect_behaviors)
 	EffectBehaviorService.scene_effect_behaviors.append_array(scene_effect_behaviors)
 	EffectBehaviorService.player_effect_behaviors.append_array(player_effect_behaviors)
