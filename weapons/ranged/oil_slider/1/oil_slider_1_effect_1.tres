@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/projectile_structure_spawn_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_puddle.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+key = "oil_slider_structure_spawn"
+text_key = "EFFECT_OIL_SLIDER_STRUCTURE_SPAWN"
+value = 0
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = [  ]
+structure_scene = ExtResource( 2 )
