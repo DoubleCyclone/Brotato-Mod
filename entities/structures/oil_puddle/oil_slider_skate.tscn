@@ -1,25 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/structures/structure.tscn" type="PackedScene" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_puddle.gd" type="Script" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_puddle.png" type="Texture" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_puddle.wav" type="AudioStream" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_skate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_skate.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_skate.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.9999
 height = 32.0
 
-[node name="OilPuddle" instance=ExtResource( 1 )]
+[node name="OilSliderSkate" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 can_be_boosted = true
 to_be_removed_in_priority = true
-pressed_sounds = [ ExtResource( 4 ) ]
-oil_skate = ExtResource( 5 )
 
 [node name="Sprite" parent="Animation" index="0"]
 position = Vector2( 0, 40 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Muzzle" parent="Animation" index="1"]
 position = Vector2( 0, 31 )
@@ -27,6 +23,7 @@ position = Vector2( 0, 31 )
 [node name="Collision" parent="." index="1"]
 visible = false
 position = Vector2( 0, -8 )
+one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
 collision_layer = 0
@@ -34,8 +31,9 @@ collision_mask = 6
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 18 )
 rotation = 1.5708
+scale = Vector2( 0.7, 1.6 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

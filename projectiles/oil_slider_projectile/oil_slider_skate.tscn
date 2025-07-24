@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://projectiles/player_projectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_skate.png" type="Texture" id=2]
-[ext_resource path="res://projectiles/projectile.gd" type="Script" id=3]
 
 [node name="OilSliderSkate" instance=ExtResource( 1 )]
-script = ExtResource( 3 )
 destroy_on_leaving_screen = false
 
 [node name="Sprite" parent="." index="0"]
