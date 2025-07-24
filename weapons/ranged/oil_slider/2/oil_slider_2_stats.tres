@@ -1,14 +1,14 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_reloading.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_shoot.wav" type="AudioStream" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_reloading.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_shoot.wav" type="AudioStream" id=4]
 
 [resource]
 script = ExtResource( 1 )
-cooldown = 85
-damage = 10
+cooldown = 80
+damage = 18
 accuracy = 1.0
 crit_chance = 0.03
 crit_damage = 1.5
@@ -19,12 +19,12 @@ knockback_piercing = 0.0
 can_have_positive_knockback = true
 can_have_negative_knockback = false
 effect_scale = 1.0
-scaling_stats = [ [ "stat_elemental_damage", 1.0 ], [ "stat_speed", 1.5 ] ]
+scaling_stats = [ [ "stat_elemental_damage", 1.05 ], [ "stat_speed", 1.55 ] ]
 lifesteal = 0.0
-shooting_sounds = [ ExtResource( 3 ) ]
+shooting_sounds = [ ExtResource( 4 ) ]
 sound_db_mod = -5
 is_healing = false
-custom_on_cooldown_sprite = ExtResource( 2 )
+custom_on_cooldown_sprite = ExtResource( 3 )
 recoil = 25
 recoil_duration = 0.1
 additional_cooldown_every_x_shots = -1
@@ -39,4 +39,4 @@ bounce_dmg_reduction = 0.5
 can_bounce = true
 projectile_speed = 2000
 increase_projectile_speed_with_range = false
-projectile_scene = ExtResource( 4 )
+projectile_scene = ExtResource( 2 )

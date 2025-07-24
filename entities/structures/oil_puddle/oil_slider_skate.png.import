@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/oil_slider_skate.png-611045e1172656b6cbc59315483ea98a.stex"
+path="res://.import/oil_slider_skate.png-de528e03a54f5882200ec245e6975474.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_skate.png"
-dest_files=[ "res://.import/oil_slider_skate.png-611045e1172656b6cbc59315483ea98a.stex" ]
+source_file="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_skate.png"
+dest_files=[ "res://.import/oil_slider_skate.png-de528e03a54f5882200ec245e6975474.stex" ]
 
 [params]
 

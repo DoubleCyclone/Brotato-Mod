@@ -2,7 +2,7 @@
 
 [ext_resource path="res://entities/structures/structure.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_skate.gd" type="Script" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_skate.png" type="Texture" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_skate.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.9999

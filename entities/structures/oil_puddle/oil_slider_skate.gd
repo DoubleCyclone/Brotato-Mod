@@ -11,7 +11,6 @@ var player
 func _ready():
 	player = get_parent().get_parent().get_parent()
 	if !player.get_node("Animation/Sprite").has_node("OilSliderSkate"): return
-	print("skate ready")
 	var timer = get_tree().create_timer(spawn_effect.effect_timer,false)
 	timer.connect("timeout",self,"on_timer_timeout",[player])	
 	player.current_stats.speed *= spawn_effect.speed_modifier
@@ -19,7 +18,12 @@ func _ready():
 	
 
 func respawn() -> void :
-	print("skate respawn")
+	player = get_parent().get_parent().get_parent()
+	if !player.get_node("Animation/Sprite").has_node("OilSliderSkate"): return
+	var timer = get_tree().create_timer(spawn_effect.effect_timer,false)
+	timer.connect("timeout",self,"on_timer_timeout",[player])	
+	player.current_stats.speed *= spawn_effect.speed_modifier
+	player.disable_hurtbox()
 
 
 func _on_Area2D_body_entered(_body: Node) -> void :
@@ -35,7 +39,6 @@ func _on_Area2D_body_exited(_body: Node) -> void :
 
 
 func on_timer_timeout(player: Node) -> void :
-	print("unapply buff")
 	player.current_stats.speed /= spawn_effect.speed_modifier
 	player.enable_hurtbox()
 	queue_free()
