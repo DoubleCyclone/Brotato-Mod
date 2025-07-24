@@ -30,7 +30,6 @@ func _on_Area2D_body_exited(_body: Node) -> void :
 	
 	
 func spawn_skate(_body: Node) -> void:
-	print("spawn skate")
 	SoundManager2D.play(Utils.get_rand_element(pressed_sounds), global_position, 5, 0.2)
 	skate_instance = oil_skate.instance()
 	skate_instance.position = skate_instance.position + Vector2(0,33)
