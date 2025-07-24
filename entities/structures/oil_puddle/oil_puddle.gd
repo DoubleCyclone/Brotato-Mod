@@ -40,10 +40,6 @@ func spawn_skate(_body: Node) -> void:
 	skate_instance.get_node("Animation/Sprite").scale = Vector2(3,3)
 	_body.get_node("Animation/Sprite").call_deferred("add_child",skate_instance)
 
-
-func apply_effect(_body: Node) -> void :
-	_body.current_stats.speed *= 1.5
-	_body.disable_hurtbox()
 	
 #func boost(boost_args: BoostArgs) -> void :
 #	if can_be_boosted:

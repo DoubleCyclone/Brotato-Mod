@@ -29,6 +29,7 @@ func _on_Area2D_body_entered(_body: Node) -> void :
 	var args = TakeDamageArgs.new(player.player_index)
 	_body.take_damage(damage_value.value, args)
 
+
 func _on_Area2D_body_exited(_body: Node) -> void :
 	pass
 
