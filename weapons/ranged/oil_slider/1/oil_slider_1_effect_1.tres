@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/projectile_structure_spawn_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/oil_slider_effect.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_puddle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/1/oil_slider_1_skate_stats.tres" type="Resource" id=3]
 
@@ -17,3 +17,4 @@ structure_scene = ExtResource( 2 )
 chance = 1.0
 effect_timer = 0.75
 stats = ExtResource( 3 )
+speed_modifier = 1.1

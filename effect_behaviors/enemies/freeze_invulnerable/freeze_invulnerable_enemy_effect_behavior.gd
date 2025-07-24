@@ -48,10 +48,10 @@ func on_hurt(hitbox: Hitbox) -> void :
 
 	effects.append_array(item_effects)
 	
-
-	for effect in hitbox.effects:
-		if effect.custom_key == "weapon_freeze_invulnerable":
-			effects.push_back(effect.to_array())
+	if hitbox:
+		for effect in hitbox.effects:
+			if effect.custom_key == "weapon_freeze_invulnerable":
+				effects.push_back(effect.to_array())
 
 	try_add_effects(effects, hitbox.scaling_stats)
 

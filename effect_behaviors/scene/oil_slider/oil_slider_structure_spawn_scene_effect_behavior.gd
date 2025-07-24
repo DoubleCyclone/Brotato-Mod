@@ -16,12 +16,13 @@ func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type) -> void :
 	var structure
 	var chance = 0
-	for effect in args.hitbox.effects:
-		if effect.key == "oil_slider_structure_spawn":
-			structure = effect.structure_scene
-			chance = effect.chance
-	if Utils.get_chance_success(chance):
-		spawn_structure(structure, args.hitbox, unit)
+	if args.hitbox:
+		for effect in args.hitbox.effects:
+			if effect.key == "oil_slider_structure_spawn":
+				structure = effect.structure_scene
+				chance = effect.chance
+		if Utils.get_chance_success(chance):
+			spawn_structure(structure, args.hitbox, unit)
 		
 func spawn_structure(structure_scene, hitbox, unit):
 	var instance = structure_scene.instance()
