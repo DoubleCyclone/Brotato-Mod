@@ -2,11 +2,12 @@ class_name OilPuddle
 extends Structure
 
 export (Array, Resource) var pressed_sounds
+export (PackedScene) var oil_skate
 
 onready var _sprite = $Animation / Sprite
 onready var _original_texture = _sprite.texture
-
 var _original_effects: Array
+var skate_instance: Projectile
 
 
 func respawn() -> void :
@@ -15,42 +16,49 @@ func respawn() -> void :
 
 
 func _on_Area2D_body_entered(_body: Node) -> void :
+	if dead or not(_body is Player): return
+	for effect in effects:
+		if effect.key == "oil_slider_structure_spawn" and !_body.get_node("OilSliderSkate"):
+			SoundManager2D.play(Utils.get_rand_element(pressed_sounds), global_position, 5, 0.2)
+			apply_effect(_body)
+			var timer = get_tree().create_timer(effect.effect_timer,false)
+			timer.connect("timeout",self,"on_timer_timeout",[_body])	
+			die()
 
-	if dead: return
+#func _on_Area2D_body_exited(_body: Node) -> void :
+#	if dead or not(_body is Player) or _body.get_node("OilSliderSkate"): return
+#	die()
 
-	SoundManager2D.play(Utils.get_rand_element(pressed_sounds), global_position, 5, 0.2)
+func apply_effect(_body: Node) -> void :
+	print("apply buff")
+	_body.current_stats.speed *= 1.5
+	_body.disable_hurtbox()
+	skate_instance = oil_skate.instance() 
+	skate_instance.position = skate_instance.position + Vector2(0,33)
+#	skate_instance.connect()
+	_body.get_node("Animation/Sprite").call_deferred("add_child",skate_instance)
+	#TODO
 
-
-func _on_Area2D_body_exited(_body: Node) -> void :
-	if dead or effects.size() <= 0: return
-
-	var explosion_effect = effects[0]
-	var args: = WeaponServiceExplodeArgs.new()
-	args.pos = global_position
-	args.damage = stats.damage
-	args.accuracy = stats.accuracy
-	args.crit_chance = stats.crit_chance
-	args.crit_damage = stats.crit_damage
-	args.burning_data = stats.burning_data
-	args.scaling_stats = stats.scaling_stats
-	args.from_player_index = player_index
-	args.damage_tracking_key = explosion_effect.tracking_key
-	args.from = self
-	var _inst = WeaponService.explode(explosion_effect, args)
-	die()
-
-
-func boost(boost_args: BoostArgs) -> void :
-	if can_be_boosted:
-		.boost(boost_args)
-		stats.damage *= 1.0 + boost_args.damage_boost / 100.0
-
-		_original_effects = effects
-		var new_explosion_effect = effects[0].duplicate()
-		new_explosion_effect.scale *= 1.0 + boost_args.range_boost / 100.0
-		effects = [new_explosion_effect]
-
-
-func boost_ended() -> void :
-	.boost_ended()
-	effects = _original_effects
+func on_timer_timeout(_body: Node) -> void :
+	print("unapply buff")
+	_body.current_stats.speed /= 1.5
+	_body.enable_hurtbox()
+	skate_instance.queue_free()
+	
+func on_skate_hit_something(thing_hit, damage_dealt):
+	print("hit something")
+	
+#func boost(boost_args: BoostArgs) -> void :
+#	if can_be_boosted:
+#		.boost(boost_args)
+#		stats.damage *= 1.0 + boost_args.damage_boost / 100.0
+#
+#		_original_effects = effects
+#		var new_explosion_effect = effects[0].duplicate()
+#		new_explosion_effect.scale *= 1.0 + boost_args.range_boost / 100.0
+#		effects = [new_explosion_effect]
+#
+#
+#func boost_ended() -> void :
+#	.boost_ended()
+#	effects = _original_effects

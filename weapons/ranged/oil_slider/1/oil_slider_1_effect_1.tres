@@ -13,4 +13,5 @@ storage_method = 0
 effect_sign = 3
 custom_args = [  ]
 structure_scene = ExtResource( 2 )
-chance = 0.5
+chance = 1.0
+effect_timer = 0.75
