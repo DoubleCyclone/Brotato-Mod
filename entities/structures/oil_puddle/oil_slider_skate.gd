@@ -14,7 +14,7 @@ func _ready():
 	var timer = get_tree().create_timer(spawn_effect.effect_timer,false)
 	timer.connect("timeout",self,"on_timer_timeout",[player])	
 	player.current_stats.speed *= spawn_effect.speed_modifier
-	player.disable_hurtbox()
+	player.get_node("Hurtbox").monitoring = false
 	
 
 func respawn() -> void :
@@ -40,8 +40,9 @@ func _on_Area2D_body_exited(_body: Node) -> void :
 
 func on_timer_timeout(player: Node) -> void :
 	player.current_stats.speed /= spawn_effect.speed_modifier
-	player.enable_hurtbox()
+	player.get_node("Hurtbox").monitoring = true
 	queue_free()
+	
 # TODO: when getting on the skate while taking damage, invulnerability does not apply (or the newly applied one is removed by the old timer)
 # TODO: add boost functions to structures maybe
 
