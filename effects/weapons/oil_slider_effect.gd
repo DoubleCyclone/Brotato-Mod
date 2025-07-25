@@ -16,3 +16,4 @@ func get_args(_player_index: int) -> Array:
 	return [str(round(chance * 100.0)), str(round(speed_modifier * 100.0 - 100.0)), str(scaled_damage), scaling_text, str(effect_timer)]
 
 # TODO: learn what serialize / deserialize does and use it
+# TODO: maybe add base damage values to the descriptions of the weapons
