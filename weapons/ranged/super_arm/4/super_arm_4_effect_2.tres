@@ -11,4 +11,4 @@ custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
-consumable_drop_chance = 0.1
+consumable_drop_chance = 0.09
