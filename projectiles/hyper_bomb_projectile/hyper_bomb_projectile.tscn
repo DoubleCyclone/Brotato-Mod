@@ -1,26 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://projectiles/player_projectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/hyper_bomb_projectile/Hyper Bomb.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/structure_spawner_projectile.gd" type="Script" id=3]
-[ext_resource path="res://entities/units/player/potato.png" type="Texture" id=4]
 
 [node name="HyperBombProjectile" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+rotation_speed = 1
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 0 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
-[node name="Shadow" type="Sprite" parent="." index="1"]
-modulate = Color( 0, 0, 0, 0.392157 )
-show_behind_parent = true
-position = Vector2( 0, 30 )
-scale = Vector2( 1, -0.3 )
-texture = ExtResource( 4 )
-
-[node name="Hitbox" parent="." index="2"]
+[node name="Hitbox" parent="." index="1"]
 position = Vector2( 0, 1 )
 scale = Vector2( 0.6, 0.6 )
 deals_damage = false

@@ -3,26 +3,24 @@ extends PlayerProjectile
 
 signal projectile_stopped(projectile)
 
-onready var shadow: = $Shadow as Sprite
 var speed_multiplier
 var max_scale = Vector2(1.75,1.75)
 var min_scale = Vector2(1,1)
 var max_scale_reached = false
 
 func _physics_process(delta):
+	if rotation_speed != 0:
+		rotation_degrees -= 22
+	
 	speed_multiplier = _weapon_stats.projectile_speed / 2
 	if not max_scale_reached and scale < max_scale:
 		scale.x += delta
 		scale.y += delta
-		shadow.scale.x -= delta
-		shadow.scale.y += delta / 2
 		if scale >= max_scale:
 			max_scale_reached = true
 	elif max_scale_reached and scale > min_scale:
 		scale.x -= delta
 		scale.y -= delta
-		shadow.scale.x += delta
-		shadow.scale.y -= delta / 2
 	# Prevent the projectile from leaving the screen
 	if position.x < ZoneService.current_zone_min_position.x or position.x > ZoneService.current_zone_max_position.x:
 		velocity.x = 0
