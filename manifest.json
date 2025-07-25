@@ -1,9 +1,9 @@
 {
 	"name": "FirstModTrial",
 	"namespace": "8bithero",
-	"version_number": "0.0.1",
-	"description": "Description of your mod...",
-	"website_url": "https://github.com/exampleauthor/examplemod",
+	"version_number": "1.0.0",
+	"description": "Adds 8 weapons from Megaman 1 and Megaman Powered Up!",
+	"website_url": "https://github.com/DoubleCyclone/Brotato-Mod",
 	"dependencies": [
 
 	],
