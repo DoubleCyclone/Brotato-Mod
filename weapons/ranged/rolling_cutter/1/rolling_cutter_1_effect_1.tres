@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/rolling_cutter_boomerang_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/1/rolling_cutter_1_stats.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+key = "rolling_cutter_boomerang_effect"
+text_key = "EFFECT_ROLLING_CUTTER_BOOMERANG"
+value = 0
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = [  ]
+weapon_stats = ExtResource( 2 )

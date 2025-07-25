@@ -6,3 +6,4 @@ EFFECT_TIME_SLOW;Creates fields around you that deal damage and has a {0}% chanc
 EFFECT_RELOAD_WHEN_PICKUP_SUPER_ARM_STONE;Killed enemies drop a stone consumable with a {0}% chance. When picked up, the weapon automatically reloads.
 EFFECT_HYPER_BOMB_SPAWN;Instead of dealing damage, a bomb will spawn in the projectile's place when it stops and explode in {0} seconds dealing the weapon's damage with a scale of {1}.
 EFFECT_OIL_SLIDER_STRUCTURE_SPAWN;Has a {0}% chance to spawn an oil puddle on hit. Whenever the puddle is touched by the player, they get on an oil skateboard that increases their movement speed by {1}%, makes them invulnerable and deals {2} ({3}) contact damage for {4} seconds.
+EFFECT_ROLLING_CUTTER_BOOMERANG;This weapon is thrown at wherever the player is looking at and follows an elliptical trajectory with a speed of {0}. Its major axis' length is {1} and minor axis' length is {2}. This weapon has infinite piercing but it cannot be aimed manually.

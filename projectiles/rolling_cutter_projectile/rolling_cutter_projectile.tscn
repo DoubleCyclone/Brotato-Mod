@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://projectiles/player_projectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/rolling_cutter_projectile/rolling_cutter_projectile.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/boomerang_projectile.gd" type="Script" id=3]
 
 [node name="RollingCutterProjectile" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+destroy_on_leaving_screen = false
+rotation_speed = 5
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( -5, 0 )
