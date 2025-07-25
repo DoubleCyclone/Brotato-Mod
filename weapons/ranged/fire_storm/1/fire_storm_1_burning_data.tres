@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-chance = 0.4
+chance = 0.25
 damage = 2
 duration = 2
 spread = 0
