@@ -29,7 +29,8 @@ func respawn() -> void :
 func _on_Area2D_body_entered(_body: Node) -> void :
 	if dead: return
 	if _body is Player or _body is Structure: return
-	var damage_value = _body.get_damage_value(stats.damage, player.player_index)
+	var scaled_damage = WeaponService.apply_scaling_stats_to_damage(stats.damage, stats.scaling_stats, player.player_index)
+	var damage_value = _body.get_damage_value(scaled_damage, player.player_index)
 	var args = TakeDamageArgs.new(player.player_index)
 	_body.take_damage(damage_value.value, args)
 

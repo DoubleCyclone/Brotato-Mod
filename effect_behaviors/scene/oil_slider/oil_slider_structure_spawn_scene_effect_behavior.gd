@@ -27,8 +27,9 @@ func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 func spawn_structure(structure_scene, hitbox, unit):
 	var instance = structure_scene.instance()
 	instance.player_index = hitbox.from.player_index
-	instance.stats = hitbox.from.current_stats
 	instance.position = unit.position
 	instance.get_node("Animation/Sprite").scale = Vector2(2,2)
 	instance.effects = hitbox.effects
 	Utils.get_scene_node().get_node("Entities").call_deferred("add_child",instance)
+
+	
