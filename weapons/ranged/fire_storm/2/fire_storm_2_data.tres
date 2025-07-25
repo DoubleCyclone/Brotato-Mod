@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=9 format=2]
+[gd_resource type="Resource" load_steps=10 format=2]
 
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/fire_storm_ico.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/2/fire_storm_2_stats.tres" type="Resource" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/fire_storm.tscn" type="PackedScene" id=7]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/2/fire_storm_2_effect_2.tres" type="Resource" id=8]
+[ext_resource path="res://items/sets/primitive/primitive_set_data.tres" type="Resource" id=9]
 
 [resource]
 script = ExtResource( 1 )
@@ -24,7 +25,7 @@ is_cursed = false
 curse_factor = 0.0
 weapon_id = ""
 type = 1
-sets = [ ExtResource( 3 ) ]
+sets = [ ExtResource( 3 ), ExtResource( 9 ) ]
 scene = ExtResource( 7 )
 stats = ExtResource( 6 )
 upgrades_into = ExtResource( 5 )
