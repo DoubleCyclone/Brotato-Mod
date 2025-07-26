@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/ice_slasher_projectile/ice_slasher_projectile.png" type="Texture" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/ice_slasher_projectile/8bit_mt_ice_slasher_projectile.png" type="Texture" id=1]
 [ext_resource path="res://projectiles/player_projectile.tscn" type="PackedScene" id=2]
 
 [node name="IceSlasherProjectile" instance=ExtResource( 2 )]

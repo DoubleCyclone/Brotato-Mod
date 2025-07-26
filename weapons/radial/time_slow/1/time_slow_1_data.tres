@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=10 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/time_slow_ico.png" type="Texture" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/8bit_mt_time_slow_ico.png" type="Texture" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/time_slow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/1/time_slow_1_stats.tres" type="Resource" id=3]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=4]

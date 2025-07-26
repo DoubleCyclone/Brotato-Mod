@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm_impact.wav" type="AudioStream" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/8bit_mt_super_arm_impact.wav" type="AudioStream" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/super_arm_projectile/super_arm_projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=3]
 

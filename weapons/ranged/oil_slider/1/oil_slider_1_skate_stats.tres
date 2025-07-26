@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_reloading.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_shoot.wav" type="AudioStream" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider_reloading.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider_shoot.wav" type="AudioStream" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/oil_slider_projectile/oil_slider_projectile.tscn" type="PackedScene" id=4]
 
 [resource]

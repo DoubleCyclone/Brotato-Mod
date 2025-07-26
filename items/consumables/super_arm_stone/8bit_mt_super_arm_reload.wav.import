@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/8bit_mt_super_arm_reload.wav-1693476e4ee44500e283cb27dd0352cf.sample"
+
+[deps]
+
+source_file="res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/8bit_mt_super_arm_reload.wav"
+dest_files=[ "res://.import/8bit_mt_super_arm_reload.wav-1693476e4ee44500e283cb27dd0352cf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

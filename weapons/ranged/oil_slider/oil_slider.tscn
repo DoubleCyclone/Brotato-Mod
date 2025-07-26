@@ -2,7 +2,7 @@
 
 [ext_resource path="res://weapons/weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/shaders/outline.gdshader" type="Shader" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider.png" type="Texture" id=3]
 [ext_resource path="res://weapons/ranged/ranged_weapon.gd" type="Script" id=9]
 
 [sub_resource type="ShaderMaterial" id=2]

@@ -6,7 +6,7 @@
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=4]
 [ext_resource path="res://items/sets/primitive/primitive_set_data.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/3/super_arm_3_effect_1.tres" type="Resource" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/super_arm_ico.png" type="Texture" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/8bit_mt_super_arm_ico.png" type="Texture" id=7]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/4/super_arm_4_data.tres" type="Resource" id=8]
 [ext_resource path="res://items/sets/blunt/blunt_set_data.tres" type="Resource" id=9]
 

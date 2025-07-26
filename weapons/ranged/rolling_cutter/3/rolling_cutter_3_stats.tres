@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/rolling_cutter.wav" type="AudioStream" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/rolling_cutter_reloading.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/8bit_mt_rolling_cutter.wav" type="AudioStream" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/8bit_mt_rolling_cutter_reloading.png" type="Texture" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/rolling_cutter_projectile/rolling_cutter_projectile.tscn" type="PackedScene" id=4]
 
 [resource]

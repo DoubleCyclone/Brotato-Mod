@@ -4,7 +4,7 @@
 [ext_resource path="res://overlap/hitbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://projectiles/player_explosion.gd" type="Script" id=3]
 [ext_resource path="res://particles/explosion_smoke.tscn" type="PackedScene" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/hyper_bomb_explosion.wav" type="AudioStream" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb_explosion.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 147.34

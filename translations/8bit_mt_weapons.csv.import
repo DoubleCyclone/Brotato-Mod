@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods-unpacked/8bithero-FirstModTrial/translations/8bit_mt_weapons.en.translation" ]
+
+source_file="res://mods-unpacked/8bithero-FirstModTrial/translations/8bit_mt_weapons.csv"
+dest_files=[ "res://mods-unpacked/8bithero-FirstModTrial/translations/8bit_mt_weapons.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=1

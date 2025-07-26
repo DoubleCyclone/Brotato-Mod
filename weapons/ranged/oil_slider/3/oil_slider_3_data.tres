@@ -5,7 +5,7 @@
 [ext_resource path="res://items/sets/medieval/medieval_set_data.tres" type="Resource" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/3/oil_slider_3_effect_1.tres" type="Resource" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider_ico.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider_ico.png" type="Texture" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/4/oil_slider_4_data.tres" type="Resource" id=7]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://projectiles/player_projectile.tscn" type="PackedScene" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/hyper_bomb_projectile/Hyper Bomb.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/hyper_bomb_projectile/8bit_mt_hyper_bomb.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/structure_spawner_projectile.gd" type="Script" id=3]
 
 [node name="HyperBombProjectile" instance=ExtResource( 1 )]
