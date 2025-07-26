@@ -13,7 +13,7 @@ func shoot(_distance: float) -> void :
 	
 	var exploding_effect = null
 	for effect in _parent.effects :
-		if effect is RadialExplodingEffect:
+		if effect.key == "radial_explosion":
 			exploding_effect = effect
 			exploding_effect.scale = _parent.current_stats.max_range / 100
 	
