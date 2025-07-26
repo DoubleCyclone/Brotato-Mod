@@ -12,7 +12,7 @@
 
 [resource]
 script = ExtResource( 6 )
-my_id = "weapon_time_slow_2"
+my_id = "8bit_mt_weapon_time_slow_2"
 unlocked_by_default = true
 icon = ExtResource( 5 )
 name = "WEAPON_TIME_SLOW"
