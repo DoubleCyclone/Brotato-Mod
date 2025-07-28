@@ -44,7 +44,7 @@ func install_script_extensions() -> void:
 	# ! Add extensions (longform version of the above)
 	#ModLoaderMod.install_script_extension("res://mods-unpacked/AuthorName-ModName/extensions/main.gd")
 	#ModLoaderMod.install_script_extension("res://mods-unpacked/AuthorName-ModName/extensions/entities/units/player/player.gd")
-	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("weapons/weapon.gd"))
+#	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("weapons/weapon.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/player_run_data.gd"))
 
 	
