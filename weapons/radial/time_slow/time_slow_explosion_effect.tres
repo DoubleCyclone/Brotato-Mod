@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 key = "radial_explosion"
-text_key = ""
+text_key = "EFFECT_RADIAL_EXPLOSION"
 value = 0
 custom_key = ""
 storage_method = 0

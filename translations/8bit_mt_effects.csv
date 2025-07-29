@@ -2,8 +2,9 @@
 EFFECT_PROJECTILE_ROTATE_ON_SHOOT;Spawns an extra projectile with infinite penetration that rotates around you when this weapon is fired, dealing {0} ({1}) damage.
 EFFECT_SIDEWAYS_PROJECTILE_ON_SHOOT;Has a {0}% chance to shoot 2 extra projectiles perpendicular to the original projectile which deal {1} ({2}) damage when this weapon is fired.
 EFFECT_FREEZE_INVULNERABLE;Has a {0}% chance to freeze enemies for {1} second(s). (Bosses and Elites have a {2}% chance of getting frozen instead. Frozen enemies cannot be interacted with)
-EFFECT_TIME_SLOW;Creates fields around you that deal damage and has a {0}% chance to slow the enemies by {1}% with every stack (up to {3}% on max stacks) for {2} seconds.
+EFFECT_TIME_SLOW;Has a {0}% chance to slow the enemies by {1}% with every stack (up to {3}% on max stacks) for {2} seconds.
 EFFECT_RELOAD_WHEN_PICKUP_SUPER_ARM_STONE;Killed enemies drop a stone consumable with a {0}% chance. When picked up, the weapon automatically reloads.
 EFFECT_HYPER_BOMB_SPAWN;Instead of dealing damage, a bomb will spawn in the projectile's place when it stops and explode in {0} seconds dealing the weapon's damage with a scale of {1}.
 EFFECT_OIL_SLIDER_STRUCTURE_SPAWN;Has a {0}% chance to spawn an oil puddle on hit. Whenever the puddle is touched by the player, they get on an oil skateboard that increases their movement speed by {1}%, makes them invulnerable and deals {2} ({3}) contact damage for {4} seconds.
 EFFECT_ROLLING_CUTTER_BOOMERANG;This weapon is thrown at wherever the player is looking at and follows an elliptical trajectory with a speed of {0}. Its major axis' length is {1} and minor axis' length is {2}. This weapon has infinite piercing but it cannot be aimed manually.
+EFFECT_RADIAL_EXPLOSION;Creates fields around you that deal damage instead of shooting a projectile.
