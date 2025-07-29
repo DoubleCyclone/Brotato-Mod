@@ -72,7 +72,8 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 	emit_signal("projectile_shot", projectile)
 	return projectile
 	
-func shoot_rotating_projectile(rotating_effect: ProjectileRotateOnShootEffect, rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
+# TODO : Whenever an effect with its classname is mentioned, it does not work
+func shoot_rotating_projectile(rotating_effect, rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
 	var args: = WeaponServiceSpawnProjectileArgs.new()
 	args.knockback_direction = knockback
 	args.effects = _parent.effects
