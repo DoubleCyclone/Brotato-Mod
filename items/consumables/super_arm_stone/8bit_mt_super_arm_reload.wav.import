@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_super_arm_reload.wav-1693476e4ee44500e283cb27dd0352cf.sample"
+path="res://.import/8bit_mt_super_arm_reload.wav-a7270dd7c9c86b33ac4639497d6bc761.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/8bit_mt_super_arm_reload.wav"
-dest_files=[ "res://.import/8bit_mt_super_arm_reload.wav-1693476e4ee44500e283cb27dd0352cf.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/items/consumables/super_arm_stone/8bit_mt_super_arm_reload.wav"
+dest_files=[ "res://.import/8bit_mt_super_arm_reload.wav-a7270dd7c9c86b33ac4639497d6bc761.sample" ]
 
 [params]
 

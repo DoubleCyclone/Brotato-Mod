@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_ice_slasher_projectile.png-a6d2cc5ee03cdfac6d9c67ee538d2658.stex"
+path="res://.import/8bit_mt_ice_slasher_projectile.png-64353d66b22c0407cfb52cbe6a507c4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/projectiles/ice_slasher_projectile/8bit_mt_ice_slasher_projectile.png"
-dest_files=[ "res://.import/8bit_mt_ice_slasher_projectile.png-a6d2cc5ee03cdfac6d9c67ee538d2658.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/projectiles/ice_slasher_projectile/8bit_mt_ice_slasher_projectile.png"
+dest_files=[ "res://.import/8bit_mt_ice_slasher_projectile.png-64353d66b22c0407cfb52cbe6a507c4d.stex" ]
 
 [params]
 

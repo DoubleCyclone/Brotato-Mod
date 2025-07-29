@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/sideways_projectiles_on_shoot_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/3/thunder_beam_3_small_stats.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/sideways_projectiles_on_shoot_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/3/thunder_beam_3_small_stats.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )

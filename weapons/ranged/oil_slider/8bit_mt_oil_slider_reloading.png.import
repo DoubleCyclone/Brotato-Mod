@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_oil_slider_reloading.png-a84fabdf397cec8ddcb0c7fbc10630f3.stex"
+path="res://.import/8bit_mt_oil_slider_reloading.png-cea47a809c73f53dcfc525320ce2d7e9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider_reloading.png"
-dest_files=[ "res://.import/8bit_mt_oil_slider_reloading.png-a84fabdf397cec8ddcb0c7fbc10630f3.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/8bit_mt_oil_slider_reloading.png"
+dest_files=[ "res://.import/8bit_mt_oil_slider_reloading.png-cea47a809c73f53dcfc525320ce2d7e9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_super_arm.png-4ebf0aeaa2927ab9a1719a662db9696a.stex"
+path="res://.import/8bit_mt_super_arm.png-932f627be14e79421371a8ff53899ed1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/8bit_mt_super_arm.png"
-dest_files=[ "res://.import/8bit_mt_super_arm.png-4ebf0aeaa2927ab9a1719a662db9696a.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/super_arm/8bit_mt_super_arm.png"
+dest_files=[ "res://.import/8bit_mt_super_arm.png-932f627be14e79421371a8ff53899ed1.stex" ]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 [ext_resource path="res://weapons/weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/shaders/outline.gdshader" type="Shader" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/8bit_mt_thunder_beam.png" type="Texture" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/shooting_behaviors/sideways_projectile_weapon_shooting_behavior.gd" type="Script" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/8bit_mt_thunder_beam.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/shooting_behaviors/sideways_projectile_weapon_shooting_behavior.gd" type="Script" id=4]
 [ext_resource path="res://weapons/ranged/ranged_weapon.gd" type="Script" id=9]
 
 [sub_resource type="ShaderMaterial" id=2]

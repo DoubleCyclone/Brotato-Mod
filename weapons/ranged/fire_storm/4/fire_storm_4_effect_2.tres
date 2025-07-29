@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/4/fire_storm_4_rotating_projectile_stats.tres" type="Resource" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/projectile_rotate_on_shoot_effect.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/projectile_rotate_on_shoot_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/4/fire_storm_4_rotating_projectile_stats.tres" type="Resource" id=2]
 
 [resource]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 key = "projectile_rotate_on_shoot"
 text_key = "effect_projectile_rotate_on_shoot"
 value = 1
@@ -12,4 +12,4 @@ custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
-weapon_stats = ExtResource( 1 )
+weapon_stats = ExtResource( 2 )

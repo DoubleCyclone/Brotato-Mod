@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_rolling_cutter_projectile.png-200aa61bd8752085d03aa7f0a6f97a23.stex"
+path="res://.import/8bit_mt_rolling_cutter_projectile.png-908d5d4a24d9dae58af6821a3bd67db6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/projectiles/rolling_cutter_projectile/8bit_mt_rolling_cutter_projectile.png"
-dest_files=[ "res://.import/8bit_mt_rolling_cutter_projectile.png-200aa61bd8752085d03aa7f0a6f97a23.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/projectiles/rolling_cutter_projectile/8bit_mt_rolling_cutter_projectile.png"
+dest_files=[ "res://.import/8bit_mt_rolling_cutter_projectile.png-908d5d4a24d9dae58af6821a3bd67db6.stex" ]
 
 [params]
 

@@ -1,30 +1,30 @@
 [gd_resource type="Resource" load_steps=8 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/3/oil_slider_3_stats.tres" type="Resource" id=1]
-[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=2]
-[ext_resource path="res://items/sets/medieval/medieval_set_data.tres" type="Resource" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/oil_slider.tscn" type="PackedScene" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/3/oil_slider_3_effect_1.tres" type="Resource" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider_ico.png" type="Texture" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/4/oil_slider_4_data.tres" type="Resource" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/3/oil_slider_3_stats.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/3/oil_slider_3_effect_1.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/4/oil_slider_4_data.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/8bit_mt_oil_slider_ico.png" type="Texture" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/oil_slider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://items/sets/medieval/medieval_set_data.tres" type="Resource" id=6]
+[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=7]
 
 [resource]
-script = ExtResource( 2 )
+script = ExtResource( 7 )
 my_id = "8bit_mt_weapon_oil_slider_3"
 unlocked_by_default = true
-icon = ExtResource( 6 )
+icon = ExtResource( 4 )
 name = "WEAPON_OIL_SLIDER"
 tier = 2
 value = 70
-effects = [ ExtResource( 5 ) ]
+effects = [ ExtResource( 2 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
 curse_factor = 0.0
 weapon_id = ""
 type = 1
-sets = [ ExtResource( 3 ) ]
-scene = ExtResource( 4 )
+sets = [ ExtResource( 6 ) ]
+scene = ExtResource( 5 )
 stats = ExtResource( 1 )
-upgrades_into = ExtResource( 7 )
+upgrades_into = ExtResource( 3 )
 add_to_chars_as_starting = [  ]

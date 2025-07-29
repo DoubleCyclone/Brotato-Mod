@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_ice_slasher_ico.png-908b17c64800b2acef6949141058a31b.stex"
+path="res://.import/8bit_mt_ice_slasher_ico.png-a7b2eb4151c6cb729276acf1eaaffcc0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/8bit_mt_ice_slasher_ico.png"
-dest_files=[ "res://.import/8bit_mt_ice_slasher_ico.png-908b17c64800b2acef6949141058a31b.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/8bit_mt_ice_slasher_ico.png"
+dest_files=[ "res://.import/8bit_mt_ice_slasher_ico.png-a7b2eb4151c6cb729276acf1eaaffcc0.stex" ]
 
 [params]
 

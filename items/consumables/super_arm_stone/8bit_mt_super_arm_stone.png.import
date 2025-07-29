@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_super_arm_stone.png-02de1f4a6b2bc7d659975113bb14cbf6.stex"
+path="res://.import/8bit_mt_super_arm_stone.png-037a8f38933623d0e3974260d753bd24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/8bit_mt_super_arm_stone.png"
-dest_files=[ "res://.import/8bit_mt_super_arm_stone.png-02de1f4a6b2bc7d659975113bb14cbf6.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/items/consumables/super_arm_stone/8bit_mt_super_arm_stone.png"
+dest_files=[ "res://.import/8bit_mt_super_arm_stone.png-037a8f38933623d0e3974260d753bd24.stex" ]
 
 [params]
 

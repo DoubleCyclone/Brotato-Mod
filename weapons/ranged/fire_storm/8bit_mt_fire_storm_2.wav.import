@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_fire_storm_2.wav-60b9e7d8506dba86fb580473656e2e57.sample"
+path="res://.import/8bit_mt_fire_storm_2.wav-84b8c3e27d4c3cc8677d1624b08e0a03.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/8bit_mt_fire_storm_2.wav"
-dest_files=[ "res://.import/8bit_mt_fire_storm_2.wav-60b9e7d8506dba86fb580473656e2e57.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/8bit_mt_fire_storm_2.wav"
+dest_files=[ "res://.import/8bit_mt_fire_storm_2.wav-84b8c3e27d4c3cc8677d1624b08e0a03.sample" ]
 
 [params]
 

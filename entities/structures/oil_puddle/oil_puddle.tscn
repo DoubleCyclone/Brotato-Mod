@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/structures/structure.tscn" type="PackedScene" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_puddle.gd" type="Script" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/8bit_mt_oil_slider_puddle.png" type="Texture" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/8bit_mt_oil_slider_puddle.wav" type="AudioStream" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/oil_slider_skate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/structures/oil_puddle/oil_puddle.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/structures/oil_puddle/8bit_mt_oil_slider_puddle.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/structures/oil_puddle/8bit_mt_oil_slider_puddle.wav" type="AudioStream" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/structures/oil_puddle/oil_slider_skate.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.9999

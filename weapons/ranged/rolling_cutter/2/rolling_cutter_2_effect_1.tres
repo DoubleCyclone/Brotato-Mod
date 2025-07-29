@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/rolling_cutter_boomerang_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/2/rolling_cutter_2_stats.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/rolling_cutter_boomerang_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/rolling_cutter/2/rolling_cutter_2_stats.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )

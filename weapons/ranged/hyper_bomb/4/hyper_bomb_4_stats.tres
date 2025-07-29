@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/projectiles/hyper_bomb_projectile/hyper_bomb_projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/hyper_bomb_projectile/hyper_bomb_projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=2]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 cooldown = 95
 damage = 90
 accuracy = 1.0
@@ -36,4 +36,4 @@ bounce_dmg_reduction = 0.5
 can_bounce = false
 projectile_speed = 500
 increase_projectile_speed_with_range = false
-projectile_scene = ExtResource( 2 )
+projectile_scene = ExtResource( 1 )

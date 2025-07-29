@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_oil_slider_shoot.wav-1b9c7d6faac2bf916310762731f050a7.sample"
+path="res://.import/8bit_mt_oil_slider_shoot.wav-17b17d4d26d8b6149a503bc15340588f.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/oil_slider/8bit_mt_oil_slider_shoot.wav"
-dest_files=[ "res://.import/8bit_mt_oil_slider_shoot.wav-1b9c7d6faac2bf916310762731f050a7.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/8bit_mt_oil_slider_shoot.wav"
+dest_files=[ "res://.import/8bit_mt_oil_slider_shoot.wav-17b17d4d26d8b6149a503bc15340588f.sample" ]
 
 [params]
 

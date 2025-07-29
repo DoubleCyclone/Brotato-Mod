@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_oil_slider_puddle.wav-4e7cd5bd41fd0cbf8affd7a227b642c5.sample"
+path="res://.import/8bit_mt_oil_slider_puddle.wav-7e7f333a07557c36a4a494e5f67180e8.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/oil_puddle/8bit_mt_oil_slider_puddle.wav"
-dest_files=[ "res://.import/8bit_mt_oil_slider_puddle.wav-4e7cd5bd41fd0cbf8affd7a227b642c5.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/entities/structures/oil_puddle/8bit_mt_oil_slider_puddle.wav"
+dest_files=[ "res://.import/8bit_mt_oil_slider_puddle.wav-7e7f333a07557c36a4a494e5f67180e8.sample" ]
 
 [params]
 

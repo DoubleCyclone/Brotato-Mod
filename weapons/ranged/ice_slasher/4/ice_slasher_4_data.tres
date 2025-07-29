@@ -1,28 +1,28 @@
 [gd_resource type="Resource" load_steps=7 format=2]
 
-[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/8bit_mt_ice_slasher_ico.png" type="Texture" id=2]
-[ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/4/ice_slasher_4_effect.tres" type="Resource" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/ice_slasher.tscn" type="PackedScene" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/4/ice_slasher_4_stats.tres" type="Resource" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/4/ice_slasher_4_effect.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/4/ice_slasher_4_stats.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/8bit_mt_ice_slasher_ico.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/ice_slasher.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=5]
+[ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=6]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 my_id = "8bit_mt_weapon_ice_slasher_4"
 unlocked_by_default = true
-icon = ExtResource( 2 )
+icon = ExtResource( 3 )
 name = "WEAPON_ICE_SLASHER"
 tier = 3
 value = 102
-effects = [ ExtResource( 4 ) ]
+effects = [ ExtResource( 1 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "weapon_ice_slasher"
 type = 1
-sets = [ ExtResource( 3 ) ]
-scene = ExtResource( 5 )
-stats = ExtResource( 6 )
+sets = [ ExtResource( 6 ) ]
+scene = ExtResource( 4 )
+stats = ExtResource( 2 )
 add_to_chars_as_starting = [  ]

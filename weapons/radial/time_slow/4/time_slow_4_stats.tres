@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/8bit_mt_time_slow_reloading.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/8bit_mt_time_slow.wav" type="AudioStream" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/8bit_mt_time_slow_reloading.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/8bit_mt_time_slow.wav" type="AudioStream" id=3]
 
 [resource]
 script = ExtResource( 1 )

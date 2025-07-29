@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_thunder_beam_ico.png-d0e3c9f39060bfcc1d767ff9495eb652.stex"
+path="res://.import/8bit_mt_thunder_beam_ico.png-03a14a2dda02d515bfd97a2dcfadb47b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/8bit_mt_thunder_beam_ico.png"
-dest_files=[ "res://.import/8bit_mt_thunder_beam_ico.png-d0e3c9f39060bfcc1d767ff9495eb652.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/8bit_mt_thunder_beam_ico.png"
+dest_files=[ "res://.import/8bit_mt_thunder_beam_ico.png-03a14a2dda02d515bfd97a2dcfadb47b.stex" ]
 
 [params]
 

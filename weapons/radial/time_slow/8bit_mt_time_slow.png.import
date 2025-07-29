@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_time_slow.png-897ae661f0d1f380e997e0eb6b12838e.stex"
+path="res://.import/8bit_mt_time_slow.png-39dacb2f9618b7e4c93435cd5cfa0d24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/8bit_mt_time_slow.png"
-dest_files=[ "res://.import/8bit_mt_time_slow.png-897ae661f0d1f380e997e0eb6b12838e.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/8bit_mt_time_slow.png"
+dest_files=[ "res://.import/8bit_mt_time_slow.png-39dacb2f9618b7e4c93435cd5cfa0d24.stex" ]
 
 [params]
 

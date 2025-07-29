@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_thunder_beam.wav-d6fda7ca86b813feef44dcf00c1ac548.sample"
+path="res://.import/8bit_mt_thunder_beam.wav-364a795bcddc79963c8cf64b36ee3c8f.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/thunder_beam/8bit_mt_thunder_beam.wav"
-dest_files=[ "res://.import/8bit_mt_thunder_beam.wav-d6fda7ca86b813feef44dcf00c1ac548.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/8bit_mt_thunder_beam.wav"
+dest_files=[ "res://.import/8bit_mt_thunder_beam.wav-364a795bcddc79963c8cf64b36ee3c8f.sample" ]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/items/consumables/super_arm_stone/super_arm_stone_data.tres" type="Resource" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/super_arm/8bit_mt_super_arm_holding.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/items/consumables/super_arm_stone/super_arm_stone_data.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/super_arm/8bit_mt_super_arm_holding.png" type="Texture" id=3]
 
 
 [node name="SuperArmConsumableSpawnSceneEffectBehavior" type="Node"]

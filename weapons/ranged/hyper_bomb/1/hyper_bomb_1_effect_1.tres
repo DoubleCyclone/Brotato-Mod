@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effects/weapons/thrown_bomb_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/hyper_bomb/hyper_bomb_structure.tscn" type="PackedScene" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/1/hyper_bomb_1_exploding_effect.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/thrown_bomb_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/hyper_bomb/1/hyper_bomb_1_exploding_effect.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/structures/hyper_bomb/hyper_bomb_structure.tscn" type="PackedScene" id=3]
 
 [resource]
 script = ExtResource( 1 )
@@ -13,6 +13,6 @@ custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
-effects = [ ExtResource( 4 ) ]
-structure_scene = ExtResource( 2 )
+effects = [ ExtResource( 2 ) ]
+structure_scene = ExtResource( 3 )
 timer_cooldown = 1.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_hyper_bomb_structure.png-cf77119cad9bb207694c43c4cfe58913.stex"
+path="res://.import/8bit_mt_hyper_bomb_structure.png-12c628c8cf91518c4fc2e6627f8ba45d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/entities/structures/hyper_bomb/8bit_mt_hyper_bomb_structure.png"
-dest_files=[ "res://.import/8bit_mt_hyper_bomb_structure.png-cf77119cad9bb207694c43c4cfe58913.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/entities/structures/hyper_bomb/8bit_mt_hyper_bomb_structure.png"
+dest_files=[ "res://.import/8bit_mt_hyper_bomb_structure.png-12c628c8cf91518c4fc2e6627f8ba45d.stex" ]
 
 [params]
 

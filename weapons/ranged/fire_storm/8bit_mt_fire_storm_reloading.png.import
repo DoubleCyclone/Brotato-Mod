@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_fire_storm_reloading.png-d1aafa8612a7086cc7fdcfd603a70fe3.stex"
+path="res://.import/8bit_mt_fire_storm_reloading.png-eb7792b88378ee7fd888ba4ee6c1044a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/fire_storm/8bit_mt_fire_storm_reloading.png"
-dest_files=[ "res://.import/8bit_mt_fire_storm_reloading.png-d1aafa8612a7086cc7fdcfd603a70fe3.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/8bit_mt_fire_storm_reloading.png"
+dest_files=[ "res://.import/8bit_mt_fire_storm_reloading.png-eb7792b88378ee7fd888ba4ee6c1044a.stex" ]
 
 [params]
 

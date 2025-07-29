@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_ice_slasher.wav-9df7048821371386586e68af9e8cacaf.sample"
+path="res://.import/8bit_mt_ice_slasher.wav-7b70afdf87f44998c6c9fa07ca8f9da5.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/ice_slasher/8bit_mt_ice_slasher.wav"
-dest_files=[ "res://.import/8bit_mt_ice_slasher.wav-9df7048821371386586e68af9e8cacaf.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/8bit_mt_ice_slasher.wav"
+dest_files=[ "res://.import/8bit_mt_ice_slasher.wav-7b70afdf87f44998c6c9fa07ca8f9da5.sample" ]
 
 [params]
 

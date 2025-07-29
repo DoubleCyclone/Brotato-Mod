@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_hyper_bomb.png-ee3b50ce9c3db28bc62aeb4bca8e8c01.stex"
+path="res://.import/8bit_mt_hyper_bomb.png-82be410d4ea01e1ead646fd0f6f1d7eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb.png"
-dest_files=[ "res://.import/8bit_mt_hyper_bomb.png-ee3b50ce9c3db28bc62aeb4bca8e8c01.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb.png"
+dest_files=[ "res://.import/8bit_mt_hyper_bomb.png-82be410d4ea01e1ead646fd0f6f1d7eb.stex" ]
 
 [params]
 

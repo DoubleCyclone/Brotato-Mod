@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://items/global/effect_behavior_data.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior.tscn" type="PackedScene" id=2]
 
 
 [resource]

@@ -1,6 +1,8 @@
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
+# TODO: some enemies move but stay backwards while moving when ice slasher is equipped
+
 var _current_stacks: int = 0
 var _active_effects: Array = []
 var _effects_proc_count: Dictionary = {}

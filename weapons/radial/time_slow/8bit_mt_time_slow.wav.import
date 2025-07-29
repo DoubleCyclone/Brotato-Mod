@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_time_slow.wav-0fc60f557e045875a15121dbee241163.sample"
+path="res://.import/8bit_mt_time_slow.wav-88da836d7d40d59ddecef4a571b461c0.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/radial/time_slow/8bit_mt_time_slow.wav"
-dest_files=[ "res://.import/8bit_mt_time_slow.wav-0fc60f557e045875a15121dbee241163.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/8bit_mt_time_slow.wav"
+dest_files=[ "res://.import/8bit_mt_time_slow.wav-88da836d7d40d59ddecef4a571b461c0.sample" ]
 
 [params]
 

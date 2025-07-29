@@ -11,8 +11,8 @@ extends Node
 
 # ? Brief overview of what your mod does...
 
-const AUTHORNAME_MODNAME_DIR := "8bithero-FirstModTrial" # Name of the directory that this file is in
-const AUTHORNAME_MODNAME_LOG_NAME := "8bithero-FirstModTrial" # Full ID of the mod (AuthorName-ModName)
+const AUTHORNAME_MODNAME_DIR := "8bithero-Megatato" # Name of the directory that this file is in
+const AUTHORNAME_MODNAME_LOG_NAME := "8bithero-Megatato" # Full ID of the mod (AuthorName-ModName)
 
 var mod_dir_path := ""
 var extensions_dir_path := ""
@@ -66,21 +66,21 @@ func _ready() -> void:
 	# Get the ContentLoader class
 	var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 
-	var content_dir = "res://mods-unpacked/8bithero-FirstModTrial/"
-	var mod_log = "8bithero-FirstModTrial"
+	var content_dir = "res://mods-unpacked/8bithero-Megatato/"
+	var mod_log = "8bithero-Megatato"
 
 	# Add content. These .tres files are ContentData resources
-	ContentLoader.load_data(content_dir + "firstmodtrial_contents.tres", mod_log)
+	ContentLoader.load_data(content_dir + "Megatato_contents.tres", mod_log)
 	get_effect_behaviors()
 
 func get_effect_behaviors() -> void:
 	var enemy_effect_behaviors = []
 	var scene_effect_behaviors = []
 	var player_effect_behaviors = []
-	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/freeze_invulnerable/freeze_invulnerable_enemy_effect_behavior_data.tres"))
-	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/enemies/time_slow/time_slow_enemy_effect_behavior_data.tres"))
-	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior_data.tres"))
-	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-FirstModTrial/effect_behaviors/scene/oil_slider/oil_slider_structure_spawn_scene_effect_behavior_data.tres"))
+	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/enemies/freeze_invulnerable/freeze_invulnerable_enemy_effect_behavior_data.tres"))
+	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/enemies/time_slow/time_slow_enemy_effect_behavior_data.tres"))
+	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior_data.tres"))
+	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/oil_slider/oil_slider_structure_spawn_scene_effect_behavior_data.tres"))
 	EffectBehaviorService.enemy_effect_behaviors.append_array(enemy_effect_behaviors)
 	EffectBehaviorService.scene_effect_behaviors.append_array(scene_effect_behaviors)
 	EffectBehaviorService.player_effect_behaviors.append_array(player_effect_behaviors)

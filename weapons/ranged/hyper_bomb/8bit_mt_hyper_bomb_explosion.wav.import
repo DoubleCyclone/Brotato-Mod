@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_hyper_bomb_explosion.wav-902b1bec1e2bd7cf75a1a4be06678112.sample"
+path="res://.import/8bit_mt_hyper_bomb_explosion.wav-b0676611590e8d84730627a592252dd2.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb_explosion.wav"
-dest_files=[ "res://.import/8bit_mt_hyper_bomb_explosion.wav-902b1bec1e2bd7cf75a1a4be06678112.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb_explosion.wav"
+dest_files=[ "res://.import/8bit_mt_hyper_bomb_explosion.wav-b0676611590e8d84730627a592252dd2.sample" ]
 
 [params]
 

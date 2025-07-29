@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/8bit_mt_rolling_cutter.wav-1da621629f4a1e344d311e82d20d9309.sample"
+path="res://.import/8bit_mt_rolling_cutter.wav-c85816446e0048d22817b402e09f3e19.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-FirstModTrial/weapons/ranged/rolling_cutter/8bit_mt_rolling_cutter.wav"
-dest_files=[ "res://.import/8bit_mt_rolling_cutter.wav-1da621629f4a1e344d311e82d20d9309.sample" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/rolling_cutter/8bit_mt_rolling_cutter.wav"
+dest_files=[ "res://.import/8bit_mt_rolling_cutter.wav-c85816446e0048d22817b402e09f3e19.sample" ]
 
 [params]
 
