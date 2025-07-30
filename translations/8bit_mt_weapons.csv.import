@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.en.translation" ]
+files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.ja.translation" ]
 
 source_file="res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.csv"
-dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.en.translation" ]
+dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_weapons.ja.translation" ]
 
 [params]
 

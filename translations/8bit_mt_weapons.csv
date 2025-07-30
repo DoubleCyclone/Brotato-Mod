@@ -1,9 +1,9 @@
-﻿key;en
-WEAPON_FIRE_STORM;Fire Storm
-WEAPON_THUNDER_BEAM;Thunder Beam
-WEAPON_ICE_SLASHER;Ice Slasher
-WEAPON_TIME_SLOW;Time Slow
-WEAPON_SUPER_ARM;Super Arm
-WEAPON_HYPER_BOMB;Hyper Bomb
-WEAPON_OIL_SLIDER;Oil Slider
-WEAPON_ROLLING_CUTTER;Rolling Cutter
+﻿key;en;tr;ja
+WEAPON_FIRE_STORM;Fire Storm;Ateş Fırtınası;ファイヤーストーム
+WEAPON_THUNDER_BEAM;Thunder Beam;Gök Gürültüsü Işını;サンダービーム
+WEAPON_ICE_SLASHER;Ice Slasher;Buz Kesici;アイススラッシャー
+WEAPON_TIME_SLOW;Time Slow;Zaman Yavaşlatıcı;タイムスロー
+WEAPON_SUPER_ARM;Super Arm;Süper Kol;スーパーアーム
+WEAPON_HYPER_BOMB;Hyper Bomb;Hiper Bomba;ハイパーボム
+WEAPON_OIL_SLIDER;Oil Slider;Yağ Kaykayı;オイルスライダー
+WEAPON_ROLLING_CUTTER;Rolling Cutter;Yuvarlanan Kesici;ローリングカッター

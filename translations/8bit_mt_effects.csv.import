@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.en.translation" ]
+files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.ja.translation" ]
 
 source_file="res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.csv"
-dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.en.translation" ]
+dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_effects.ja.translation" ]
 
 [params]
 
