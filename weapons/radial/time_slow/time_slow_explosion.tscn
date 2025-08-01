@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://projectiles/rocket/explosion.png" type="Texture" id=1]
 [ext_resource path="res://overlap/hitbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/radial_player_explosion.gd" type="Script" id=3]
 [ext_resource path="res://particles/explosion_smoke.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/1/time_slow_1_effect_1.tres" type="Resource" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0000.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0002.png" type="Texture" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0003.png" type="Texture" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0004.png" type="Texture" id=9]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0001.png" type="Texture" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 147.34
@@ -34,32 +39,18 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), null ]
+"values": [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), null ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("Hitbox")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.05 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "emit_smoke"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("Hitbox")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0.05 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -74,7 +65,7 @@ explosion_effects = [ ExtResource( 5 ) ]
 
 [node name="Sprite" type="Sprite" parent="."]
 unique_name_in_owner = true
-modulate = Color( 0.870588, 0.607843, 0.878431, 0.560784 )
+modulate = Color( 0.788235, 0.788235, 0.788235, 0.392157 )
 self_modulate = Color( 0.788235, 0.788235, 0.788235, 0.392157 )
 scale = Vector2( 1.36719, 1.36719 )
 texture = ExtResource( 1 )

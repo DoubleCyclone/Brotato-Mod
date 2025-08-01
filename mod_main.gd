@@ -46,6 +46,7 @@ func install_script_extensions() -> void:
 	#ModLoaderMod.install_script_extension("res://mods-unpacked/AuthorName-ModName/extensions/entities/units/player/player.gd")
 #	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("weapons/weapon.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/player_run_data.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("mods-unpacked/8bithero-Megatato/weapons/shooting_behaviors/radial_weapon_shooting_behavior.gd"))
 
 	
 
