@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/time_slow_explosion0001.png-3e9c36d5a3d02385817467fe525242a7.stex"
+path="res://.import/8bit_mt_time_slow_explosion0001.png-f3f95ac4893a2fe87e1dea72a0adf5cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0001.png"
-dest_files=[ "res://.import/time_slow_explosion0001.png-3e9c36d5a3d02385817467fe525242a7.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0001.png"
+dest_files=[ "res://.import/8bit_mt_time_slow_explosion0001.png-f3f95ac4893a2fe87e1dea72a0adf5cc.stex" ]
 
 [params]
 

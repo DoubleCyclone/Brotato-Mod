@@ -5,11 +5,11 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/radial_player_explosion.gd" type="Script" id=3]
 [ext_resource path="res://particles/explosion_smoke.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/1/time_slow_1_effect_1.tres" type="Resource" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0000.png" type="Texture" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0002.png" type="Texture" id=7]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0003.png" type="Texture" id=8]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0004.png" type="Texture" id=9]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/time_slow_explosion0001.png" type="Texture" id=10]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0000.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0002.png" type="Texture" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0003.png" type="Texture" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0004.png" type="Texture" id=9]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0001.png" type="Texture" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 147.34
@@ -66,7 +66,7 @@ explosion_effects = [ ExtResource( 5 ) ]
 [node name="Sprite" type="Sprite" parent="."]
 unique_name_in_owner = true
 modulate = Color( 0.788235, 0.788235, 0.788235, 0.392157 )
-self_modulate = Color( 0.788235, 0.788235, 0.788235, 0.392157 )
+self_modulate = Color( 0.788235, 0.788235, 0.788235, 0.784314 )
 scale = Vector2( 1.36719, 1.36719 )
 texture = ExtResource( 1 )
 
