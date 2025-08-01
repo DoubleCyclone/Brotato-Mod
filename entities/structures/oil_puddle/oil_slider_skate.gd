@@ -44,7 +44,6 @@ func on_timer_timeout(player: Node) -> void :
 	player.get_node("Hurtbox").monitoring = true
 	queue_free()
 	
-# TODO: when getting on the skate while taking damage, invulnerability does not apply (or the newly applied one is removed by the old timer)
 # TODO: add boost functions to structures maybe
 
 #func boost(boost_args: BoostArgs) -> void :
