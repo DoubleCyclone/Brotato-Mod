@@ -11,3 +11,4 @@ func start_explosion() -> void :
 	_sprite.modulate.a = ProgressData.settings.explosion_opacity
 	_animation_player.play("explode")
 	set_physics_process(true)
+	

@@ -15,8 +15,7 @@ func shoot(_distance: float) -> void :
 	for effect in _parent.effects :
 		if effect.key == "radial_explosion":
 			exploding_effect = effect
-			exploding_effect.scale = _parent.current_stats.max_range / 100
-			# TODO : range is INT SO DOESN'T WORK
+			exploding_effect.scale = _parent.current_stats.max_range / 200.0
 	
 	var args: = WeaponServiceExplodeArgs.new()
 	args.pos = _parent.sprite.global_position
