@@ -15,4 +15,4 @@ effect_sign = 3
 custom_args = [  ]
 effects = [ ExtResource( 2 ) ]
 structure_scene = ExtResource( 3 )
-timer_cooldown = 1.0
+timer_cooldown = 0.75

@@ -11,9 +11,9 @@ var max_scale_reached = false
 #TODO rework this and buff structure so that it explodes faster
 func _physics_process(delta):
 	if rotation_speed != 0:
-		rotation_degrees -= 22
+		rotation_degrees -= 20
 	
-	speed_multiplier = _weapon_stats.projectile_speed / 2
+	speed_multiplier = _weapon_stats.projectile_speed / 1.5
 	if not max_scale_reached and scale < max_scale:
 		scale.x += delta
 		scale.y += delta
@@ -31,7 +31,7 @@ func _physics_process(delta):
 	if velocity.x > 0:
 		velocity.x -= speed_multiplier * delta
 	elif velocity.x < 0:
-		velocity.x += speed_multiplier* delta
+		velocity.x += speed_multiplier * delta
 	if velocity.y > 0:
 		velocity.y -= speed_multiplier * delta
 	elif velocity.y < 0:
