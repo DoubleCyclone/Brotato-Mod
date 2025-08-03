@@ -1,13 +1,12 @@
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
-# TODO: some enemies move but stay backwards while moving when ice slasher is equipped
-
 var _current_stacks: int = 0
 var _active_effects: Array = []
 var _effects_proc_count: Dictionary = {}
 var original_speed: int = 0
 var original_attack_cd: int = 0
+var original_animation: String = ""
 
 
 class ActiveEffect:
@@ -70,9 +69,14 @@ func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 
 
 func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
+	if _parent.dead : 
+		return
+	
 	var chance = from_weapon_freeze_invulnerable_effect[3]
+	
 	if _parent.get("is_elite") != null:
 		chance /= 5
+		
 	if Utils.get_chance_success(chance):
 		var source_id = from_weapon_freeze_invulnerable_effect[0]
 		var duration = from_weapon_freeze_invulnerable_effect[4]
@@ -80,47 +84,62 @@ func add_active_effect(from_weapon_freeze_invulnerable_effect: Array) -> void :
 		var outline_color = from_weapon_freeze_invulnerable_effect[6]
 		var effect_color = from_weapon_freeze_invulnerable_effect[7]
 
+		var already_exists: bool = false
 		var active_effect: ActiveEffect = null
-
-		active_effect = ActiveEffect.new()
-
-		active_effect.source_id = source_id
-		active_effect.timer = duration
-		active_effect.duration_secs = duration
-		active_effect.max_stacks = max_stacks
-		active_effect.outline_color = Color(outline_color)
-		active_effect.effect_color = Color(effect_color)
 		
-		original_speed = _parent.current_stats.speed
-		if _parent.get_node("AttackBehavior").get("_current_cd") != null:
-			original_attack_cd = _parent.get_node("AttackBehavior")._current_cd
+		for existing_active_effect in _active_effects:
+			if existing_active_effect.source_id == source_id:
+				already_exists = true
+				active_effect = existing_active_effect
+				break
 		
-		_parent.get_node("Collision").set_deferred("disabled",true)	# make enemy not block others
-		_parent.get_node("Hitbox").set_deferred("deals_damage",false) # make the enemy deal no damage
-		_parent.get_node("AnimationPlayer").current_animation = "[stop]" # freeze the animation
-		_parent._hurtbox.call_deferred("disable") # to make invulnerable
-		_parent.current_stats.set_deferred("speed", 0) # in case we need to process speed
-		_parent.set_deferred("mirror_sprite_with_movement", false) # prevent them from turning while frozen
-		_parent.sprite.set_deferred("self_modulate", active_effect.effect_color)
-		if _parent._current_attack_behavior.get("_current_cd") != null:
-			_parent._current_attack_behavior._current_cd = 9999
-		
-		_active_effects.push_back(active_effect)
+		if already_exists:
+			active_effect.max_stacks = max(active_effect.max_stacks, max_stacks) as int
+			active_effect.duration_secs = max(active_effect.duration_secs, duration)
+			active_effect.timer = active_effect.duration_secs
+			
+			if active_effect.current_stacks >= active_effect.max_stacks:
+				return
+				
+			active_effect.current_stacks += 1
+			_effects_proc_count[source_id] += 1
+		else:
+			active_effect = ActiveEffect.new()
+			active_effect.source_id = source_id
+			active_effect.timer = duration
+			active_effect.duration_secs = duration
+			active_effect.max_stacks = max_stacks
+			active_effect.outline_color = Color(outline_color)
+			active_effect.effect_color = Color(effect_color)
+			
+			original_speed = _parent.current_stats.speed
+			if _parent.get_node("AttackBehavior").get("_current_cd") != null:
+				original_attack_cd = _parent.get_node("AttackBehavior")._current_cd
+			original_animation = _parent.get_node("AnimationPlayer").current_animation
+			
+			_parent.get_node("Hitbox").deals_damage = false
+			_parent.get_node("AnimationPlayer").current_animation = "[stop]"
+			
+			_parent._can_move = false
+			_parent.sprite.self_modulate = active_effect.effect_color
+			
+			if _parent._current_attack_behavior.get("_current_cd") != null:
+				_parent._current_attack_behavior._current_cd = 9999
+			
+			_active_effects.push_back(active_effect)
 
-		if not _parent.has_outline(active_effect.outline_color):
-			_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
+			if not _parent.has_outline(active_effect.outline_color):
+				_parent.add_outline(active_effect.outline_color, 1.0, 0.0)
 
-		_effects_proc_count[source_id] = 1
+			_effects_proc_count[source_id] = 1
 
 
-func on_active_effect_timer_timed_out(active_effect: ActiveEffect):
-	_parent.get_node("Collision").disabled = false
+func on_active_effect_timer_timed_out(active_effect: ActiveEffect):	
 	_parent.get_node("Hitbox").deals_damage = true
-	_parent.get_node("AnimationPlayer").current_animation = "idle"
-	_parent._hurtbox.enable()
-	_parent.current_stats.speed = original_speed
-	_parent.mirror_sprite_with_movement = true
+	_parent.get_node("AnimationPlayer").current_animation = original_animation
+	_parent._can_move = true
 	_parent.sprite.self_modulate = Color.white
+	
 	if _parent._current_attack_behavior.get("_current_cd") != null:
 		_parent._current_attack_behavior._current_cd = original_attack_cd
 
