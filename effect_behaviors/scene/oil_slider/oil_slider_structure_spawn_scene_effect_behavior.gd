@@ -28,7 +28,7 @@ func spawn_structure(structure_scene, hitbox, unit):
 	var instance = structure_scene.instance()
 	instance.player_index = hitbox.from.player_index
 	instance.position = unit.position
-	instance.get_node("Animation/Sprite").scale = Vector2(2,2)
+#	instance.get_node("Animation/Sprite").scale = Vector2(2,2)
 	instance.effects = hitbox.effects
 	Utils.get_scene_node().get_node("Entities").call_deferred("add_child",instance)
 
