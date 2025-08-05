@@ -23,8 +23,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "fire"
-length = 0.04
+length = 0.06
 loop = true
+step = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
