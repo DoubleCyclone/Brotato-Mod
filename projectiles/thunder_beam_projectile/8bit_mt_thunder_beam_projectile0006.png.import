@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_thunder_beam_projectile.png-346297ea7bed86d57ed5e1b25e8fefbc.stex"
+path="res://.import/8bit_mt_thunder_beam_projectile0006.png-1e13dca9b101524aecfb51b14e1ae083.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/projectiles/thunder_beam_projectile/8bit_mt_thunder_beam_projectile.png"
-dest_files=[ "res://.import/8bit_mt_thunder_beam_projectile.png-346297ea7bed86d57ed5e1b25e8fefbc.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/projectiles/thunder_beam_projectile/8bit_mt_thunder_beam_projectile0006.png"
+dest_files=[ "res://.import/8bit_mt_thunder_beam_projectile0006.png-1e13dca9b101524aecfb51b14e1ae083.stex" ]
 
 [params]
 
