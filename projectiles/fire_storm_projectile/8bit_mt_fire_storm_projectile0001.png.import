@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8_bit_mt_fire_storm_shield_projectile0000.png-87773b63be8af65ebfcba013ae2bd815.stex"
+path="res://.import/8bit_mt_fire_storm_projectile0001.png-bf11b174bd754006bfb69ae732cc63ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/8_bit_mt_fire_storm_shield_projectile0000.png"
-dest_files=[ "res://.import/8_bit_mt_fire_storm_shield_projectile0000.png-87773b63be8af65ebfcba013ae2bd815.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/8bit_mt_fire_storm_projectile0001.png"
+dest_files=[ "res://.import/8bit_mt_fire_storm_projectile0001.png-bf11b174bd754006bfb69ae732cc63ec.stex" ]
 
 [params]
 

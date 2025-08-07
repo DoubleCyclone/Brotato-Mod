@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_hyper_bomb.png-cf9c417fd2943c1f973d33a900f64c00.stex"
+path="res://.import/8bit_mt_fire_storm_projectile0000.png-c6639cac5a2a3f07d1b713260266dad6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/projectiles/hyper_bomb_projectile/8bit_mt_hyper_bomb.png"
-dest_files=[ "res://.import/8bit_mt_hyper_bomb.png-cf9c417fd2943c1f973d33a900f64c00.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/8bit_mt_fire_storm_projectile0000.png"
+dest_files=[ "res://.import/8bit_mt_fire_storm_projectile0000.png-c6639cac5a2a3f07d1b713260266dad6.stex" ]
 
 [params]
 
