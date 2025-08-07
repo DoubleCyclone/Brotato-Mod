@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.ja.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.zh_Hans_CN.translation" ]
+
+source_file="res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.csv"
+dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.ja.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_characters.zh_Hans_CN.translation" ]
+
+[params]
+
+compress=true
+delimiter=1
