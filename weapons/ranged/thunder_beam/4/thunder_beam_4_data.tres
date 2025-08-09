@@ -6,7 +6,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/thunder_beam.tscn" type="PackedScene" id=4]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=5]
 [ext_resource path="res://items/sets/precise/precise_set_data.tres" type="Resource" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega/mega_set_data.tres" type="Resource" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=7]
 
 [resource]
 script = ExtResource( 5 )

@@ -3,7 +3,7 @@ extends Structure
 
 onready var _sprite = $Animation / Sprite
 
-#TODO : test if crit happens and scales normally
+#TODO : Try this with a node and a hitbox instead. 
 
 var _original_effects: Array
 var spawn_effect

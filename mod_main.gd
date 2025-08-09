@@ -71,6 +71,10 @@ func add_translations() -> void:
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.tr.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.ja.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.zh_Hans_CN.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.en.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.tr.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.ja.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.zh_Hans_CN.translation"))
 
 func _ready() -> void:
 	# Get the ContentLoader class

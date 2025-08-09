@@ -7,7 +7,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/oil_slider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/sets/medieval/medieval_set_data.tres" type="Resource" id=6]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=7]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega/mega_set_data.tres" type="Resource" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 7 )
