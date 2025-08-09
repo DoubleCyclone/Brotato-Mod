@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/3/oil_slider_3_stats.tres" type="Resource" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/3/oil_slider_3_effect_1.tres" type="Resource" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/oil_slider/oil_slider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/sets/medieval/medieval_set_data.tres" type="Resource" id=6]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega/mega_set_data.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 7 )
@@ -23,7 +24,7 @@ is_cursed = false
 curse_factor = 0.0
 weapon_id = ""
 type = 1
-sets = [ ExtResource( 6 ) ]
+sets = [ ExtResource( 6 ), ExtResource( 8 ) ]
 scene = ExtResource( 5 )
 stats = ExtResource( 1 )
 upgrades_into = ExtResource( 3 )

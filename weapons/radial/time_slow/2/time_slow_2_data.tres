@@ -7,7 +7,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/3/time_slow_3_data.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/8bit_mt_time_slow_ico.png" type="Texture" id=6]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=7]
-[ext_resource path="res://items/sets/support/support_set_data.tres" type="Resource" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega/mega_set_data.tres" type="Resource" id=8]
 [ext_resource path="res://items/sets/explosive/explosive_set_data.tres" type="Resource" id=9]
 
 [resource]

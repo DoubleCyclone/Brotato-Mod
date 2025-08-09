@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/1/ice_slasher_1_effect.tres" type="Resource" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/1/ice_slasher_1_stats.tres" type="Resource" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/ice_slasher/ice_slasher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=6]
 [ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega/mega_set_data.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 6 )
@@ -23,7 +24,7 @@ is_cursed = false
 curse_factor = 0.0
 weapon_id = "weapon_ice_slasher"
 type = 1
-sets = [ ExtResource( 7 ) ]
+sets = [ ExtResource( 7 ), ExtResource( 8 ) ]
 scene = ExtResource( 5 )
 stats = ExtResource( 2 )
 upgrades_into = ExtResource( 3 )
