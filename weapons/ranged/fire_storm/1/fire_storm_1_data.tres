@@ -12,7 +12,7 @@
 
 [resource]
 script = ExtResource( 8 )
-my_id = "8bit_mt_fire_storm_1"
+my_id = "8bit_mt_weapon_fire_storm_1"
 unlocked_by_default = true
 icon = ExtResource( 5 )
 name = "WEAPON_FIRE_STORM"
