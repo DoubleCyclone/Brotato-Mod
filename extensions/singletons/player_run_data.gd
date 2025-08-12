@@ -176,7 +176,7 @@ static func init_effects() -> Dictionary:
 		"projectile_rotate_on_shoot": [],
 		"sideways_projectiles_on_shoot": [],
 		"effect_hyper_bomb_spawn": [],
-		"only_mega_man_weapons" : 0
+		"limited_weapon_pool" : []
 	}
 
 	all_effects.merge(all_stats)

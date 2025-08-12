@@ -1,13 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://items/global/effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/characters/limited_weapon_pool_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )
-key = "only_mega_man_weapons"
-text_key = "EFFECT_ONLY_MEGA_MAN_WEAPONS"
-value = 1
-custom_key = ""
-storage_method = 0
-effect_sign = 1
+key = "rock_limited_weapon_pool"
+text_key = "EFFECT_LIMITED_WEAPON_POOL"
+value = 0
+custom_key = "limited_weapon_pool"
+storage_method = 1
+effect_sign = 0
 custom_args = [  ]
+allowed_weapon_sets = [ ExtResource( 2 ) ]

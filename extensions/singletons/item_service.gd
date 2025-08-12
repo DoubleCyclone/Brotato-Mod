@@ -33,7 +33,7 @@ func _get_rand_item_for_wave(wave: int, player_index: int, type: int, args: GetR
 		var no_duplicate_weapons: bool = RunData.get_player_effect_bool("no_duplicate_weapons", player_index)
 		var no_structures: bool = RunData.get_player_effect("remove_shop_items", player_index).has("structure")
 
-		var only_mega_man_weapons: bool = RunData.get_player_effect_bool("only_mega_man_weapons", player_index)
+		var limited_weapon_pool: bool = RunData.get_player_effect("limited_weapon_pool", player_index).size() > 0
 
 		var player_sets: Array = RunData.get_player_sets(player_index)
 		var unique_weapon_ids: Dictionary = RunData.get_unique_weapon_ids(player_index)
@@ -67,11 +67,18 @@ func _get_rand_item_for_wave(wave: int, player_index: int, type: int, args: GetR
 				backup_pool = remove_element_by_id(backup_pool, item)
 				items_to_remove.append(item)
 				
-			if only_mega_man_weapons and (item.type == WeaponType.RANGED or item.type == WeaponType.MELEE):
+			if limited_weapon_pool and (item.type == WeaponType.RANGED or item.type == WeaponType.MELEE):
+				var permitted_sets_ids = []
+				for set_data in RunData.get_player_effect("limited_weapon_pool", player_index):
+					permitted_sets_ids.append(set_data.my_id)
 				var current_weapon_sets = []
 				for item_set in item.sets:
 					current_weapon_sets.append(item_set.my_id)
-				if !current_weapon_sets.has("set_mega_man_1"):
+				var matching_set = 0
+				for set_id in permitted_sets_ids:	
+					if current_weapon_sets.has(set_id):
+						matching_set += 1
+				if matching_set <= 0:
 					backup_pool = remove_element_by_id(backup_pool, item)
 					items_to_remove.push_back(item)
 

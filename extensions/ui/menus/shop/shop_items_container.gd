@@ -8,7 +8,7 @@ func _can_weapon_be_bought(shop_item: ShopItem) -> bool:
 	var no_duplicate_weapons = RunData.get_player_effect_bool("no_duplicate_weapons", player_index)
 	var lock_current_weapons = RunData.get_player_effect_bool("lock_current_weapons", player_index)
 
-	var only_mega_man_weapons = RunData.get_player_effect_bool("only_mega_man_weapons", player_index)
+	var limited_weapon_pool: bool = RunData.get_player_effect("limited_weapon_pool", player_index).size() > 0
 
 	var weapon_data: WeaponData = shop_item.item_data
 	var weapon_type: = weapon_data.type
@@ -37,11 +37,18 @@ func _can_weapon_be_bought(shop_item: ShopItem) -> bool:
 	if lock_current_weapons and not weapon_slot_available:
 		return false
 		
-	if only_mega_man_weapons:
+	if limited_weapon_pool:
+		var permitted_sets_ids = []
 		var current_weapon_sets = []
 		for item_set in weapon_data.sets:
 			current_weapon_sets.append(item_set.my_id)
-		if !current_weapon_sets.has("set_mega_man_1"):
+		for set_data in RunData.get_player_effect("limited_weapon_pool", player_index):
+			permitted_sets_ids.append(set_data.my_id)
+		var matching_set = 0
+		for set_id in permitted_sets_ids:	
+			if current_weapon_sets.has(set_id):
+				matching_set += 1
+		if matching_set <= 0:
 			return false
 	
 	if player_has_weapon and not weapon_slot_available and weapon_data.upgrades_into != null and weapon_data.upgrades_into.tier <= max_weapon_tier:
