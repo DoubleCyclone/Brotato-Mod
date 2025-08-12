@@ -3,7 +3,7 @@
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_stats.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/ice_slasher.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/mega_buster.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/8bit_mt_mega_buster_ico.png" type="Texture" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_effect_1.tres" type="Resource" id=6]
 

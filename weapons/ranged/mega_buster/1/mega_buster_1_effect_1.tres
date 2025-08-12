@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=9 format=2]
+[gd_resource type="Resource" load_steps=11 format=2]
 
-[ext_resource path="res://effects/weapons/weapon_effect_with_sub_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/mega_buster_charged_shot_effect.gd" type="Script" id=1]
 [ext_resource path="res://items/global/custom_arg.gd" type="Script" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_effect_1c.tres" type="Resource" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_effect_1d.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/fire_storm_projectile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/8bit_mt_mega_buster_charged.wav" type="AudioStream" id=6]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
@@ -47,3 +49,5 @@ storage_method = 0
 effect_sign = 2
 custom_args = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
 sub_effects = [ ExtResource( 3 ), ExtResource( 4 ) ]
+charged_projectile = ExtResource( 5 )
+charged_shot_sounds = [ ExtResource( 6 ) ]

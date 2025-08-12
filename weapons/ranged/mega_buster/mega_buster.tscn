@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/8bit_mt_mega_buster.png" type="Texture" id=1]
 [ext_resource path="res://weapons/weapon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/shaders/outline.gdshader" type="Shader" id=3]
 [ext_resource path="res://weapons/ranged/ranged_weapon.gd" type="Script" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/shooting_behaviors/charged_shot_periodical_shooting_behavior.gd" type="Script" id=5]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -40,5 +41,8 @@ position = Vector2( 7, -5 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 1 )
+
+[node name="ShootingBehavior" parent="." index="4"]
+script = ExtResource( 5 )
 
 [editable path="Sprite/Hitbox"]
