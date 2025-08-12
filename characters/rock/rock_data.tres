@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=15 format=2]
+[gd_resource type="Resource" load_steps=16 format=2]
 
 [ext_resource path="res://items/characters/character_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/1/thunder_beam_1_data.tres" type="Resource" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/rock_mouth_appearance.tres" type="Resource" id=12]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/rock_hat_appearance.tres" type="Resource" id=13]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/effects/rock_effect_1.tres" type="Resource" id=14]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_data.tres" type="Resource" id=15]
 
 [resource]
 script = ExtResource( 1 )
@@ -34,4 +35,4 @@ tags = [  ]
 wanted_tags = [  ]
 banned_item_groups = [  ]
 banned_items = [  ]
-starting_weapons = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ) ]
+starting_weapons = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 15 ) ]

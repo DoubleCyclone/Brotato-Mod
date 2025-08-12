@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=36 format=2]
+[gd_resource type="Resource" load_steps=37 format=2]
 
 [ext_resource path="res://mods-unpacked/Darkly77-ContentLoader/content_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/1/thunder_beam_1_data.tres" type="Resource" id=2]
@@ -35,12 +35,13 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/rolling_cutter/3/rolling_cutter_3_data.tres" type="Resource" id=33]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/rock_data.tres" type="Resource" id=34]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=35]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_data.tres" type="Resource" id=36]
 
 [resource]
 script = ExtResource( 1 )
 characters = [ ExtResource( 34 ) ]
 items = [  ]
-weapons = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 32 ) ]
+weapons = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 36 ) ]
 weapons_characters = [  ]
 sets = [ ExtResource( 35 ) ]
 challenges = [  ]
