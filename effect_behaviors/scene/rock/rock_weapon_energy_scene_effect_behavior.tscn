@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/rock/rock_weapon_energy_scene_effect_behavior.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/misc/energy_tank/energy_tank.tscn" type="PackedScene" id=2]
+
+[node name="RockWeaponEnergySceneEffectBehavior" type="Node"]
+script = ExtResource( 1 )
+energy_tank = ExtResource( 2 )

@@ -7,16 +7,16 @@ signal projectile_shot(projectile)
 func shoot(_distance: float) -> void :
 	var charging_effect
 	for effect in _parent.effects:
-		if effect.key == "modify_every_x_projectile":
+		if effect.key == "charged_shot_periodical":
 			charging_effect = effect
 			
 	if charging_effect:	
 		if _parent._nb_shots_taken % charging_effect.value == 0:
-			_parent.current_stats.projectile_scene = charging_effect.charged_projectile
-			SoundManager.play(Utils.get_rand_element(charging_effect.charged_shot_sounds), _parent.current_stats.sound_db_mod, 0.2)
+			_parent.current_stats = charging_effect.charged_projectile_stats
 		else:
-			_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
-			SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
+			_parent.current_stats = _parent.stats
+			
+	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 		
 	var initial_position: Vector2 = _parent.sprite.position
 
