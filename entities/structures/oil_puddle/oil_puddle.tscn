@@ -19,6 +19,7 @@ oil_skate = ExtResource( 5 )
 
 [node name="Sprite" parent="Animation" index="0"]
 position = Vector2( 0, 40 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
 [node name="Muzzle" parent="Animation" index="1"]

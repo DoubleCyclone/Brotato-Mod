@@ -43,9 +43,7 @@ func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 	
 	
 func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type) -> void :
-	#TODO some weapons crash because of their hitboxes (Oil Slider Skate)
 	var energy_tank = args.hitbox.from.get_node("EnergyTank")
-#	print(args.hitbox.from)
 	# Temporary solution
 	if energy_tank:
 		energy_tank.fill(value)

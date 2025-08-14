@@ -6,9 +6,9 @@ export (PackedScene) var oil_skate
 
 onready var _sprite = $Animation / Sprite
 onready var _original_texture = _sprite.texture
-var _original_effects: Array
-var skate_instance: Structure
+var skate_instance
 var spawn_effect
+var from_weapon
 
 
 func respawn() -> void :
@@ -32,25 +32,9 @@ func _on_Area2D_body_exited(_body: Node) -> void :
 func spawn_skate(_body: Node) -> void:
 	SoundManager2D.play(Utils.get_rand_element(pressed_sounds), global_position, 5, 0.2)
 	skate_instance = oil_skate.instance()
-	skate_instance.position = skate_instance.position + Vector2(0,33)
-	skate_instance.stats = spawn_effect.stats
-	skate_instance.effects = effects
 	skate_instance.spawn_effect = spawn_effect
-	skate_instance.get_node("Animation/Sprite").scale = Vector2(3,3)
+	skate_instance.from_weapon = from_weapon
+	skate_instance.get_node("Sprite").scale = Vector2(3,3)
 	_body.get_node("Animation/Sprite").call_deferred("add_child",skate_instance)
 
 	
-#func boost(boost_args: BoostArgs) -> void :
-#	if can_be_boosted:
-#		.boost(boost_args)
-#		stats.damage *= 1.0 + boost_args.damage_boost / 100.0
-#
-#		_original_effects = effects
-#		var new_explosion_effect = effects[0].duplicate()
-#		new_explosion_effect.scale *= 1.0 + boost_args.range_boost / 100.0
-#		effects = [new_explosion_effect]
-#
-#
-#func boost_ended() -> void :
-#	.boost_ended()
-#	effects = _original_effects
