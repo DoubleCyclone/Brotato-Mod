@@ -90,7 +90,7 @@ func shoot_rotating_projectile(rotating_effect, rotation: float = _parent.rotati
 		_parent, 
 		args
 	)
-
+	
 	emit_signal("projectile_shot", projectile)
 	return projectile
 	

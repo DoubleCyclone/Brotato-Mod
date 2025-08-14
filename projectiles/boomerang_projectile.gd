@@ -18,6 +18,7 @@ func _ready():
 		direction = 1
 	else:
 		direction = -1
+	
 
 func _physics_process(delta: float) -> void :
 	radius = _max_range / 3

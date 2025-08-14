@@ -43,14 +43,31 @@ func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 	
 	
 func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type) -> void :
+	# Temporary solution?
+	if !args.hitbox: return
 	var energy_tank = args.hitbox.from.get_node("EnergyTank")
-	# Temporary solution
 	if energy_tank:
 		energy_tank.fill(value)
 		# TODO : do something when tank fills up
 	
 
 func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
+	# TODO check extra projectiles like charged shot they don't scale
+	# Current stats for updating, original stats for checking (original might suffice but idk)
+#	var weapon_current_stats = energy_tank.weapon.current_stats
+	var weapon_stats = energy_tank.weapon.stats
+#	weapon_stats.piercing += 1
+#	weapon_stats.nb_projectiles += 1
+#	weapon_stats.projectile_spread += 0.05
+#	if weapon_stats.can_bounce:
+#		print(weapon_stats.damage)
+#		weapon_stats.bounce += 1
+#	weapon_stats.cooldown = max(weapon_stats.cooldown - 5, WeaponService.MIN_COOLDOWN)
+#	weapon_stats.damage *= 1.2
+#	weapon_stats.crit_chance += 0.1
+#	weapon_stats.crit_damage += 0.1
+#	weapon_stats.max_range *= 1.1
+#	weapon_stats.lifesteal = min(weapon_stats.lifesteal + 0.1, 1.0)
 	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
 
 

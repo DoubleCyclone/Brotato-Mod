@@ -4,12 +4,13 @@ extends Node
 var capacity : float = 100.0
 var current_value : float = 0.0
 var start_value : float = 0.0
+var weapon
 
 signal tank_filled(tank, amount)
 signal tank_full(tank)
 
 func _ready():
-	pass
+	weapon = get_parent()
 
 
 func fill(amount: float):
