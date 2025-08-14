@@ -27,7 +27,7 @@ func shoot(_distance: float) -> void :
 	args.scaling_stats = _parent.current_stats.scaling_stats
 	args.from_player_index = _parent._get_player_index()
 #	args.damage_tracking_key = _parent.tracking_text
-	args.from = self
+	args.from = _parent
 
 	var attack_id: = _get_next_attack_id()
 	for i in _parent.current_stats.nb_projectiles:

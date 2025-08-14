@@ -60,6 +60,7 @@ func shoot(_distance: float) -> void :
 	
 func on_projectile_stopped(projectile):
 	var instance = structure_scene.instance()
+	instance.from_weapon = _parent
 	instance.player_index = _parent.player_index
 	var offset_pos = Vector2(projectile.position.x,projectile.position.y+22)
 	instance.position = offset_pos

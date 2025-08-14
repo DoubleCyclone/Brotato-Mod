@@ -2,6 +2,7 @@ class_name HyperBombStructure
 extends Structure
 
 var cooldown = 0.25
+var from_weapon
 onready var _sprite = $Animation / Sprite
 onready var _shadow = $Animation / Shadow
 onready var _original_texture = _sprite.texture
@@ -32,8 +33,8 @@ func on_explosion_timer_run_out() -> void:
 	args.burning_data = stats.burning_data
 	args.scaling_stats = stats.scaling_stats
 	args.from_player_index = player_index
+	args.from = from_weapon
 #	args.damage_tracking_key = explosion_effect.tracking_key
-	args.from = self
 	_shadow.visible = false
 	var _inst = WeaponService.explode(explosion_effect, args)
 	die()

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://projectiles/rocket/explosion.png" type="Texture" id=1]
 [ext_resource path="res://overlap/hitbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://projectiles/player_explosion.gd" type="Script" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/radial_player_explosion.gd" type="Script" id=3]
 [ext_resource path="res://particles/explosion_smoke.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb_explosion.wav" type="AudioStream" id=5]
 

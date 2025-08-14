@@ -1,6 +1,8 @@
 class_name RockWeaponEnergySceneEffectBehavior
 extends SceneEffectBehavior
 
+# Maybe add an indicator when the tank is filled like a popup
+
 export (PackedScene) var energy_tank
 
 
@@ -31,6 +33,8 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 					weapons.append(weapon)
 					# Add energy tank to every weapon
 					var energy_tank_instance = energy_tank.instance()
+					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
+					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
 					weapon.add_child(energy_tank_instance)
 			
 		
@@ -39,7 +43,18 @@ func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 	
 	
 func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type) -> void :
+	#TODO some weapons crash because of their hitboxes (Oil Slider Skate)
 	var energy_tank = args.hitbox.from.get_node("EnergyTank")
-	energy_tank.fill(value)
-	# TODO : do something when tank fills up
-	print(args.hitbox.from.get_node("EnergyTank").current_value)
+#	print(args.hitbox.from)
+	# Temporary solution
+	if energy_tank:
+		energy_tank.fill(value)
+		# TODO : do something when tank fills up
+	
+
+func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
+	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
+
+
+func _on_EnergyTank_tank_full(energy_tank) -> void:
+	print("full")
