@@ -53,22 +53,88 @@ func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 
 func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 	# TODO check extra projectiles like charged shot they don't scale
+	# TODO put rock effect 2 back to the character
+
 	# Current stats for updating, original stats for checking (original might suffice but idk)
-#	var weapon_current_stats = energy_tank.weapon.current_stats
 	var weapon_stats = energy_tank.weapon.stats
-#	weapon_stats.piercing += 1
-#	weapon_stats.nb_projectiles += 1
-#	weapon_stats.projectile_spread += 0.05
-#	if weapon_stats.can_bounce:
-#		print(weapon_stats.damage)
-#		weapon_stats.bounce += 1
-#	weapon_stats.cooldown = max(weapon_stats.cooldown - 5, WeaponService.MIN_COOLDOWN)
-#	weapon_stats.damage *= 1.2
-#	weapon_stats.crit_chance += 0.1
-#	weapon_stats.crit_damage += 0.1
-#	weapon_stats.max_range *= 1.1
-#	weapon_stats.lifesteal = min(weapon_stats.lifesteal + 0.1, 1.0)
-	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
+	var weapon_current_stats = energy_tank.weapon.current_stats
+	var stats_list = [
+		weapon_current_stats.cooldown,
+		weapon_current_stats.damage,
+		weapon_current_stats.crit_chance,
+		weapon_current_stats.crit_damage,
+		weapon_current_stats.max_range,
+		weapon_current_stats.lifesteal
+		]
+	
+	var piercing_ban = false
+	if !weapon_stats.projectile_scene:
+		piercing_ban = true
+	elif weapon_stats.projectile_scene.instance().get_script().get_path().rfind("structure_spawner_projectile.gd") != -1:
+		piercing_ban = true
+	elif weapon_stats.projectile_scene.instance().get_script().get_path().rfind("boomerang_projectile.gd") != -1:
+		piercing_ban = true
+		
+	var extra_projectiles_ban = false
+	if !weapon_stats.projectile_scene:
+		extra_projectiles_ban = true
+		
+	var bounce_ban = false
+	if !weapon_stats.can_bounce:
+		bounce_ban = true
+		
+	
+	# piercing is only for when there is a projectile that deals damage
+	if !piercing_ban:
+		print("piercing not banned")
+		stats_list.append(weapon_current_stats.piercing)
+		
+	if !extra_projectiles_ban: # TODO Rolling Cutter, Thunder Beam extra projectiles
+		print("projectiles not banned")
+		stats_list.append(weapon_current_stats.nb_projectiles)
+		
+	if !bounce_ban: # TODO Thunder beam extra projectiles
+		print("bounce not banned")
+		stats_list.append(weapon_current_stats.bounce)
+	
+	var chosen_stat = stats_list.pick_random()
+	
+	weapon_current_stats.bounce += 1
+	print("bounce ",weapon_current_stats.bounce)
+	
+#	match chosen_stat:
+#		weapon_current_stats.bounce:
+#			weapon_current_stats.bounce += 1
+#			print("bounce ",weapon_current_stats.bounce)
+#		weapon_current_stats.piercing:
+#			weapon_current_stats.piercing += 1
+#			print("piercing ",weapon_current_stats.piercing)
+#		weapon_current_stats.nb_projectiles:
+#			weapon_current_stats.nb_projectiles += 1
+#			weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 3.14)
+#			weapon_current_stats.damage = max(weapon_current_stats.damage * 0.7, 1)
+#			print("projectiles ",weapon_current_stats.nb_projectiles)
+#			print("spread ",weapon_current_stats.projectile_spread)
+#			print("damage", weapon_current_stats.damage)
+#		weapon_current_stats.cooldown:
+#			weapon_current_stats.cooldown = max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
+#			print("cooldown ",weapon_current_stats.cooldown)
+#		weapon_current_stats.damage:
+#			weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
+#			print("damage ",weapon_current_stats.damage)
+#		weapon_current_stats.crit_chance:
+#			weapon_current_stats.crit_chance += 0.1
+#			print("crit chance ",weapon_current_stats.crit_chance)
+#		weapon_current_stats.crit_damage:
+#			weapon_current_stats.crit_damage += 0.1
+#			print("crit damage ",weapon_current_stats.crit_damage)
+#		weapon_current_stats.max_range:
+#			weapon_current_stats.max_range *= 1.1
+#			print("range ",weapon_current_stats.max_range)
+#		weapon_current_stats.lifesteal:
+#			weapon_current_stats.lifesteal = min(weapon_current_stats.lifesteal + 0.1, 1.0)
+#			print("lifesteal ",weapon_current_stats.lifesteal)
+#	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
 
 
 func _on_EnergyTank_tank_full(energy_tank) -> void:

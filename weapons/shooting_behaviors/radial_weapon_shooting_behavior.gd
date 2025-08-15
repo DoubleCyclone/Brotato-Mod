@@ -10,13 +10,13 @@ func shoot(_distance: float) -> void :
 #	var initial_position: Vector2 = _parent.sprite.position
 
 	_parent.set_shooting(true)
-	
+
 	var exploding_effect = null
 	for effect in _parent.effects :
 		if effect.key == "radial_explosion":
 			exploding_effect = effect
 			exploding_effect.scale = _parent.current_stats.max_range / 200.0
-	
+
 	var args: = WeaponServiceExplodeArgs.new()
 	args.pos = _parent.sprite.global_position
 	args.damage = _parent.current_stats.damage
@@ -32,8 +32,9 @@ func shoot(_distance: float) -> void :
 	var attack_id: = _get_next_attack_id()
 	for i in _parent.current_stats.nb_projectiles:
 		if exploding_effect != null :
+			print("explode ",i)
 			WeaponService.explode(exploding_effect, args)
-			
+
 	_parent._hitbox.player_attack_id = attack_id
 
 	_parent.set_shooting(false)

@@ -4,7 +4,6 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/hyper_bomb_projectile/8bit_mt_hyper_bomb_projectile.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/structure_spawner_projectile.gd" type="Script" id=3]
 
-
 [node name="HyperBombProjectile" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 rotation_speed = 1

@@ -1,7 +1,7 @@
 class_name EnergyTank
 extends Node
 
-var capacity : float = 100.0
+var capacity : float = 50.0
 var current_value : float = 0.0
 var start_value : float = 0.0
 var weapon
@@ -20,6 +20,7 @@ func fill(amount: float):
 	if current_value >= capacity:
 		current_value = capacity
 		emit_signal("tank_full", self)
+		capacity *= 2
 		
 	
 	
