@@ -62,11 +62,10 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 		weapon_current_stats.cooldown,
 		weapon_current_stats.damage,
 		weapon_current_stats.crit_chance,
-		weapon_current_stats.crit_damage,
-		weapon_current_stats.max_range,
 		weapon_current_stats.lifesteal
 		]
 	
+	# Ban specific attributes depending on weapon
 	var piercing_ban = false
 	if !weapon_stats.projectile_scene:
 		piercing_ban = true
@@ -83,25 +82,28 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 	if !weapon_stats.can_bounce:
 		bounce_ban = true
 		
-	
-	# piercing is only for when there is a projectile that deals damage
+	var range_ban = false
+	if weapon_stats.projectile_scene:
+		if weapon_stats.projectile_scene.instance().get_script().get_path().rfind("structure_spawner_projectile.gd") != -1:
+			range_ban = true
+		
 	if !piercing_ban:
-		print("piercing not banned")
+#		print("piercing not banned")
 		stats_list.append(weapon_current_stats.piercing)
 		
 	if !extra_projectiles_ban: # TODO Rolling Cutter, Thunder Beam extra projectiles
-		print("projectiles not banned")
+#		print("projectiles not banned")
 		stats_list.append(weapon_current_stats.nb_projectiles)
 		
 	if !bounce_ban: # TODO Thunder beam extra projectiles
-		print("bounce not banned")
+#		print("bounce not banned")
 		stats_list.append(weapon_current_stats.bounce)
+		
+	if !range_ban: 
+#		print("range not banned")
+		stats_list.append(weapon_current_stats.max_range)
 	
-	var chosen_stat = stats_list.pick_random()
-	
-	weapon_current_stats.bounce += 1
-	print("bounce ",weapon_current_stats.bounce)
-	
+#	var chosen_stat = stats_list.pick_random()	
 #	match chosen_stat:
 #		weapon_current_stats.bounce:
 #			weapon_current_stats.bounce += 1
@@ -119,19 +121,18 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #		weapon_current_stats.cooldown:
 #			weapon_current_stats.cooldown = max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
 #			print("cooldown ",weapon_current_stats.cooldown)
-#		weapon_current_stats.damage:
+#		weapon_current_stats.damage: # fire storm rotating, oil slider skate, super arm extra, thunder beam sideways, mega buster charged
 #			weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
 #			print("damage ",weapon_current_stats.damage)
-#		weapon_current_stats.crit_chance:
-#			weapon_current_stats.crit_chance += 0.1
+#		weapon_current_stats.crit_chance: # fire storm rotating, oil slider skate, super arm extra, thunder beam sideways, mega buster charged
+#			weapon_current_stats.crit_chance += 0.15
+#			weapon_current_stats.crit_damage += 0.15
 #			print("crit chance ",weapon_current_stats.crit_chance)
-#		weapon_current_stats.crit_damage:
-#			weapon_current_stats.crit_damage += 0.1
 #			print("crit damage ",weapon_current_stats.crit_damage)
 #		weapon_current_stats.max_range:
 #			weapon_current_stats.max_range *= 1.1
 #			print("range ",weapon_current_stats.max_range)
-#		weapon_current_stats.lifesteal:
+#		weapon_current_stats.lifesteal: # time slow, fire storm rotating, oil slider skate, super arm extra, thunder beam sideways, mega buster charged
 #			weapon_current_stats.lifesteal = min(weapon_current_stats.lifesteal + 0.1, 1.0)
 #			print("lifesteal ",weapon_current_stats.lifesteal)
 #	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)

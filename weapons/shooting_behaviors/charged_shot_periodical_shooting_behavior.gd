@@ -12,9 +12,15 @@ func shoot(_distance: float) -> void :
 			
 	if charging_effect:	
 		if _parent._nb_shots_taken % charging_effect.value == 0:
-			_parent.current_stats = charging_effect.charged_projectile_stats
+			var charged_stats = _parent.current_stats.duplicate()
+			charged_stats.damage *= charging_effect.damage_multiplier
+			charged_stats.piercing += charging_effect.extra_piercing
+			charged_stats.shooting_sounds = charging_effect.charged_shot_sounds
+			charged_stats.projectile_scene = charging_effect.charged_projectile_scene
+			_parent.current_stats = charged_stats
 		else:
-			_parent.current_stats = _parent.stats
+			_parent.current_stats = WeaponService.init_ranged_stats(_parent.stats, _parent.player_index, true)
+			
 			
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 		
