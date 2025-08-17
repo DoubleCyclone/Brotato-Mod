@@ -3,24 +3,29 @@ extends WeaponShootingBehavior
 
 signal projectile_shot(projectile)
 
+var charged_initialized = false
 
-func shoot(_distance: float) -> void :
+func shoot(_distance: float) -> void :	
 	var charging_effect
 	for effect in _parent.effects:
 		if effect.key == "charged_shot_periodical":
 			charging_effect = effect
 			
+	# TODO when charged gets stat increase it stays there does not reflect on the original projectile
 	if charging_effect:	
 		if _parent._nb_shots_taken % charging_effect.value == 0:
-			var charged_stats = _parent.current_stats.duplicate()
-			charged_stats.damage *= charging_effect.damage_multiplier
-			charged_stats.piercing += charging_effect.extra_piercing
-			charged_stats.shooting_sounds = charging_effect.charged_shot_sounds
-			charged_stats.projectile_scene = charging_effect.charged_projectile_scene
-			_parent.current_stats = charged_stats
+			_parent.current_stats.damage *= charging_effect.damage_multiplier
+			_parent.current_stats.piercing += charging_effect.extra_piercing
+			_parent.current_stats.shooting_sounds = charging_effect.charged_shot_sounds
+			_parent.current_stats.projectile_scene = charging_effect.charged_projectile_scene
+			if !charged_initialized:
+				charged_initialized = !charged_initialized
 		else:
-			_parent.current_stats = WeaponService.init_ranged_stats(_parent.stats, _parent.player_index, true)
-			
+			if charged_initialized and _parent._nb_shots_taken % charging_effect.value == 1:
+				_parent.current_stats.damage /= charging_effect.damage_multiplier
+				_parent.current_stats.piercing -= charging_effect.extra_piercing
+				_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds
+				_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
 			
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 		

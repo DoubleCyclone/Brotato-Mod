@@ -102,6 +102,44 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 	if !range_ban: 
 #		print("range not banned")
 		stats_list.append(weapon_current_stats.max_range)
+		
+	# Bounce TEST
+#	weapon_current_stats.bounce += 1
+#	print("bounce ",weapon_current_stats.bounce)
+
+	# Piercing TEST
+#	weapon_current_stats.piercing += 1
+#	print("piercing ",weapon_current_stats.piercing)
+	
+	# ProjectileNumber TEST
+#	weapon_current_stats.nb_projectiles += 1
+#	weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 3.14)
+#	weapon_current_stats.damage = max(weapon_current_stats.damage * 0.7, 1)
+#	print("projectiles ",weapon_current_stats.nb_projectiles)
+#	print("spread ",weapon_current_stats.projectile_spread)
+#	print("damage", weapon_current_stats.damage)
+	
+	# Cooldown TEST
+#	weapon_current_stats.cooldown = max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
+#	print("cooldown ",weapon_current_stats.cooldown)
+
+	# Damage TEST
+#	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
+#	print("damage ",weapon_current_stats.damage)
+
+	# Crit TEST
+#	weapon_current_stats.crit_chance += 0.15
+#	weapon_current_stats.crit_damage += 0.15
+#	print("crit chance ",weapon_current_stats.crit_chance)
+#	print("crit damage ",weapon_current_stats.crit_damage)
+
+	# Range TEST
+#	weapon_current_stats.max_range *= 1.1
+#	print("range ",weapon_current_stats.max_range)
+
+	# Lifesteal TEST
+#	weapon_current_stats.lifesteal = min(weapon_current_stats.lifesteal + 0.1, 1.0)
+#	print("lifesteal ",weapon_current_stats.lifesteal)
 	
 #	var chosen_stat = stats_list.pick_random()	
 #	match chosen_stat:
