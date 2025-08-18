@@ -6,7 +6,6 @@ export (PackedScene) var explosion_scene
 export (float) var scale: = 1.0
 export (int) var base_smoke_amount: = 40
 export (int) var sound_db_mod: = - 10
-#export (Array, Resource) var effects
 
 
 static func get_id() -> String:

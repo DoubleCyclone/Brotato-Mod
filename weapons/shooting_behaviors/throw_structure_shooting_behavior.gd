@@ -67,7 +67,7 @@ func on_projectile_stopped(projectile):
 	instance.stats = _parent.current_stats
 	for effect in _parent.effects:
 		if effect.key == "effect_hyper_bomb_spawn":
-			instance.effects = effect.effects
+			instance.effects = effect.effects #TODO : maybe append
 	instance.cooldown = structure_spawn_effect.timer_cooldown
 	Utils.get_scene_node().get_node("Entities").add_child(instance)
 	

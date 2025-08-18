@@ -71,6 +71,9 @@ func try_add_effects(effects: Array, scaling_stats: Array) -> void :
 
 
 func add_active_effect(from_weapon_time_slow_effect: Array) -> void :
+	if _parent.dead : 
+		return
+		
 	var chance = from_weapon_time_slow_effect[3]
 
 	if Utils.get_chance_success(chance):

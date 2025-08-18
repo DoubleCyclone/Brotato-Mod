@@ -1,13 +1,11 @@
 class_name RadialWeaponShootingBehavior
 extends WeaponShootingBehavior
 
-signal projectile_shot(projectile)
-
+signal projectile_shot(projectile) #Unused but causes error if not here
+# TODO: fix lifesteal and maybe other problems (tier 1 has 1 lifesteal revert it)
 
 func shoot(_distance: float) -> void :
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
-
-#	var initial_position: Vector2 = _parent.sprite.position
 
 	_parent.set_shooting(true)
 
@@ -29,12 +27,18 @@ func shoot(_distance: float) -> void :
 #	args.damage_tracking_key = _parent.tracking_text
 	args.from = _parent
 
+	var explosion
 	var attack_id: = _get_next_attack_id()
 	for i in _parent.current_stats.nb_projectiles:
 		if exploding_effect != null :
-			print("explode ",i)
-			WeaponService.explode(exploding_effect, args)
-
-	_parent._hitbox.player_attack_id = attack_id
+			explosion = WeaponService.explode(exploding_effect, args)
+			if explosion._hitbox:
+				for effect in _parent.effects:
+					if !explosion._hitbox.effects.has(effect):
+						explosion._hitbox.effects.append(effect)
+				explosion._hitbox.player_attack_id = attack_id	
+				emit_signal("projectile_shot",explosion) #TODO : experimental
+				
+	RunData.manage_life_steal(_parent.current_stats, _parent._get_player_index())
 
 	_parent.set_shooting(false)
