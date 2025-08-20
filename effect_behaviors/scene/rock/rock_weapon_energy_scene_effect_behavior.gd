@@ -87,6 +87,13 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 		if weapon_stats.projectile_scene.instance().get_script().get_path().rfind("structure_spawner_projectile.gd") != -1:
 			range_ban = true
 		
+	var has_projectiles_on_hit = false
+	var extra_projectile_effect
+	for effect in energy_tank.weapon.effects:
+		if effect.key == "EFFECT_PROJECTILES_ON_HIT":
+			extra_projectile_effect = effect
+			has_projectiles_on_hit = true
+		
 	if !piercing_ban:
 #		print("piercing not banned")
 		stats_list.append(weapon_current_stats.piercing)
@@ -104,14 +111,20 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 		stats_list.append(weapon_current_stats.max_range)
 		
 	# Bounce TEST
-	if !bounce_ban:
-		weapon_current_stats.bounce += 1
-		print("bounce ",weapon_current_stats.bounce)
+#	if !bounce_ban:
+#		weapon_current_stats.bounce += 1
+#		print("bounce ",weapon_current_stats.bounce)
+#		if extra_projectile_effect:
+#			extra_projectile_effect.weapon_stats.bounce += 1
+#			print(extra_projectile_effect.weapon_stats.bounce)
 
 	# Piercing TEST
-	if !piercing_ban:
-		weapon_current_stats.piercing += 1
-		print("piercing ",weapon_current_stats.piercing)
+#	if !piercing_ban:
+#		weapon_current_stats.piercing += 1
+#		print("piercing ",weapon_current_stats.piercing)
+#		if extra_projectile_effect:
+#			extra_projectile_effect.weapon_stats.piercing += 1
+#			print(extra_projectile_effect.weapon_stats.piercing)
 	
 	# ProjectileNumber TEST
 #	if !extra_projectiles_ban:
@@ -121,6 +134,12 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #		print("projectiles ",weapon_current_stats.nb_projectiles)
 #		print("spread ",weapon_current_stats.projectile_spread)
 #		print("damage", weapon_current_stats.damage)
+#		if extra_projectile_effect :
+#			extra_projectile_effect.value += 1
+#			extra_projectile_effect.weapon_stats.projectile_spread = min(extra_projectile_effect.weapon_stats.projectile_spread + 0.15, 3.14)
+#			extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 0.7, 1)
+#			print(extra_projectile_effect.value)
+		
 	
 	# Cooldown TEST # TODO : reverts back to original
 #	weapon_current_stats.cooldown = max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
@@ -129,12 +148,20 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 	# Damage TEST # TODO : reverts back to original
 #	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
 #	print("damage ",weapon_current_stats.damage)
+#	if extra_projectile_effect :
+#		extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 1.2, extra_projectile_effect.weapon_stats.damage + 1)
+#		print(extra_projectile_effect.weapon_stats.damage)
  
 	# Crit TEST # TODO : reverts back to original 
 #	weapon_current_stats.crit_chance += 0.15
 #	weapon_current_stats.crit_damage += 0.15
 #	print("crit chance ",weapon_current_stats.crit_chance)
 #	print("crit damage ",weapon_current_stats.crit_damage)
+#	if extra_projectile_effect :
+#		extra_projectile_effect.weapon_stats.crit_chance += 0.15
+#		extra_projectile_effect.weapon_stats.crit_damage += 0.15
+#		print(extra_projectile_effect.weapon_stats.crit_chance)
+#		print(extra_projectile_effect.weapon_stats.crit_damage)
 
 	# Range TEST
 #	if !range_ban:
@@ -144,6 +171,9 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 	# Lifesteal TEST
 #	weapon_current_stats.lifesteal = min(weapon_current_stats.lifesteal + 0.1, 1.0)
 #	print("lifesteal ",weapon_current_stats.lifesteal)
+#	if extra_projectile_effect :
+#		extra_projectile_effect.weapon_stats.lifesteal += 0.15
+#		print(extra_projectile_effect.weapon_stats.lifesteal)
 	
 #	var chosen_stat = stats_list.pick_random()	
 #	match chosen_stat:
@@ -179,6 +209,10 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			print("lifesteal ",weapon_current_stats.lifesteal)
 #	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
 
+	if extra_projectile_effect :
+		var on_hit_args: = WeaponServiceInitStatsArgs.new()
+		var effect_stats = WeaponService.init_ranged_stats(extra_projectile_effect.weapon_stats, energy_tank.weapon.player_index, true, on_hit_args)
+		energy_tank.weapon._hitbox.projectiles_on_hit = [extra_projectile_effect.value, effect_stats, extra_projectile_effect.auto_target_enemy]
 
 func _on_EnergyTank_tank_full(energy_tank) -> void:
 	print("full")
