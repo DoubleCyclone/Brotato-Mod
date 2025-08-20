@@ -18,11 +18,11 @@ func _ready():
 	timer.connect("timeout",self,"on_timer_timeout",[player])	
 	player.current_stats.speed *= spawn_effect.speed_modifier
 	player.get_node("Hurtbox").monitoring = false
-	var hitbox_args = Hitbox.HitboxArgs.new().set_from_weapon_stats(spawn_effect.stats)
-	var scaled_damage = WeaponService.apply_scaling_stats_to_damage(spawn_effect.stats.damage, spawn_effect.stats.scaling_stats, player.player_index)
+	var hitbox_args = Hitbox.HitboxArgs.new().set_from_weapon_stats(from_weapon.current_stats)
+	var scaled_damage = WeaponService.apply_scaling_stats_to_damage(from_weapon.current_stats.damage * spawn_effect.damage_multiplier, from_weapon.current_stats.scaling_stats, player.player_index)
 	_hitbox.set_damage(scaled_damage, hitbox_args)
-	_hitbox.crit_damage = 2
-	_hitbox.crit_chance = spawn_effect.stats.crit_chance + RunData.get_stat("stat_crit_chance", player.player_index) / 100
+	_hitbox.crit_damage = from_weapon.current_stats.crit_damage
+	_hitbox.crit_chance = from_weapon.current_stats.crit_chance
 	_hitbox.from = from_weapon
 
 func respawn() -> void :
@@ -32,11 +32,11 @@ func respawn() -> void :
 	timer.connect("timeout",self,"on_timer_timeout",[player])	
 	player.current_stats.speed *= spawn_effect.speed_modifier
 	player.get_node("Hurtbox").monitoring = false
-	var hitbox_args = Hitbox.HitboxArgs.new().set_from_weapon_stats(spawn_effect.stats)
-	var scaled_damage = WeaponService.apply_scaling_stats_to_damage(spawn_effect.stats.damage, spawn_effect.stats.scaling_stats, player.player_index)
+	var hitbox_args = Hitbox.HitboxArgs.new().set_from_weapon_stats(from_weapon.current_stats)
+	var scaled_damage = WeaponService.apply_scaling_stats_to_damage(from_weapon.current_stats.damage * spawn_effect.damage_multiplier, from_weapon.current_stats.scaling_stats, player.player_index)
 	_hitbox.set_damage(scaled_damage, hitbox_args)
-	_hitbox.crit_damage = 2
-	_hitbox.crit_chance = spawn_effect.stats.crit_chance + RunData.get_stat("stat_crit_chance", player.player_index) / 100
+	_hitbox.crit_damage = from_weapon.current_stats.crit_damage
+	_hitbox.crit_chance = from_weapon.current_stats.crit_chance
 	_hitbox.from = from_weapon
 	
 	

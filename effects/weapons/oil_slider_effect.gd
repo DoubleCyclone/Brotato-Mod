@@ -6,6 +6,7 @@ export (float) var chance
 export (float) var effect_timer
 export (Resource) var stats
 export (float) var speed_modifier
+export (float) var damage_multiplier
 
 static func get_id() -> String:
 	return "weapon_oil_slider_effect"
@@ -17,3 +18,4 @@ func get_args(_player_index: int) -> Array:
 
 # TODO: learn what serialize / deserialize does and use it
 # TODO: maybe add base damage values to the descriptions of the weapons
+# TODO: fix description

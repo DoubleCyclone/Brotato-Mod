@@ -21,7 +21,7 @@ func _ready():
 	
 
 func _physics_process(delta: float) -> void :
-	radius = _max_range / 3
+	radius = _max_range / 4
 	d += delta
 	var progress = d * _weapon_stats.projectile_speed
 

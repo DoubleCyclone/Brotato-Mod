@@ -104,14 +104,14 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 		stats_list.append(weapon_current_stats.max_range)
 		
 	# Bounce TEST
-#	if !bounce_ban:
-#		weapon_current_stats.bounce += 1
-#		print("bounce ",weapon_current_stats.bounce)
+	if !bounce_ban:
+		weapon_current_stats.bounce += 1
+		print("bounce ",weapon_current_stats.bounce)
 
 	# Piercing TEST
-#	if !piercing_ban:
-#		weapon_current_stats.piercing += 1
-#		print("piercing ",weapon_current_stats.piercing)
+	if !piercing_ban:
+		weapon_current_stats.piercing += 1
+		print("piercing ",weapon_current_stats.piercing)
 	
 	# ProjectileNumber TEST
 #	if !extra_projectiles_ban:

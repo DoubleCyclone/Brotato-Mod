@@ -11,7 +11,7 @@ func shoot(_distance: float) -> void :
 		if effect.key == "charged_shot_periodical":
 			charging_effect = effect
 			
-	# TODO when charged gets stat increase it stays there does not reflect on the original projectile
+	# TODO might be better like fire storm
 	if charging_effect:	
 		if _parent._nb_shots_taken % charging_effect.value == 0:
 			_parent.current_stats.damage *= charging_effect.damage_multiplier

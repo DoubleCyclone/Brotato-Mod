@@ -8,4 +8,4 @@ static func get_id() -> String:
 
 func get_args(_player_index: int) -> Array:
 	var current_stats = WeaponService.init_ranged_stats(weapon_stats, _player_index, true)
-	return [str(round(current_stats.projectile_speed)), str(round(current_stats.max_range / 3)), str(round((current_stats.max_range / 3) * 0.75))]
+	return [str(round(current_stats.projectile_speed)), str(round(current_stats.max_range / 4)), str(round((current_stats.max_range / 4) * 0.75))]
