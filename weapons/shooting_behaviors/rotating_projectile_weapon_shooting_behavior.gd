@@ -26,7 +26,6 @@ func shoot(_distance: float) -> void :
 		var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
 		# revert stats for original projectile
 		if rotating_effect and rotation_initialized:
-#			_parent.current_stats.damage = original_damage
 			for stat in _parent.current_stats.scaling_stats:
 				stat[1] *= rotating_effect.damage_multiplier
 			_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds 
@@ -40,7 +39,6 @@ func shoot(_distance: float) -> void :
 		var projectile = shoot_projectile(proj_rotation, knockback_direction)
 		projectile._hitbox.player_attack_id = attack_id
 		if rotating_effect:
-#			var rotating_projectile = shoot_rotating_projectile(rotating_effect, proj_rotation, knockback_direction)
 			# change stats for rotation
 			original_damage = _parent.current_stats.damage
 			original_bounce = _parent.current_stats.bounce

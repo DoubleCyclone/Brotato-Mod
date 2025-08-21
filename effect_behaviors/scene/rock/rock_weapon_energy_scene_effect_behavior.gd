@@ -33,7 +33,7 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 					weapons.append(weapon)
 					# Add energy tank to every weapon
 					var energy_tank_instance = energy_tank.instance()
-#					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
+					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
 					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
 					weapon.add_child(energy_tank_instance)
 			
@@ -51,11 +51,20 @@ func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 		# TODO : do something when tank fills up
 	
 
-#func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
+func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
 	# TODO put rock effect 2 back to the character, mega buster stats, tiers etc.
 		
+	var weapon_current_stats = energy_tank.weapon.current_stats
+	var stats_list = [
+		weapon_current_stats.cooldown,
+		weapon_current_stats.damage,
+		weapon_current_stats.crit_chance,
+		weapon_current_stats.lifesteal
+		]
+		
 	# Bounce TEST
+#	var bounce_ban = false
 #	if !bounce_ban:
 #		weapon_current_stats.bounce += 1
 #		print("bounce ",weapon_current_stats.bounce)
@@ -67,9 +76,10 @@ func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 #			print(sideways_projectiles_effect.weapon_stats.bounce)
 
 	# Piercing TEST
-#	if !piercing_ban:
-#		weapon_current_stats.piercing += 1
-#		print("piercing ",weapon_current_stats.piercing)
+	var piercing_ban = false
+	if !piercing_ban:
+		weapon_current_stats.piercing += 1
+		print("piercing ",weapon_current_stats.piercing)
 #		if extra_projectile_effect:
 #			extra_projectile_effect.weapon_stats.piercing += 1
 #			print(extra_projectile_effect.weapon_stats.piercing)
