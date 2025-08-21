@@ -87,12 +87,15 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 		if weapon_stats.projectile_scene.instance().get_script().get_path().rfind("structure_spawner_projectile.gd") != -1:
 			range_ban = true
 		
-	var has_projectiles_on_hit = false
 	var extra_projectile_effect
 	for effect in energy_tank.weapon.effects:
 		if effect.key == "EFFECT_PROJECTILES_ON_HIT":
 			extra_projectile_effect = effect
-			has_projectiles_on_hit = true
+	
+	var sideways_projectiles_effect
+	for effect in energy_tank.weapon.effects:
+		if effect.key == "sideways_projectiles_on_shoot":
+			sideways_projectiles_effect = effect
 		
 	if !piercing_ban:
 #		print("piercing not banned")
@@ -117,6 +120,9 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #		if extra_projectile_effect:
 #			extra_projectile_effect.weapon_stats.bounce += 1
 #			print(extra_projectile_effect.weapon_stats.bounce)
+#		if sideways_projectiles_effect :
+#			sideways_projectiles_effect.weapon_stats.bounce += 1
+#			print(sideways_projectiles_effect.weapon_stats.bounce)
 
 	# Piercing TEST
 #	if !piercing_ban:
@@ -125,6 +131,9 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #		if extra_projectile_effect:
 #			extra_projectile_effect.weapon_stats.piercing += 1
 #			print(extra_projectile_effect.weapon_stats.piercing)
+#		if sideways_projectiles_effect :
+#			sideways_projectiles_effect.weapon_stats.piercing += 1
+#			print(sideways_projectiles_effect.weapon_stats.piercing)
 	
 	# ProjectileNumber TEST
 #	if !extra_projectiles_ban:
@@ -139,6 +148,10 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			extra_projectile_effect.weapon_stats.projectile_spread = min(extra_projectile_effect.weapon_stats.projectile_spread + 0.15, 3.14)
 #			extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 0.7, 1)
 #			print(extra_projectile_effect.value)
+#		if sideways_projectiles_effect :
+#			sideways_projectiles_effect.weapon_stats.nb_projectiles += 1
+#			sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 0.7, 1)
+#			print(sideways_projectiles_effect.weapon_stats.nb_projectiles)
 		
 	
 	# Cooldown TEST # TODO : reverts back to original
@@ -151,6 +164,9 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	if extra_projectile_effect :
 #		extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 1.2, extra_projectile_effect.weapon_stats.damage + 1)
 #		print(extra_projectile_effect.weapon_stats.damage)
+#	if sideways_projectiles_effect :
+#		sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
+#		print(sideways_projectiles_effect.weapon_stats.damage)
  
 	# Crit TEST # TODO : reverts back to original 
 #	weapon_current_stats.crit_chance += 0.15
@@ -162,19 +178,29 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #		extra_projectile_effect.weapon_stats.crit_damage += 0.15
 #		print(extra_projectile_effect.weapon_stats.crit_chance)
 #		print(extra_projectile_effect.weapon_stats.crit_damage)
+#	if sideways_projectiles_effect :
+#			sideways_projectiles_effect.weapon_stats.crit_chance += 0.15
+#			sideways_projectiles_effect.weapon_stats.crit_damage += 0.15
+#			print(sideways_projectiles_effect.weapon_stats.crit_chance)
 
 	# Range TEST
 #	if !range_ban:
 #		weapon_current_stats.max_range *= 1.1
 #		print("range ",weapon_current_stats.max_range)
+#	if sideways_projectiles_effect :
+#		sideways_projectiles_effect.weapon_stats.max_range *= 1.1
+#		print(sideways_projectiles_effect.weapon_stats.max_range)
 
 	# Lifesteal TEST
 #	weapon_current_stats.lifesteal = min(weapon_current_stats.lifesteal + 0.1, 1.0)
 #	print("lifesteal ",weapon_current_stats.lifesteal)
 #	if extra_projectile_effect :
-#		extra_projectile_effect.weapon_stats.lifesteal += 0.15
+#		extra_projectile_effect.weapon_stats.lifesteal = min(extra_projectile_effect.weapon_stats.lifesteal + 0.1, 1.0)
 #		print(extra_projectile_effect.weapon_stats.lifesteal)
-	
+#	if sideways_projectiles_effect :
+#		sideways_projectiles_effect.weapon_stats.lifesteal = min(sideways_projectiles_effect.weapon_stats.lifesteal + 0.1, 1.0)
+#		print(sideways_projectiles_effect.weapon_stats.lifesteal)
+
 #	var chosen_stat = stats_list.pick_random()	
 #	match chosen_stat:
 #		weapon_current_stats.bounce:
@@ -213,6 +239,7 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 		var on_hit_args: = WeaponServiceInitStatsArgs.new()
 		var effect_stats = WeaponService.init_ranged_stats(extra_projectile_effect.weapon_stats, energy_tank.weapon.player_index, true, on_hit_args)
 		energy_tank.weapon._hitbox.projectiles_on_hit = [extra_projectile_effect.value, effect_stats, extra_projectile_effect.auto_target_enemy]
+
 
 func _on_EnergyTank_tank_full(energy_tank) -> void:
 	print("full")
