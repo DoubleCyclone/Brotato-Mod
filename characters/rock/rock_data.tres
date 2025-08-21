@@ -15,10 +15,10 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/rock_hat_appearance.tres" type="Resource" id=13]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/effects/rock_effect_1.tres" type="Resource" id=14]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_data.tres" type="Resource" id=15]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/2/fire_storm_2_data.tres" type="Resource" id=16]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/2/mega_buster_2_data.tres" type="Resource" id=16]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/effects/rock_effect_3.tres" type="Resource" id=17]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/4/fire_storm_4_data.tres" type="Resource" id=18]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/3/fire_storm_3_data.tres" type="Resource" id=19]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/4/mega_buster_4_data.tres" type="Resource" id=18]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/3/mega_buster_3_data.tres" type="Resource" id=19]
 
 [resource]
 script = ExtResource( 1 )

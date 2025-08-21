@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/mega_buster_charged_shot_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/1/mega_buster_1_stats.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/8bit_mt_mega_buster_charged.wav" type="AudioStream" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/mega_buster_projectile/mega_buster_charged_projectile.tscn" type="PackedScene" id=4]
+
+[resource]
+script = ExtResource( 1 )
+key = "charged_shot_periodical"
+text_key = "effect_charged_shot_periodical"
+value = 4
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = [  ]
+original_weapon_stats = ExtResource( 2 )
+charged_projectile_scene = ExtResource( 4 )
+extra_piercing = 2
+damage_multiplier = 2.4
+charged_shot_sounds = [ ExtResource( 3 ) ]

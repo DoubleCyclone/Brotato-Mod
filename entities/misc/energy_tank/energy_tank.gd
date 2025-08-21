@@ -16,11 +16,14 @@ func _ready():
 func fill(amount: float):
 	var fill_amount = min(amount/4, 10)
 	current_value += fill_amount
+	print("+",amount,"  ",current_value,"/",capacity)
 	emit_signal("tank_filled", self, fill_amount)
 	if current_value >= capacity:
 		current_value = capacity
 		emit_signal("tank_full", self)
 		capacity *= 2
+		current_value = start_value
+		print("tank filled! new capacity = ",capacity, " value = ", current_value)
 		
 	
 	
