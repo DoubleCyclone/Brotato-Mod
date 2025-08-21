@@ -6,7 +6,8 @@ signal projectile_shot(projectile)
 var rotation_initialized = false
 var original_damage
 var original_bounce
-
+# TODO : breaks after a while having 0 piercing for rotation etc. might happen in other weapons as well,
+# TODO : maybe duplicate stats just for the non-originals 
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
 	var rotating_effect
@@ -24,29 +25,30 @@ func shoot(_distance: float) -> void :
 	for i in _parent.current_stats.nb_projectiles:
 		var proj_rotation = rand_range(_parent.rotation - _parent.current_stats.projectile_spread, _parent.rotation + _parent.current_stats.projectile_spread)
 		var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
-		# revert stats for original projectile
-		if rotating_effect and rotation_initialized:
-			for stat in _parent.current_stats.scaling_stats:
-				stat[1] *= rotating_effect.damage_multiplier
-			_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds 
-			_parent.current_stats.piercing -= 9999 
-			_parent.current_stats.piercing_dmg_reduction = _parent.stats.piercing_dmg_reduction 
-			_parent.current_stats.bounce = true
-			_parent.current_stats.projectile_speed = _parent.stats.projectile_speed 
-			_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
-			_parent.current_stats.bounce = original_bounce
-			print(_parent.current_stats.bounce)
-		var projectile = shoot_projectile(proj_rotation, knockback_direction)
-		projectile._hitbox.player_attack_id = attack_id
 		if rotating_effect:
+		# revert stats for original projectile
+			if rotation_initialized:
+				print("true")
+	#			for stat in _parent.current_stats.scaling_stats:
+	#				stat[1] *= rotating_effect.damage_multiplier
+				_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds 
+				_parent.current_stats.piercing -= 9999 
+				_parent.current_stats.piercing_dmg_reduction = _parent.stats.piercing_dmg_reduction 
+				_parent.current_stats.bounce = true
+				_parent.current_stats.projectile_speed = _parent.stats.projectile_speed 
+				_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
+				_parent.current_stats.bounce = original_bounce
+			var projectile = shoot_projectile(proj_rotation, knockback_direction)
+			projectile._hitbox.player_attack_id = attack_id
 			# change stats for rotation
 			original_damage = _parent.current_stats.damage
 			original_bounce = _parent.current_stats.bounce
 			_parent.current_stats.damage = ceil(_parent.current_stats.damage / rotating_effect.damage_multiplier)
-			for stat in _parent.current_stats.scaling_stats:
-				stat[1] /= rotating_effect.damage_multiplier
+#			for stat in _parent.current_stats.scaling_stats:
+#				stat[1] /= rotating_effect.damage_multiplier
 			_parent.current_stats.shooting_sounds = rotating_effect.shooting_sounds
 			_parent.current_stats.piercing += 9999 
+			print(_parent.current_stats.piercing)
 			_parent.current_stats.piercing_dmg_reduction = 0
 			_parent.current_stats.bounce = 0
 			_parent.current_stats.projectile_speed = 50
@@ -57,6 +59,9 @@ func shoot(_distance: float) -> void :
 			rotating_projectile._hitbox.player_attack_id = attack_id
 			_parent.current_stats.damage = original_damage
 			_parent.current_stats.bounce = original_bounce
+		else: # Failsafe
+			var projectile = shoot_projectile(proj_rotation, knockback_direction)
+			projectile._hitbox.player_attack_id = attack_id
 	
 	_parent.tween.interpolate_property(
 		_parent.sprite, 

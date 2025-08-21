@@ -1,13 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://items/global/effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/misc/energy_tank/energy_tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/characters/energy_tank_effect.gd" type="Script" id=2]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 key = "weapon_energy_bar"
-text_key = ""
+text_key = "EFFECT_WEAPON_ENERGY_TANK"
 value = 1
 custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
+energy_tank_scene = ExtResource( 1 )

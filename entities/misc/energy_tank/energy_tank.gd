@@ -23,7 +23,7 @@ func fill(amount: float):
 		emit_signal("tank_full", self)
 		capacity *= 2
 		current_value = start_value
-		print("tank filled! new capacity = ",capacity, " value = ", current_value)
+#		print("tank filled! new capacity = ",capacity, " value = ", current_value)
 		
 	
 	

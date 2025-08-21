@@ -76,10 +76,10 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			print(sideways_projectiles_effect.weapon_stats.bounce)
 
 	# Piercing TEST
-	var piercing_ban = false
-	if !piercing_ban:
-		weapon_current_stats.piercing += 1
-		print("piercing ",weapon_current_stats.piercing)
+#	var piercing_ban = false
+#	if !piercing_ban:
+#		weapon_current_stats.piercing += 1
+#		print("piercing ",weapon_current_stats.piercing)
 #		if extra_projectile_effect:
 #			extra_projectile_effect.weapon_stats.piercing += 1
 #			print(extra_projectile_effect.weapon_stats.piercing)
@@ -157,8 +157,6 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 
 
 func _on_EnergyTank_tank_full(energy_tank) -> void:
-
-	
 	# Current stats for updating, original stats for checking (original might suffice but idk)
 	var weapon_stats = energy_tank.weapon.stats
 	var weapon_current_stats = energy_tank.weapon.current_stats

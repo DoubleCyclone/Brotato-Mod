@@ -12,8 +12,6 @@ func shoot(_distance: float) -> void :
 		if effect.key == "charged_shot_periodical":
 			charging_effect = effect
 			
-	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
-		
 	var initial_position: Vector2 = _parent.sprite.position
 
 	_parent.set_shooting(true)
@@ -48,6 +46,8 @@ func shoot(_distance: float) -> void :
 		else: # Failsafe
 			var projectile = shoot_projectile(proj_rotation, knockback_direction)
 			projectile._hitbox.player_attack_id = attack_id
+			
+	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 		
 	_parent.tween.interpolate_property(
 		_parent.sprite, 

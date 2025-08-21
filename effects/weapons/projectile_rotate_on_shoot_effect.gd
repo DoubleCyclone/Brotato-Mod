@@ -13,5 +13,5 @@ func get_args(player_index: int) -> Array:
 	var current_stats = WeaponService.init_ranged_stats(original_weapon_stats, player_index, true)
 	#TODO: bugged scaling like mega buster
 	var scaling_text = WeaponService.get_scaling_stats_icon_text(original_weapon_stats.scaling_stats)
-	return [str(int(current_stats.damage / damage_multiplier)), scaling_text]
+	return [str(int(ceil(current_stats.damage / damage_multiplier))), scaling_text]
 
