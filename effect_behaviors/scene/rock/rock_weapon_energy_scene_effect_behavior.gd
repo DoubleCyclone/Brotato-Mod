@@ -34,7 +34,7 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 					# Add energy tank to every weapon
 					var energy_tank_instance = energy_tank.instance()
 					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
-					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
+#					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
 					weapon.add_child(energy_tank_instance)
 			
 		
@@ -43,17 +43,15 @@ func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 	
 	
 func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type) -> void :
-	# Temporary solution?
 	if !args.hitbox: return
 	var energy_tank = args.hitbox.from.get_node("EnergyTank")
 	if energy_tank:
 		energy_tank.fill(value)
-		# TODO : do something when tank fills up
 	
 
 func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
-	# TODO put rock effect 2 back to the character, mega buster stats, tiers etc.
+	# TODO put rock effect 2 back to the character
 		
 	var weapon_current_stats = energy_tank.weapon.current_stats
 	var stats_list = [
@@ -88,6 +86,7 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			print(sideways_projectiles_effect.weapon_stats.piercing)
 	
 	# ProjectileNumber TEST
+#	var extra_projectiles_ban = false
 #	if !extra_projectiles_ban:
 #		weapon_current_stats.nb_projectiles += 1
 #		weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 3.14)
@@ -106,11 +105,11 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			print(sideways_projectiles_effect.weapon_stats.nb_projectiles)
 		
 	
-	# Cooldown TEST # TODO : reverts back to original
+	# Cooldown TEST
 #	weapon_current_stats.cooldown = max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
 #	print("cooldown ",weapon_current_stats.cooldown)
 
-	# Damage TEST # TODO : reverts back to original
+	# Damage TEST 
 #	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
 #	print("damage ",weapon_current_stats.damage)
 #	if extra_projectile_effect :
@@ -120,7 +119,7 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #		sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
 #		print(sideways_projectiles_effect.weapon_stats.damage)
  
-	# Crit TEST # TODO : reverts back to original 
+	# Crit TEST 
 #	weapon_current_stats.crit_chance += 0.15
 #	weapon_current_stats.crit_damage += 0.15
 #	print("crit chance ",weapon_current_stats.crit_chance)
@@ -136,6 +135,7 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			print(sideways_projectiles_effect.weapon_stats.crit_chance)
 
 	# Range TEST
+#	var range_ban = false
 #	if !range_ban:
 #		weapon_current_stats.max_range *= 1.1
 #		print("range ",weapon_current_stats.max_range)
