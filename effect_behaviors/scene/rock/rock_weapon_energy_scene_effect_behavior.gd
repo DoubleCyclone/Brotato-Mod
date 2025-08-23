@@ -33,8 +33,8 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 					weapons.append(weapon)
 					# Add energy tank to every weapon
 					var energy_tank_instance = energy_tank.instance()
-					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
-#					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
+#					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
+					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
 					weapon.add_child(energy_tank_instance)
 			
 		
@@ -89,7 +89,7 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	var extra_projectiles_ban = false
 #	if !extra_projectiles_ban:
 #		weapon_current_stats.nb_projectiles += 1
-#		weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 3.14)
+#		weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 1.57)
 #		weapon_current_stats.damage = max(weapon_current_stats.damage * 0.7, 1)
 #		print("projectiles ",weapon_current_stats.nb_projectiles)
 #		print("spread ",weapon_current_stats.projectile_spread)
@@ -99,14 +99,14 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #			extra_projectile_effect.weapon_stats.projectile_spread = min(extra_projectile_effect.weapon_stats.projectile_spread + 0.15, 3.14)
 #			extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 0.7, 1)
 #			print(extra_projectile_effect.value)
-#		if sideways_projectiles_effect :
+#		if sideways_projectiles_effect : # TODO : Don't like this too much
 #			sideways_projectiles_effect.weapon_stats.nb_projectiles += 1
 #			sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 0.7, 1)
 #			print(sideways_projectiles_effect.weapon_stats.nb_projectiles)
 		
 	
 	# Cooldown TEST
-#	weapon_current_stats.cooldown = max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
+#	weapon_current_stats.cooldown = ceil(max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN))
 #	print("cooldown ",weapon_current_stats.cooldown)
 
 	# Damage TEST 

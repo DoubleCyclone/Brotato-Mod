@@ -37,7 +37,11 @@ func on_explosion_timer_run_out() -> void:
 #	args.damage_tracking_key = explosion_effect.tracking_key
 	_shadow.visible = false
 	var _inst = WeaponService.explode(explosion_effect, args)
+	_inst.connect("hit_something",self,"_on_explosion_hit_something")
 	die()
+
+func _on_explosion_hit_something(thing_hit, damage_dealt) -> void :
+	RunData.manage_life_steal(from_weapon.current_stats, player_index)
 
 func _on_Area2D_body_entered(_body: Node) -> void :
 	pass

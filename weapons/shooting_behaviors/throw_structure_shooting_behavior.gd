@@ -7,6 +7,7 @@ export (Texture) var throw_sprite
 export (Texture) var cooldown_sprite
 var structure_scene
 var structure_spawn_effect
+var original_lifesteal
 
 func shoot(_distance: float) -> void :
 	for effect in _parent.effects:
@@ -25,6 +26,8 @@ func shoot(_distance: float) -> void :
 	for i in _parent.current_stats.nb_projectiles:
 		var proj_rotation = rand_range(_parent.rotation - _parent.current_stats.projectile_spread, _parent.rotation + _parent.current_stats.projectile_spread)
 		var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
+		original_lifesteal = _parent.current_stats.lifesteal
+		_parent.current_stats.lifesteal = 0
 		var projectile = shoot_projectile(proj_rotation, knockback_direction)
 		projectile._hitbox.player_attack_id = attack_id
 		projectile.connect("projectile_stopped",self,"on_projectile_stopped")
@@ -59,6 +62,7 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 	
 func on_projectile_stopped(projectile):
+	_parent.current_stats.lifesteal = original_lifesteal
 	var instance = structure_scene.instance()
 	instance.from_weapon = _parent
 	instance.player_index = _parent.player_index
