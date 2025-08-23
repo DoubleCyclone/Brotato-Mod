@@ -22,8 +22,8 @@ func shoot(_distance: float) -> void :
 		var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
 		if charging_effect:	
 			if _parent._nb_shots_taken % charging_effect.value == 0:
-				for stat in _parent.current_stats.scaling_stats:
-					stat[1] *= charging_effect.damage_multiplier
+#				for stat in _parent.current_stats.scaling_stats:
+#					stat[1] *= charging_effect.damage_multiplier
 				original_damage = _parent.current_stats.damage
 				_parent.current_stats.damage *= charging_effect.damage_multiplier
 				_parent.current_stats.piercing += charging_effect.extra_piercing
@@ -36,8 +36,8 @@ func shoot(_distance: float) -> void :
 				_parent.current_stats.damage = original_damage
 			else:
 				if charged_initialized and _parent._nb_shots_taken % charging_effect.value == 1:
-					for stat in _parent.current_stats.scaling_stats:
-						stat[1] /= charging_effect.damage_multiplier
+#					for stat in _parent.current_stats.scaling_stats:
+#						stat[1] /= charging_effect.damage_multiplier
 					_parent.current_stats.piercing -= charging_effect.extra_piercing
 					_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds
 					_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
