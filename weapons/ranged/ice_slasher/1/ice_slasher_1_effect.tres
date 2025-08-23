@@ -1,6 +1,31 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/freeze_invulnerable_effect.gd" type="Script" id=1]
+[ext_resource path="res://items/global/custom_arg.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+arg_index = 0
+arg_sign = 0
+arg_value = 0
+arg_format = 0
+arg_key = ""
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+arg_index = 1
+arg_sign = 0
+arg_value = 0
+arg_format = 0
+arg_key = ""
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+arg_index = 2
+arg_sign = 0
+arg_value = 0
+arg_format = 0
+arg_key = ""
 
 [resource]
 script = ExtResource( 1 )
@@ -10,7 +35,7 @@ value = 0
 custom_key = "weapon_freeze_invulnerable"
 storage_method = 0
 effect_sign = 3
-custom_args = [  ]
+custom_args = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 source_id = "weapon_ice_slasher"
 chance = 0.15
 duration_secs = 1

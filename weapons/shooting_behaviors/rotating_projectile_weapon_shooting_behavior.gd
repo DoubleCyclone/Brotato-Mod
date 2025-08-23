@@ -7,9 +7,7 @@ var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
-# TODO : breaks after a while having 0 piercing for rotation etc. might happen in other weapons as well,
-# TODO : maybe duplicate stats just for the non-originals 
-# TODO : for whatever reason the current stats are assigned the stats values after a while
+
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
 	original_piercing = _parent.current_stats.piercing

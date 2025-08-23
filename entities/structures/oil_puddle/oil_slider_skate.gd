@@ -1,8 +1,6 @@
 class_name OildSliderSkate
 extends Node2D
 
-#TODO : Try this with a node and a hitbox instead. 
-
 onready var _hitbox = $Hitbox
 onready var _sprite = $Sprite as Sprite
 var _original_effects: Array

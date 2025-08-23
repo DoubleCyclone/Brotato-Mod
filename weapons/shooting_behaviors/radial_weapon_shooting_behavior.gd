@@ -2,7 +2,6 @@ class_name RadialWeaponShootingBehavior
 extends WeaponShootingBehavior
 
 signal projectile_shot(projectile) #Unused but causes error if not here
-# TODO: fix lifesteal and maybe other problems (tier 1 has 1 lifesteal revert it)
 
 func shoot(_distance: float) -> void :
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)

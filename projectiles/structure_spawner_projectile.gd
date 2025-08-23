@@ -8,7 +8,6 @@ var max_scale = Vector2(1.75,1.75)
 var min_scale = Vector2(1,1)
 var max_scale_reached = false
 
-#TODO rework this and buff structure so that it explodes faster
 func _physics_process(delta):
 	if rotation_speed != 0:
 		rotation_degrees -= 20

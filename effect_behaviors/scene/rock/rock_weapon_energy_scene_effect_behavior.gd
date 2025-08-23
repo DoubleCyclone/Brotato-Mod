@@ -51,7 +51,6 @@ func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 
 func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
-	# TODO put rock effect 2 back to the character
 		
 	var weapon_current_stats = energy_tank.weapon.current_stats
 	var stats_list = [
@@ -109,15 +108,20 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	weapon_current_stats.cooldown = ceil(max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN))
 #	print("cooldown ",weapon_current_stats.cooldown)
 
+	var sideways_projectiles_effect
+	for effect in energy_tank.weapon.effects:
+		if effect.key == "sideways_projectiles_on_shoot":
+			sideways_projectiles_effect = effect
+
 	# Damage TEST 
-#	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
-#	print("damage ",weapon_current_stats.damage)
+	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
+	print("damage ",weapon_current_stats.damage)
 #	if extra_projectile_effect :
 #		extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 1.2, extra_projectile_effect.weapon_stats.damage + 1)
 #		print(extra_projectile_effect.weapon_stats.damage)
-#	if sideways_projectiles_effect :
-#		sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
-#		print(sideways_projectiles_effect.weapon_stats.damage)
+	if sideways_projectiles_effect :
+		sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
+		print(sideways_projectiles_effect.weapon_stats.damage)
  
 	# Crit TEST 
 #	weapon_current_stats.crit_chance += 0.15
@@ -152,9 +156,11 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	if sideways_projectiles_effect :
 #		sideways_projectiles_effect.weapon_stats.lifesteal = min(sideways_projectiles_effect.weapon_stats.lifesteal + 0.1, 1.0)
 #		print(sideways_projectiles_effect.weapon_stats.lifesteal)
-
+#	if extra_projectile_effect :
+#		var on_hit_args: = WeaponServiceInitStatsArgs.new()
+#		var effect_stats = WeaponService.init_ranged_stats(extra_projectile_effect.weapon_stats, energy_tank.weapon.player_index, true, on_hit_args)
+#		energy_tank.weapon._hitbox.projectiles_on_hit = [extra_projectile_effect.value, effect_stats, extra_projectile_effect.auto_target_enemy]
 	
-
 
 func _on_EnergyTank_tank_full(energy_tank) -> void:
 	# Current stats for updating, original stats for checking (original might suffice but idk)
