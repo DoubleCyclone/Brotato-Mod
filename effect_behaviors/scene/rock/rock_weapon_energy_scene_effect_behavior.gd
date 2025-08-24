@@ -33,7 +33,7 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 					weapons.append(weapon)
 					# Add energy tank to every weapon
 					var energy_tank_instance = energy_tank.instance()
-#					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
+					var err = energy_tank_instance.connect("tank_filled", self, "_on_EnergyTank_tank_filled")
 					var err2 = energy_tank_instance.connect("tank_full", self, "_on_EnergyTank_tank_full")
 					weapon.add_child(energy_tank_instance)
 			
@@ -51,7 +51,10 @@ func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 
 func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	print("+",last_added_amount,"  ",energy_tank.current_value,"/",energy_tank.capacity)
-		
+	
+	# Feedback TEST
+	give_feedback("", energy_tank.weapon.player_index)
+	
 	var weapon_current_stats = energy_tank.weapon.current_stats
 	var stats_list = [
 		weapon_current_stats.cooldown,
@@ -108,20 +111,20 @@ func _on_EnergyTank_tank_filled(energy_tank, last_added_amount) -> void :
 #	weapon_current_stats.cooldown = ceil(max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN))
 #	print("cooldown ",weapon_current_stats.cooldown)
 
-	var sideways_projectiles_effect
-	for effect in energy_tank.weapon.effects:
-		if effect.key == "sideways_projectiles_on_shoot":
-			sideways_projectiles_effect = effect
+#	var sideways_projectiles_effect
+#	for effect in energy_tank.weapon.effects:
+#		if effect.key == "sideways_projectiles_on_shoot":
+#			sideways_projectiles_effect = effect
 
 	# Damage TEST 
-	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
-	print("damage ",weapon_current_stats.damage)
+#	weapon_current_stats.damage = max(weapon_current_stats.damage * 1.2, weapon_current_stats.damage + 1)
+#	print("damage ",weapon_current_stats.damage)
 #	if extra_projectile_effect :
 #		extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 1.2, extra_projectile_effect.weapon_stats.damage + 1)
 #		print(extra_projectile_effect.weapon_stats.damage)
-	if sideways_projectiles_effect :
-		sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
-		print(sideways_projectiles_effect.weapon_stats.damage)
+#	if sideways_projectiles_effect :
+#		sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
+#		print(sideways_projectiles_effect.weapon_stats.damage)
  
 	# Crit TEST 
 #	weapon_current_stats.crit_chance += 0.15
@@ -214,7 +217,8 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 	match chosen_stat:
 		weapon_current_stats.bounce:
 			weapon_current_stats.bounce += 1
-			print("bounce ",weapon_current_stats.bounce)
+			give_feedback("bounce",energy_tank.weapon.player_index)
+#			print("bounce ",weapon_current_stats.bounce)
 			if extra_projectile_effect:
 				extra_projectile_effect.weapon_stats.bounce += 1
 				print(extra_projectile_effect.weapon_stats.bounce)
@@ -292,3 +296,10 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 		var on_hit_args: = WeaponServiceInitStatsArgs.new()
 		var effect_stats = WeaponService.init_ranged_stats(extra_projectile_effect.weapon_stats, energy_tank.weapon.player_index, true, on_hit_args)
 		energy_tank.weapon._hitbox.projectiles_on_hit = [extra_projectile_effect.value, effect_stats, extra_projectile_effect.auto_target_enemy]
+
+# TODO : add colorful stat name and value 
+func give_feedback(stat_name, player_index) -> void : 
+	var floating_text_manager = Utils.get_scene_node().get_node("FloatingTextManager")
+	var player = floating_text_manager.players[player_index]
+	floating_text_manager.display(stat_name, player.global_position)
+#	floating_text_manager.on_stat_added(stat_name,value,0,player_index,floating_text_manager.stat_pos_sounds,floating_text_manager.stat_neg_sounds)
