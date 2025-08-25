@@ -1,6 +1,8 @@
 class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
+# TODO : BUG enemies die but not disappear so they still follow you
+
 var _current_stacks: int = 0
 var _active_effects: Array = []
 var _effects_proc_count: Dictionary = {}
