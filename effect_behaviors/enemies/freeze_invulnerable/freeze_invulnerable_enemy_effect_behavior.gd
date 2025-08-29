@@ -2,6 +2,9 @@ class_name FreezeInvulnerableEnemyEffectBehavior
 extends EnemyEffectBehavior
 
 # TODO : BUG enemies die but not disappear so they still follow you
+# Notes : Well Rounded Ice Slasher Only Wave 10 did not see bug happen
+# Rock Ice Slasher Only Wave 10 did not see bug happen
+# Rock Ice Slasher & Fire Storm Only saw first boss did not see bug happen
 
 var _current_stacks: int = 0
 var _active_effects: Array = []

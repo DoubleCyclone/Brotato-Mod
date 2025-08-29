@@ -27,7 +27,7 @@ script = ExtResource( 9 )
 outline_shader_mat = SubResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( 20, -5 )
+position = Vector2( 20, 0 )
 texture = ExtResource( 3 )
 
 [node name="Collision" parent="Sprite/Hitbox" index="0"]

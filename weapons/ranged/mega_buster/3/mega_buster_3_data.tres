@@ -10,7 +10,7 @@
 
 [resource]
 script = ExtResource( 1 )
-my_id = "weapon_mega_buster_3"
+my_id = "8bit_mt_weapon_mega_buster_3"
 unlocked_by_default = true
 icon = ExtResource( 4 )
 name = "WEAPON_MEGA_BUSTER"
@@ -21,7 +21,7 @@ tracking_text = ""
 is_lockable = true
 is_cursed = false
 curse_factor = 0.0
-weapon_id = "8bit_mt_weapon_mega_buster"
+weapon_id = "weapon_mega_buster_3"
 type = 1
 sets = [ ExtResource( 2 ) ]
 scene = ExtResource( 3 )
