@@ -12,7 +12,7 @@
 
 [resource]
 script = ExtResource( 6 )
-my_id = "8bit_mt_weapon_time_slow_3"
+my_id = "weapon_time_slow_3"
 unlocked_by_default = true
 icon = ExtResource( 5 )
 name = "WEAPON_TIME_SLOW"
@@ -23,7 +23,7 @@ tracking_text = ""
 is_lockable = true
 is_cursed = false
 curse_factor = 0.0
-weapon_id = "weapon_time_slow_3"
+weapon_id = "8bit_mt_weapon_time_slow"
 type = 1
 sets = [ ExtResource( 8 ), ExtResource( 7 ) ]
 scene = ExtResource( 1 )
