@@ -6,7 +6,6 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/8bit_mt_fire_storm_shield_projectile0000.png" type="Texture" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/8bit_mt_fire_storm_shield_projectile0002.png" type="Texture" id=5]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "RESET"
 length = 0.001
@@ -46,13 +45,13 @@ radius = 100.0
 max_rotation = 3
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( -2.9, 0 )
+position = Vector2( 0, 0 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 4 )
 
 [node name="Hitbox" parent="." index="1"]
-position = Vector2( -18, 1 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( -25, 2 )
+scale = Vector2( 1.25, 1.25 )
 
 [node name="Collision" parent="Hitbox" index="0"]
 position = Vector2( 19, -2 )
