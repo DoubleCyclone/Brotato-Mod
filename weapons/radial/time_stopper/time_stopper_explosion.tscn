@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://overlap/hitbox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0001.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0000.png" type="Texture" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0003.png" type="Texture" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0004.png" type="Texture" id=5]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_slow_projectile/explosion/8bit_mt_time_slow_explosion0002.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_stopper_projectile/explosion/time_stopper_explosion0000.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_stopper_projectile/explosion/time_stopper_explosion0001.png" type="Texture" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/time_stopper_projectile/explosion/time_stopper_explosion0002.png" type="Texture" id=4]
 [ext_resource path="res://particles/explosion_smoke.tscn" type="PackedScene" id=7]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/radial_player_explosion.gd" type="Script" id=8]
 
@@ -24,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -37,10 +35,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), null ]
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), null ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("Hitbox")
@@ -65,7 +63,7 @@ unique_name_in_owner = true
 modulate = Color( 0.788235, 0.788235, 0.788235, 0.392157 )
 self_modulate = Color( 0.788235, 0.788235, 0.788235, 0.784314 )
 scale = Vector2( 1.36719, 1.36719 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 1 )]
 unique_name_in_owner = true
