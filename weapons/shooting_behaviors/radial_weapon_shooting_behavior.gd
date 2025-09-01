@@ -3,6 +3,8 @@ extends WeaponShootingBehavior
 
 signal projectile_shot(projectile) #Unused but causes error if not here
 
+var original_scale
+
 func shoot(_distance: float) -> void :
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 
@@ -12,7 +14,8 @@ func shoot(_distance: float) -> void :
 	for effect in _parent.effects :
 		if effect.key == "radial_explosion":
 			exploding_effect = effect
-			exploding_effect.scale = _parent.current_stats.max_range / 200.0
+			original_scale = exploding_effect.scale
+			exploding_effect.scale *= _parent.current_stats.max_range / 200.0
 
 	var args: = WeaponServiceExplodeArgs.new()
 	args.pos = _parent.sprite.global_position
@@ -37,7 +40,9 @@ func shoot(_distance: float) -> void :
 						explosion._hitbox.effects.append(effect)
 				explosion._hitbox.player_attack_id = attack_id	
 				emit_signal("projectile_shot",explosion) #TODO : experimental
-				
+
+	exploding_effect.scale = original_scale
+	
 	RunData.manage_life_steal(_parent.current_stats, _parent._get_player_index())
 
 	_parent.set_shooting(false)

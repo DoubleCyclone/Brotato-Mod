@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/radial_exploding_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/time_stopper_explosion.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+key = "radial_explosion"
+text_key = "EFFECT_RADIAL_EXPLOSION"
+value = 0
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = [  ]
+chance = 1.0
+explosion_scene = ExtResource( 2 )
+scale = 1.0
+base_smoke_amount = 1
+sound_db_mod = -51
