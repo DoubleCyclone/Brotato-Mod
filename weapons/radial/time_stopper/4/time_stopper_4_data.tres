@@ -6,7 +6,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/time_stopper.tscn" type="PackedScene" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/4/time_stopper_4_stats.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/time_stopper_explosion_effect.tres" type="Resource" id=6]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/3/time_stopper_3_effect_1.tres" type="Resource" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/4/time_stopper_4_effect_1.tres" type="Resource" id=7]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/8bit_mt_time_stopper_ico.png" type="Texture" id=8]
 
 [resource]
