@@ -1,13 +1,14 @@
-[gd_resource type="Resource" load_steps=9 format=2]
+[gd_resource type="Resource" load_steps=10 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/1/time_stopper_1_stats.tres" type="Resource" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/mega_man_2_set_data.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/8bit_mt_time_stopper_ico.png" type="Texture" id=3]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=4]
 [ext_resource path="res://items/sets/explosive/explosive_set_data.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/time_stopper_explosion_effect.tres" type="Resource" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/time_stopper.tscn" type="PackedScene" id=7]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/1/time_stopper_1_effect.tres" type="Resource" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/2/time_stopper_2_data.tres" type="Resource" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_stopper/1/time_stopper_1_effect_1.tres" type="Resource" id=9]
 
 [resource]
 script = ExtResource( 4 )
@@ -17,7 +18,7 @@ icon = ExtResource( 3 )
 name = "WEAPON_TIME_STOPPER"
 tier = 0
 value = 16
-effects = [ ExtResource( 6 ), ExtResource( 8 ) ]
+effects = [ ExtResource( 6 ), ExtResource( 9 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
@@ -27,4 +28,5 @@ type = 1
 sets = [ ExtResource( 5 ), ExtResource( 2 ) ]
 scene = ExtResource( 7 )
 stats = ExtResource( 1 )
+upgrades_into = ExtResource( 8 )
 add_to_chars_as_starting = [  ]

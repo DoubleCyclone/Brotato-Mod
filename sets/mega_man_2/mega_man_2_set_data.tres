@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=12 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/2/set_2_effect_1.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/3/set_3_effect_1.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/2/set_2_effect_2.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/3/set_3_effect_2.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/4/set_4_effect_1.tres" type="Resource" id=5]
+[ext_resource path="res://items/sets/set_data.gd" type="Script" id=6]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/5/set_5_effect_1.tres" type="Resource" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/6/set_6_effect_1.tres" type="Resource" id=8]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/4/set_4_effect_2.tres" type="Resource" id=9]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/5/set_5_effect_2.tres" type="Resource" id=10]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/6/set_6_effect_2.tres" type="Resource" id=11]
+
+[resource]
+script = ExtResource( 6 )
+my_id = "set_mega_man_2"
+name = "WEAPON_CLASS_MEGA_MAN_2"
+set_bonuses = [ [ ExtResource( 1 ), ExtResource( 3 ) ], [ ExtResource( 2 ), ExtResource( 4 ) ], [ ExtResource( 5 ), ExtResource( 9 ) ], [ ExtResource( 7 ), ExtResource( 10 ) ], [ ExtResource( 8 ), ExtResource( 11 ) ] ]
