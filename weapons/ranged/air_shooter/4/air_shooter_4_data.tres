@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/4/air_shooter_4_stats.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/8bit_mt_air_shooter_ico.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/mega_man_2_set_data.tres" type="Resource" id=3]
+[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=4]
+[ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/air_shooter.tscn" type="PackedScene" id=6]
+
+[resource]
+script = ExtResource( 4 )
+my_id = "weapon_air_shooter_4"
+unlocked_by_default = true
+icon = ExtResource( 2 )
+name = "WEAPON_AIR_SHOOTER"
+tier = 3
+value = 130
+effects = [  ]
+tracking_text = ""
+is_lockable = true
+is_cursed = false
+curse_factor = 0.0
+weapon_id = "8bit_mt_weapon_air_shooter"
+type = 1
+sets = [ ExtResource( 5 ), ExtResource( 3 ) ]
+scene = ExtResource( 6 )
+stats = ExtResource( 1 )
+add_to_chars_as_starting = [  ]

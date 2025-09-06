@@ -1,21 +1,21 @@
 [gd_resource type="Resource" load_steps=8 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/1/air_shooter_1_stats.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/2/air_shooter_2_stats.tres" type="Resource" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/air_shooter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://items/sets/fire/fire_set_data.tres" type="Resource" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/8bit_mt_air_shooter_ico.png" type="Texture" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/2/air_shooter_2_data.tres" type="Resource" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/air_shooter/3/air_shooter_3_data.tres" type="Resource" id=5]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/mega_man_2_set_data.tres" type="Resource" id=7]
 
 [resource]
 script = ExtResource( 6 )
-my_id = "weapon_air_shooter_1"
+my_id = "weapon_air_shooter_2"
 unlocked_by_default = true
 icon = ExtResource( 4 )
 name = "WEAPON_AIR_SHOOTER"
-tier = 0
-value = 17
+tier = 1
+value = 34
 effects = [  ]
 tracking_text = ""
 is_lockable = true
