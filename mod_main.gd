@@ -10,7 +10,6 @@ extends Node
 # ! https://docs.godotengine.org/en/3.5/tutorials/scripting/gdscript/static_typing.html
 
 # ? Brief overview of what your mod does...
-
 const AUTHORNAME_MODNAME_DIR := "8bithero-Megatato" # Name of the directory that this file is in
 const AUTHORNAME_MODNAME_LOG_NAME := "8bithero-Megatato" # Full ID of the mod (AuthorName-ModName)
 
@@ -18,6 +17,9 @@ var mod_dir_path := ""
 var extensions_dir_path := ""
 var translations_dir_path := ""
 
+var enemy_effect_behaviors = []
+var scene_effect_behaviors = []
+var player_effect_behaviors = []
 
 # ! your _ready func.
 func _init() -> void:
@@ -91,9 +93,6 @@ func _ready() -> void:
 	get_effect_behaviors()
 
 func get_effect_behaviors() -> void:
-	var enemy_effect_behaviors = []
-	var scene_effect_behaviors = []
-	var player_effect_behaviors = []
 	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/enemies/freeze_invulnerable/freeze_invulnerable_enemy_effect_behavior_data.tres"))
 	enemy_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/enemies/time_slow/time_slow_enemy_effect_behavior_data.tres"))
 	scene_effect_behaviors.append(load("res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/super_arm/super_arm_consumable_spawn_scene_effect_behavior_data.tres"))

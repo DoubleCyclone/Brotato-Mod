@@ -173,6 +173,9 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 			# MOD SECTION START
 			elif effect.key == "radial_explosion":
 				new_effect.scale = _boost_effect_specific_value(effect.scale, true, effect_modifier)
+			elif effect.custom_key == "effect_weapon_time_slow":
+				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
+				new_effect.amount = min(_boost_effect_specific_value(effect.amount, true, effect_modifier), 1)
 			# MOD SECTION END
 			
 			new_effect.value = _boost_effect_value_positively(effect, effect_modifier, override, overriden_sign)
@@ -250,6 +253,6 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 
 func _boost_effect_specific_value(value, is_effect_good, effect_modifier: float) -> float:
 	if is_effect_good:
-		return value * int(ceil(abs(value) * (1.0 + effect_modifier)))
+		return value  * (1.0 + effect_modifier)
 	else:
-		return value * int(max(1.0, floor(abs(value) / (1.0 + effect_modifier))))
+		return value  / (1.0 + effect_modifier)
