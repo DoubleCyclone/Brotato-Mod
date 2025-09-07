@@ -203,11 +203,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 	for effect in energy_tank.weapon.effects:
 		if effect.key == "EFFECT_PROJECTILES_ON_HIT":
 			extra_projectile_effect = effect
-	
-	var sideways_projectiles_effect
-	for effect in energy_tank.weapon.effects:
-		if effect.key == "sideways_projectiles_on_shoot":
-			sideways_projectiles_effect = effect
 		
 	if !piercing_ban:
 		stats_list.append(weapon_current_stats.piercing)
@@ -230,9 +225,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			if extra_projectile_effect:
 				extra_projectile_effect.weapon_stats.bounce += 1
 #				print(extra_projectile_effect.weapon_stats.bounce)
-			if sideways_projectiles_effect :
-				sideways_projectiles_effect.weapon_stats.bounce += 1
-#				print(sideways_projectiles_effect.weapon_stats.bounce)
 		weapon_current_stats.piercing:
 			weapon_current_stats.piercing += 1
 			give_feedback(1,"piercing", energy_tank.weapon.player_index)
@@ -240,9 +232,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			if extra_projectile_effect:
 				extra_projectile_effect.weapon_stats.piercing += 1
 #				print(extra_projectile_effect.weapon_stats.piercing)
-			if sideways_projectiles_effect :
-				sideways_projectiles_effect.weapon_stats.piercing += 1
-#				print(sideways_projectiles_effect.weapon_stats.piercing)
 		weapon_current_stats.nb_projectiles:
 			weapon_current_stats.nb_projectiles += 1
 			weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 3.14)
@@ -259,10 +248,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 				extra_projectile_effect.weapon_stats.projectile_spread = min(extra_projectile_effect.weapon_stats.projectile_spread + 0.15, 3.14)
 				extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 0.7, 1)
 #				print(extra_projectile_effect.value)
-			if sideways_projectiles_effect :
-				sideways_projectiles_effect.weapon_stats.nb_projectiles += 1
-				sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 0.7, 1)
-#				print(sideways_projectiles_effect.weapon_stats.nb_projectiles)
 		weapon_current_stats.cooldown:
 			var cooldown_change = weapon_current_stats.cooldown - max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
 			weapon_current_stats.cooldown -= cooldown_change
@@ -278,9 +263,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			if extra_projectile_effect :
 				extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 1.2, extra_projectile_effect.weapon_stats.damage + 1)
 #				print(extra_projectile_effect.weapon_stats.damage)
-			if sideways_projectiles_effect :
-				sideways_projectiles_effect.weapon_stats.damage = max(sideways_projectiles_effect.weapon_stats.damage * 1.2, sideways_projectiles_effect.weapon_stats.damage + 1)
-#				print(sideways_projectiles_effect.weapon_stats.damage)
 		weapon_current_stats.crit_chance: # fire storm rotating, oil slider skate, super arm extra, thunder beam sideways
 			weapon_current_stats.crit_chance += 0.15
 			weapon_current_stats.crit_damage += 0.15
@@ -293,18 +275,11 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 				extra_projectile_effect.weapon_stats.crit_damage += 0.15
 #				print(extra_projectile_effect.weapon_stats.crit_chance)
 #				print(extra_projectile_effect.weapon_stats.crit_damage)
-			if sideways_projectiles_effect :
-					sideways_projectiles_effect.weapon_stats.crit_chance += 0.15
-					sideways_projectiles_effect.weapon_stats.crit_damage += 0.15
-#					print(sideways_projectiles_effect.weapon_stats.crit_chance)
 		weapon_current_stats.max_range:
 			var range_change = (weapon_current_stats.max_range * 1.1) - weapon_current_stats.max_range
 			weapon_current_stats.max_range += range_change
 			give_feedback(range_change,"stat_range", energy_tank.weapon.player_index)
 #			print("range ",weapon_current_stats.max_range)
-			if sideways_projectiles_effect :
-				sideways_projectiles_effect.weapon_stats.max_range *= 1.1
-#				print(sideways_projectiles_effect.weapon_stats.max_range)
 		weapon_current_stats.lifesteal: # time slow, fire storm rotating, oil slider skate, super arm extra, thunder beam sideways
 			var lifesteal_change = min(weapon_current_stats.lifesteal + 0.1, 1.0) - weapon_current_stats.lifesteal
 			weapon_current_stats.lifesteal += lifesteal_change 
@@ -313,9 +288,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			if extra_projectile_effect :
 				extra_projectile_effect.weapon_stats.lifesteal = min(extra_projectile_effect.weapon_stats.lifesteal + 0.1, 1.0)
 #				print(extra_projectile_effect.weapon_stats.lifesteal)
-			if sideways_projectiles_effect :
-				sideways_projectiles_effect.weapon_stats.lifesteal = min(sideways_projectiles_effect.weapon_stats.lifesteal + 0.1, 1.0)
-#				print(sideways_projectiles_effect.weapon_stats.lifesteal)
 
 	if extra_projectile_effect :
 		var on_hit_args: = WeaponServiceInitStatsArgs.new()
