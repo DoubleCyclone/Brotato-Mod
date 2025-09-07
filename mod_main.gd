@@ -48,8 +48,9 @@ func install_script_extensions() -> void:
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/player_run_data.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/item_service.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("ui/menus/shop/shop_items_container.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("dlcs/dlc_1/dlc_1_data.gd"))
 
-	
+
 
 
 func add_translations() -> void:

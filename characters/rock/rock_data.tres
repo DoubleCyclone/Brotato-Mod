@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=13 format=2]
+[gd_resource type="Resource" load_steps=14 format=2]
 
 [ext_resource path="res://items/characters/character_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/effects/rock_effect_6.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/effects/rock_effect_7.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/effects/rock_effect_test.tres" type="Resource" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/8bit_mt_rock_ico.png" type="Texture" id=10]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/rock_eyes_appearance.tres" type="Resource" id=11]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/rock_mouth_appearance.tres" type="Resource" id=12]
@@ -21,7 +22,7 @@ icon = ExtResource( 10 )
 name = "CHARACTER_ROCK"
 tier = 0
 value = 1
-effects = [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 3 ) ]
+effects = [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
