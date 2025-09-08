@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 key = "stat_curse"
 text_key = ""
-value = 1000
+value = 0
 custom_key = ""
 storage_method = 0
 effect_sign = 3

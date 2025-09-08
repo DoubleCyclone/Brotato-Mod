@@ -14,12 +14,11 @@ static func get_id() -> String:
 func get_args(player_index: int) -> Array:
 #	var scaling_text = WeaponService.get_scaling_stats_icon_text(stats.scaling_stats)
 #	var scaled_damage = WeaponService.apply_scaling_stats_to_damage(stats.damage, stats.scaling_stats, _player_index)
-	var current_stats = WeaponService.init_ranged_stats(original_weapon_stats, player_index, true)
+#	var current_stats = WeaponService.init_ranged_stats(original_weapon_stats, player_index, true)
 	return [
 		str(round(chance * 100.0)),
 		str(round(speed_modifier * 100.0 - 100.0)),
 		str(damage_multiplier),
-		str(ceil(current_stats.damage * damage_multiplier)),
 		str(effect_timer)
 		]
 

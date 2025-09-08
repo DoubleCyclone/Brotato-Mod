@@ -176,6 +176,25 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 			elif effect.custom_key == "effect_weapon_time_slow":
 				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
 				new_effect.amount = min(_boost_effect_specific_value(effect.amount, true, effect_modifier), 1)
+			elif effect.custom_key == "weapon_freeze_invulnerable":
+				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
+			elif effect.key == "projectile_rotate_on_shoot":
+				new_effect.damage_multiplier = max(_boost_effect_specific_value(effect.damage_multiplier, false, effect_modifier), 1)
+			elif effect.key == "effect_hyper_bomb_spawn":
+				new_effect.timer_cooldown = min(_boost_effect_specific_value(effect.timer_cooldown, false, effect_modifier), effect.timer_cooldown)
+			elif effect.key == "charged_shot_periodical":
+				new_effect.extra_piercing = effect.extra_piercing + 1	
+				new_effect.damage_multiplier = _boost_effect_specific_value(effect.damage_multiplier, true, effect_modifier)		
+			elif effect.key == "oil_slider_structure_spawn":
+				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
+				new_effect.effect_timer = _boost_effect_specific_value(effect.effect_timer, true, min(effect_modifier, 0.2))
+				new_effect.speed_modifier = _boost_effect_specific_value(effect.speed_modifier, true, min(effect_modifier, 0.2))
+				new_effect.damage_multiplier = _boost_effect_specific_value(effect.damage_multiplier, true, effect_modifier)
+			elif effect.key == "reload_when_pickup_super_arm_stone":
+				new_effect.consumable_drop_chance = min(_boost_effect_specific_value(effect.consumable_drop_chance, true, effect_modifier), 1)
+			elif effect.key == "sideways_projectiles_on_shoot":
+				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
+				new_effect.damage_multiplier = max(_boost_effect_specific_value(effect.damage_multiplier, false, effect_modifier), 1)
 			# MOD SECTION END
 			
 			new_effect.value = _boost_effect_value_positively(effect, effect_modifier, override, overriden_sign)
