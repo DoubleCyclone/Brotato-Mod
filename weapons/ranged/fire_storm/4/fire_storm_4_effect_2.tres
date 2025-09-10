@@ -19,3 +19,4 @@ damage_multiplier = 2.5
 extra_piercing = 9999
 shooting_sounds = [ ExtResource( 2 ) ]
 rotating_projectile_scene = ExtResource( 3 )
+shield_form_count = -1

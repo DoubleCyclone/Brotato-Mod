@@ -7,7 +7,6 @@ var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
-var rotating_shield_projectiles = []
 
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
@@ -53,11 +52,24 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
 			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction)
 			
-#			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0]
-#			rotating_projectile.add_to_group(group_name)
-#			var all_group_nodes = get_tree().get_nodes_in_group(group_name)
-#			print(all_group_nodes.size())
-			
+			# remove inactive projectiles from the node tree
+			for projectile in Utils.get_scene_node().get_node("PlayerProjectiles").get_children():
+				if !projectile._hitbox.active:
+					projectile.queue_free()
+			# create a group for rotating projectiles and add them to a list
+			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0].trim_prefix("@")
+			rotating_projectile.add_to_group(group_name)
+			var all_group_nodes = get_tree().get_nodes_in_group(group_name)
+			# form the shield? or throw projectiles
+			if rotating_effect.shield_form_count > 0:
+				if all_group_nodes.size() >= rotating_effect.shield_form_count:
+					for projectile in all_group_nodes:
+						# TODO : change stats for thrown version
+						_parent.current_stats.projectile_scene = rotating_effect.non_rotating_projectile_scene
+						var shield_projectile = shoot_projectile(proj_rotation, knockback_direction)
+						projectile.queue_free()
+					all_group_nodes.clear()
+					
 			if !rotation_initialized:
 				rotation_initialized = !rotation_initialized
 			rotating_projectile._hitbox.player_attack_id = attack_id
@@ -112,5 +124,9 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 		args
 	)
 
+	emit_signal("projectile_shot", projectile)
+	return projectile
+
+func shoot_ready_projectile(projectile):
 	emit_signal("projectile_shot", projectile)
 	return projectile
