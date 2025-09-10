@@ -7,6 +7,7 @@ var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
+var rotating_shield_projectiles = []
 
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
@@ -29,8 +30,6 @@ func shoot(_distance: float) -> void :
 		if rotating_effect:
 		# revert stats for original projectile
 			if rotation_initialized:
-	#			for stat in _parent.current_stats.scaling_stats:
-	#				stat[1] *= rotating_effect.damage_multiplier
 				_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds 
 				_parent.current_stats.piercing_dmg_reduction = _parent.stats.piercing_dmg_reduction 
 				_parent.current_stats.can_bounce = true
@@ -45,8 +44,6 @@ func shoot(_distance: float) -> void :
 			original_bounce = _parent.current_stats.bounce
 			original_piercing = _parent.current_stats.piercing
 			_parent.current_stats.damage = ceil(_parent.current_stats.damage / rotating_effect.damage_multiplier)
-#			for stat in _parent.current_stats.scaling_stats:
-#				stat[1] /= rotating_effect.damage_multiplier
 			if rotating_effect.shooting_sounds.size() != 0:
 				_parent.current_stats.shooting_sounds = rotating_effect.shooting_sounds
 			_parent.current_stats.piercing += rotating_effect.extra_piercing 
@@ -55,6 +52,12 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.projectile_speed = 50
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
 			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction)
+			
+#			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0]
+#			rotating_projectile.add_to_group(group_name)
+#			var all_group_nodes = get_tree().get_nodes_in_group(group_name)
+#			print(all_group_nodes.size())
+			
 			if !rotation_initialized:
 				rotation_initialized = !rotation_initialized
 			rotating_projectile._hitbox.player_attack_id = attack_id
