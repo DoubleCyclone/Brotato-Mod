@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/8bit_mt_leaf_shield.wav-5b139f3812d44d70d6450e8681c80392.sample"
+
+[deps]
+
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/8bit_mt_leaf_shield.wav"
+dest_files=[ "res://.import/8bit_mt_leaf_shield.wav-5b139f3812d44d70d6450e8681c80392.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
