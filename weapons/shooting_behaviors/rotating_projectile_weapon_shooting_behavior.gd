@@ -37,8 +37,9 @@ func shoot(_distance: float) -> void :
 				_parent.current_stats.projectile_speed = _parent.stats.projectile_speed 
 				_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
 				_parent.current_stats.bounce = original_bounce
-			var projectile = shoot_projectile(proj_rotation, knockback_direction)
-			projectile._hitbox.player_attack_id = attack_id
+			if _parent.stats.projectile_scene:
+				var projectile = shoot_projectile(proj_rotation, knockback_direction)
+				projectile._hitbox.player_attack_id = attack_id
 			# change stats for rotation
 			original_damage = _parent.current_stats.damage
 			original_bounce = _parent.current_stats.bounce
@@ -46,8 +47,9 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.damage = ceil(_parent.current_stats.damage / rotating_effect.damage_multiplier)
 #			for stat in _parent.current_stats.scaling_stats:
 #				stat[1] /= rotating_effect.damage_multiplier
-			_parent.current_stats.shooting_sounds = rotating_effect.shooting_sounds
-			_parent.current_stats.piercing = 9999 
+			if rotating_effect.shooting_sounds.size() != 0:
+				_parent.current_stats.shooting_sounds = rotating_effect.shooting_sounds
+			_parent.current_stats.piercing += rotating_effect.extra_piercing 
 			_parent.current_stats.piercing_dmg_reduction = 0
 			_parent.current_stats.bounce = 0
 			_parent.current_stats.projectile_speed = 50

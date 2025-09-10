@@ -3,6 +3,7 @@ extends PlayerProjectile
 
 export(float) var radius
 export(int) var max_rotation
+export(int) var projectile_speed
 var d = 0
 var distance_taken = 0 #should be a better way with this one
 
@@ -19,7 +20,7 @@ func _physics_process(delta: float) -> void :
 	# get player position
 	var player = get_parent().get_parent().get_node("Entities/Player")
 	d += delta
-	position = player.position + Vector2(sin(d * _weapon_stats.projectile_speed) * radius, cos(d * _weapon_stats.projectile_speed) * radius)
+	position = player.position + Vector2(sin(d * projectile_speed) * radius, cos(d * projectile_speed) * radius)
 	var distance_this_frame = global_position.distance_to(previous_position)
 	# calculate distance taken every frame so that we can delete it when it exceeds max range (not the max range stat of the projectile)
 	distance_taken += distance_this_frame

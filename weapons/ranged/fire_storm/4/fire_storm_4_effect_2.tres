@@ -16,5 +16,6 @@ effect_sign = 3
 custom_args = [  ]
 original_weapon_stats = ExtResource( 4 )
 damage_multiplier = 2.5
+extra_piercing = 9999
 shooting_sounds = [ ExtResource( 2 ) ]
 rotating_projectile_scene = ExtResource( 3 )

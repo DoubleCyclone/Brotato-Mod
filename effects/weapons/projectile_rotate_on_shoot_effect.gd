@@ -3,6 +3,7 @@ extends NullEffect
 
 export (Resource) var original_weapon_stats
 export (float) var damage_multiplier
+export (int) var extra_piercing
 export (Array, AudioStream) var shooting_sounds
 export (PackedScene) var rotating_projectile_scene
 
@@ -13,5 +14,5 @@ func get_args(player_index: int) -> Array:
 #	var current_stats = WeaponService.init_ranged_stats(original_weapon_stats, player_index, true)
 #	var scaling_text = WeaponService.get_scaling_stats_icon_text(original_weapon_stats.scaling_stats)
 	# TODO : cursed variants don't show the stats correctly when derived from original stats
-	return [str(1/damage_multiplier)]
+	return [str(1/damage_multiplier), "+" + str(extra_piercing)]
 
