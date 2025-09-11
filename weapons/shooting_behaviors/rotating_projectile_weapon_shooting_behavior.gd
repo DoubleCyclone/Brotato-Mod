@@ -7,10 +7,18 @@ var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
+var original_projectile_speed
+var rng
+
+func init(parent: Node) -> Node:
+	_parent = parent
+	rng = RandomNumberGenerator.new()
+	return self
 
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
 	original_piercing = _parent.current_stats.piercing
+	original_projectile_speed = _parent.current_stats.projectile_speed
 	var rotating_effect
 	for effect in _parent.effects:
 		if effect.key == "projectile_rotate_on_shoot":
@@ -52,10 +60,6 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
 			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction)
 			
-			# remove inactive projectiles from the node tree
-			for projectile in Utils.get_scene_node().get_node("PlayerProjectiles").get_children():
-				if !projectile._hitbox.active:
-					projectile.queue_free()
 			# create a group for rotating projectiles and add them to a list
 			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0].trim_prefix("@")
 			rotating_projectile.add_to_group(group_name)
@@ -63,12 +67,15 @@ func shoot(_distance: float) -> void :
 			# form the shield? or throw projectiles
 			if rotating_effect.shield_form_count > 0:
 				if all_group_nodes.size() >= rotating_effect.shield_form_count:
+					_parent.current_stats.projectile_scene = rotating_effect.non_rotating_projectile_scene
+					_parent.current_stats.projectile_speed = 2000
 					for projectile in all_group_nodes:
 						# TODO : change stats for thrown version
-						_parent.current_stats.projectile_scene = rotating_effect.non_rotating_projectile_scene
-						var shield_projectile = shoot_projectile(proj_rotation, knockback_direction)
+						var shield_projectile = shoot_projectile(projectile.rotation , knockback_direction)
+					for projectile in all_group_nodes:
 						projectile.queue_free()
 					all_group_nodes.clear()
+					_parent.current_stats.projectile_speed = original_projectile_speed		
 					
 			if !rotation_initialized:
 				rotation_initialized = !rotation_initialized
@@ -127,6 +134,3 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 	emit_signal("projectile_shot", projectile)
 	return projectile
 
-func shoot_ready_projectile(projectile):
-	emit_signal("projectile_shot", projectile)
-	return projectile
