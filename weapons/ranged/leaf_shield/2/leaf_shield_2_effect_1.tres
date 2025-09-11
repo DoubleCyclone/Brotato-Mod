@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/projectile_rotate_on_shoot_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/1/leaf_shield_1_stats.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/2/leaf_shield_2_stats.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/leaf_shield_projectile/leaf_shield_shield_projectile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/leaf_shield_projectile/leaf_shield_projectile.tscn" type="PackedScene" id=4]
 

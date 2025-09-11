@@ -8,6 +8,7 @@ export (Array, AudioStream) var shooting_sounds
 export (PackedScene) var rotating_projectile_scene
 export (PackedScene) var non_rotating_projectile_scene
 export (int) var shield_form_count
+export (int) var rotating_speed
 
 static func get_id() -> String:
 	return "weapon_projectile_rotate_on_shoot"

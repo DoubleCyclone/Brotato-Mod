@@ -43,7 +43,6 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 radius = 100.0
 max_rotation = 3
-projectile_speed = 150
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 0 )
