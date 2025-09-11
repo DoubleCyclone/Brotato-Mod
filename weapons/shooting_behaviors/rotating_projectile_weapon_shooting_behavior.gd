@@ -67,17 +67,11 @@ func shoot(_distance: float) -> void :
 			# form the shield? or throw projectiles
 			if rotating_effect.shield_form_count > 0:
 				if all_group_nodes.size() >= rotating_effect.shield_form_count:
-					# change stats for thrown version
-#					_parent.current_stats.projectile_scene = rotating_effect.non_rotating_projectile_scene
-#					_parent.current_stats.projectile_speed = 2000
 					for projectile in all_group_nodes:
-						projectile._weapon_stats.projectile_speed = 2000
+						projectile.velocity *= rotating_effect.original_weapon_stats.projectile_speed / rotating_effect.rotating_speed
 						projectile.rotating = false
-#						var shield_projectile = shoot_projectile(projectile.rotation , knockback_direction)
-#					for projectile in all_group_nodes:
-#						projectile.queue_free()
+#						projectile.connect("hitbox_disabled",self,"_on_hitbox_disabled")
 					all_group_nodes.clear()
-#					_parent.current_stats.projectile_speed = original_projectile_speed		
 					
 			if !rotation_initialized:
 				rotation_initialized = !rotation_initialized
@@ -136,3 +130,5 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 	emit_signal("projectile_shot", projectile)
 	return projectile
 
+func _on_hitbox_disabled():
+	queue_free()

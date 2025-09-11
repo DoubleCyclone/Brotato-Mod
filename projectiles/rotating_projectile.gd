@@ -7,6 +7,8 @@ var d = 0
 var distance_taken = 0 #should be a better way with this one
 var rotating = true
 
+signal hitbox_disabled(projectile)
+
 func _ready():
 	# Start with random rotation for visual variety
 	rotation = randf() * TAU
@@ -25,3 +27,8 @@ func _physics_process(delta: float) -> void :
 		distance_taken += distance_this_frame
 		if (distance_taken > max_range) :
 			queue_free()
+#	if !_hitbox.active:
+#		print("hitbox")
+#		emit_signal("hitbox_disabled",self)
+#	else:
+#		._physics_process(delta)
