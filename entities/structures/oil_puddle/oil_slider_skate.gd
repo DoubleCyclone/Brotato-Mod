@@ -43,4 +43,3 @@ func on_timer_timeout(player: Node) -> void :
 	player.get_node("Hurtbox").monitoring = true
 	queue_free()
 
-

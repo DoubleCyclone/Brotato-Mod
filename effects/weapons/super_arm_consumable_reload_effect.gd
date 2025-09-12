@@ -8,4 +8,3 @@ static func get_id() -> String:
 	
 func get_args(player_index: int) -> Array:
 	return [str(consumable_drop_chance * 100)]
-

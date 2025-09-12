@@ -149,4 +149,3 @@ func on_active_effect_timer_timed_out(active_effect: ActiveEffect):
 
 	if remove_outline:
 		_parent.remove_outline(active_effect.outline_color)
-

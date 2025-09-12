@@ -30,4 +30,3 @@ func fill(amount: float):
 #func _physics_process(delta):
 #	if current_value >= capacity:
 #		print("FULL")
-

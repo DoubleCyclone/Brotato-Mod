@@ -129,4 +129,3 @@ func shoot_sideways_projectile(proj_number, rotation: float = _parent.rotation, 
 #	return projectile
 #
 	
-

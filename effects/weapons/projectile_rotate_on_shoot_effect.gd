@@ -11,11 +11,11 @@ export (int) var shield_form_count
 export (int) var rotating_speed
 
 static func get_id() -> String:
-	return "weapon_projectile_rotate_on_shoot"
+	return "projectile_projectile_rotate_on_shoot"
 	
 func get_args(player_index: int) -> Array:
-#	var current_stats = WeaponService.init_ranged_stats(original_weapon_stats, player_index, true)
-#	var scaling_text = WeaponService.get_scaling_stats_icon_text(original_weapon_stats.scaling_stats)
+#	var current_stats = projectileService.init_ranged_stats(original_projectile_stats, player_index, true)
+#	var scaling_text = projectileService.get_scaling_stats_icon_text(original_projectile_stats.scaling_stats)
 	# TODO : cursed variants don't show the stats correctly when derived from original stats
 	return [str(1/damage_multiplier), "+" + str(extra_piercing)]
 

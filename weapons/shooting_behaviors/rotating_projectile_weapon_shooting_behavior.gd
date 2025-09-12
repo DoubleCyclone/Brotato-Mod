@@ -68,7 +68,7 @@ func shoot(_distance: float) -> void :
 #			if rotating_effect.shield_form_count > 0:
 #				if all_group_nodes.size() >= rotating_effect.shield_form_count:
 #					for projectile in all_group_nodes:
-#						projectile.velocity *= rotating_effect.original_weapon_stats.projectile_speed / rotating_effect.rotating_speed
+#						projectile.velocity *= rotating_effect.original_projectile_stats.projectile_speed / rotating_effect.rotating_speed
 #						projectile.rotating = false
 ##						projectile.connect("hitbox_disabled",self,"_on_hitbox_disabled")
 #					all_group_nodes.clear()

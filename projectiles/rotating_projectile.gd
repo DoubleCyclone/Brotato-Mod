@@ -33,7 +33,6 @@ func stop() -> void :
 	_hitbox.active = false
 	_hitbox.disable()
 	_hitbox.ignored_objects.clear()
-#	rotating = true
 
 	if stop_delay > 0:
 		_enable_stop_delay = true

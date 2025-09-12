@@ -14,4 +14,3 @@ func get_args(player_index: int) -> Array:
 #	var scaling_text = WeaponService.get_scaling_stats_icon_text(current_stats.scaling_stats)
 	return [str(chance * 100), str(1/damage_multiplier), str(ceil(current_stats.damage / damage_multiplier))]
 
-

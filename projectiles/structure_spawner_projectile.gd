@@ -38,4 +38,3 @@ func _physics_process(delta):
 	if velocity.length() < 10:
 		emit_signal("projectile_stopped",self)
 		queue_free()
-
