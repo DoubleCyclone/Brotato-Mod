@@ -25,3 +25,18 @@ func _physics_process(delta: float) -> void :
 		distance_taken += distance_this_frame
 		if (distance_taken > max_range) :
 			queue_free()
+
+func stop() -> void :
+	if _enable_stop_delay:
+		return
+
+	_hitbox.active = false
+	_hitbox.disable()
+	_hitbox.ignored_objects.clear()
+#	rotating = true
+
+	if stop_delay > 0:
+		_enable_stop_delay = true
+		_sprite.hide()
+	else:
+		queue_free()
