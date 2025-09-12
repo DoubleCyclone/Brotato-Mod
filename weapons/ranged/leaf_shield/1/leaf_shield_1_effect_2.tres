@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/shield_form_effect.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+key = "shield_form"
+text_key = "effect_shield_form"
+value = 4
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = [  ]

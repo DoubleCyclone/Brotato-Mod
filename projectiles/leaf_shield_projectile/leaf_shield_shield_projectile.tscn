@@ -40,7 +40,7 @@ tracks/0/keys = {
 [node name="LeafShieldShieldProjectile" instance=ExtResource( 3 )]
 script = ExtResource( 4 )
 radius = 100.0
-max_rotation = 10000
+max_rotation = 100
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 0 )

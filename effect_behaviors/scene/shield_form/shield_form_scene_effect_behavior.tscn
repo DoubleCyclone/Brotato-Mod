@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effect_behaviors/scene/shield_form/shield_form_scene_effect_behavior.gd" type="Script" id=1]
+
+[node name="ShieldFormSceneEffectBehavior" type="Node"]
+script = ExtResource( 1 )
