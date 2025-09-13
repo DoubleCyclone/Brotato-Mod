@@ -32,6 +32,8 @@ onready var _six_projectiles_attachment_6 = $Six / Attach6
 
 func update_projectiles_positions(projectiles: Array) -> void :
 #	print(projectiles)
+	for projectile in projectiles:
+		projectile.origin = get_parent().position
 	if projectiles.size() == 1:
 		projectiles[0].position = _one_projectile_attachment_1.position
 #		projectiles[0].attach(_one_projectile_attachment_1.position, 0)
