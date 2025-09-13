@@ -2,12 +2,14 @@ class_name RotatingProjectileWeaponShootingBehavior
 extends WeaponShootingBehavior
 
 signal projectile_shot(projectile)
+signal shield_forming_projectile_shot(projectile)
 
 var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
 var rng
+var will_form_shield = false
 
 func init(parent: Node) -> Node:
 	_parent = parent
@@ -21,6 +23,8 @@ func shoot(_distance: float) -> void :
 	for effect in _parent.effects:
 		if effect.key == "projectile_rotate_on_shoot":
 			rotating_effect = effect
+		if effect.key == "shield_form":
+			will_form_shield = true
 	
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 
@@ -56,7 +60,9 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
 			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction, true)
 			rotating_projectile.rotating_speed = rotating_effect.rotating_speed
-			rotating_projectile.origin = _parent._parent.position
+			if will_form_shield:
+				emit_signal("shield_forming_projectile_shot", rotating_projectile)
+#			rotating_projectile.origin = _parent._parent.position
 #			# create a group for rotating projectiles and add them to a list
 #			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0].trim_prefix("@")
 #			rotating_projectile.add_to_group(group_name)

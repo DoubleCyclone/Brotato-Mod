@@ -15,7 +15,6 @@ func _ready():
 	rotation = randf() * TAU
 
 func _physics_process(delta: float) -> void :
-	print(position)
 	if rotating and rotating_speed != 0:
 		if around_player_only or origin == null:
 			var player = _hitbox.from.get_parent().get_parent()
