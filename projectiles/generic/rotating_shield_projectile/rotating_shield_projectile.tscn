@@ -59,89 +59,89 @@ autoplay = "fire"
 anims/RESET = SubResource( 1 )
 anims/fire = SubResource( 2 )
 
-[node name="Projectiles" type="Node2D" parent="." index="3"]
+[node name="ProjectileContainer" type="Node2D" parent="." index="3"]
 position = Vector2( 0, -24 )
 script = ExtResource( 3 )
 
-[node name="One" type="Node2D" parent="Projectiles" index="0"]
+[node name="One" type="Node2D" parent="ProjectileContainer" index="0"]
 visible = false
 
-[node name="Attach1" type="Position2D" parent="Projectiles/One" index="0"]
+[node name="Attach1" type="Position2D" parent="ProjectileContainer/One" index="0"]
 visible = false
 position = Vector2( 0, 30 )
 
-[node name="Two" type="Node2D" parent="Projectiles" index="1"]
+[node name="Two" type="Node2D" parent="ProjectileContainer" index="1"]
 visible = false
 
-[node name="Attach1" type="Position2D" parent="Projectiles/Two" index="0"]
+[node name="Attach1" type="Position2D" parent="ProjectileContainer/Two" index="0"]
 position = Vector2( 40, 20 )
 
-[node name="Attach2" type="Position2D" parent="Projectiles/Two" index="1"]
+[node name="Attach2" type="Position2D" parent="ProjectileContainer/Two" index="1"]
 position = Vector2( -40, 20 )
 
-[node name="Three" type="Node2D" parent="Projectiles" index="2"]
+[node name="Three" type="Node2D" parent="ProjectileContainer" index="2"]
 visible = false
 
-[node name="Attach1" type="Position2D" parent="Projectiles/Three" index="0"]
+[node name="Attach1" type="Position2D" parent="ProjectileContainer/Three" index="0"]
 position = Vector2( 40, 20 )
 
-[node name="Attach2" type="Position2D" parent="Projectiles/Three" index="1"]
+[node name="Attach2" type="Position2D" parent="ProjectileContainer/Three" index="1"]
 position = Vector2( -40, 20 )
 
-[node name="Attach3" type="Position2D" parent="Projectiles/Three" index="2"]
+[node name="Attach3" type="Position2D" parent="ProjectileContainer/Three" index="2"]
 position = Vector2( 0, -45 )
 
-[node name="Four" type="Node2D" parent="Projectiles" index="3"]
+[node name="Four" type="Node2D" parent="ProjectileContainer" index="3"]
 visible = false
 
-[node name="Attach1" type="Position2D" parent="Projectiles/Four" index="0"]
+[node name="Attach1" type="Position2D" parent="ProjectileContainer/Four" index="0"]
 position = Vector2( 40, 35 )
 
-[node name="Attach2" type="Position2D" parent="Projectiles/Four" index="1"]
+[node name="Attach2" type="Position2D" parent="ProjectileContainer/Four" index="1"]
 position = Vector2( -40, 35 )
 
-[node name="Attach3" type="Position2D" parent="Projectiles/Four" index="2"]
+[node name="Attach3" type="Position2D" parent="ProjectileContainer/Four" index="2"]
 position = Vector2( -40, -30 )
 
-[node name="Attach4" type="Position2D" parent="Projectiles/Four" index="3"]
+[node name="Attach4" type="Position2D" parent="ProjectileContainer/Four" index="3"]
 position = Vector2( 40, -30 )
 
-[node name="Five" type="Node2D" parent="Projectiles" index="4"]
+[node name="Five" type="Node2D" parent="ProjectileContainer" index="4"]
 visible = false
 
-[node name="Attach1" type="Position2D" parent="Projectiles/Five" index="0"]
+[node name="Attach1" type="Position2D" parent="ProjectileContainer/Five" index="0"]
 position = Vector2( 35, 35 )
 
-[node name="Attach2" type="Position2D" parent="Projectiles/Five" index="1"]
+[node name="Attach2" type="Position2D" parent="ProjectileContainer/Five" index="1"]
 position = Vector2( -35, 35 )
 
-[node name="Attach3" type="Position2D" parent="Projectiles/Five" index="2"]
+[node name="Attach3" type="Position2D" parent="ProjectileContainer/Five" index="2"]
 position = Vector2( -55, -20 )
 
-[node name="Attach4" type="Position2D" parent="Projectiles/Five" index="3"]
+[node name="Attach4" type="Position2D" parent="ProjectileContainer/Five" index="3"]
 position = Vector2( 55, -20 )
 
-[node name="Attach5" type="Position2D" parent="Projectiles/Five" index="4"]
+[node name="Attach5" type="Position2D" parent="ProjectileContainer/Five" index="4"]
 position = Vector2( 0, -55 )
 
-[node name="Six" type="Node2D" parent="Projectiles" index="5"]
+[node name="Six" type="Node2D" parent="ProjectileContainer" index="5"]
 
-[node name="Attach1" type="Position2D" parent="Projectiles/Six" index="0"]
+[node name="Attach1" type="Position2D" parent="ProjectileContainer/Six" index="0"]
 position = Vector2( 35, 45 )
 
-[node name="Attach2" type="Position2D" parent="Projectiles/Six" index="1"]
+[node name="Attach2" type="Position2D" parent="ProjectileContainer/Six" index="1"]
 position = Vector2( -35, 45 )
 
-[node name="Attach3" type="Position2D" parent="Projectiles/Six" index="2"]
+[node name="Attach3" type="Position2D" parent="ProjectileContainer/Six" index="2"]
 position = Vector2( -60, 0 )
 
-[node name="Attach4" type="Position2D" parent="Projectiles/Six" index="3"]
+[node name="Attach4" type="Position2D" parent="ProjectileContainer/Six" index="3"]
 position = Vector2( 60, 0 )
 
-[node name="Attach5" type="Position2D" parent="Projectiles/Six" index="4"]
+[node name="Attach5" type="Position2D" parent="ProjectileContainer/Six" index="4"]
 position = Vector2( -35, -45 )
 
-[node name="Attach6" type="Position2D" parent="Projectiles/Six" index="5"]
+[node name="Attach6" type="Position2D" parent="ProjectileContainer/Six" index="5"]
 position = Vector2( 35, -45 )
 
 [editable path="Hitbox"]

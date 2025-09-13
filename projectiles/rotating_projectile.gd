@@ -6,6 +6,8 @@ export(int) var max_rotation
 var d = 0
 var distance_taken = 0 #should be a better way with this one
 var rotating = true
+var origin
+var around_player_only = true
 
 func _ready():
 	# Start with random rotation for visual variety
@@ -13,13 +15,14 @@ func _ready():
 
 func _physics_process(delta: float) -> void :
 	if rotating:
+		if around_player_only or origin == null:
+#			var player = get_parent().get_parent().get_node("Entities/Player")
+			var player = _hitbox.from.get_parent().get_parent()
+			origin = player.position
 		var max_range = PI * 2 * radius * max_rotation
 		var previous_position = global_position
-		
-		# get player position
-		var player = get_parent().get_parent().get_node("Entities/Player")
 		d += delta
-		position = player.position + Vector2(sin(d * _weapon_stats.projectile_speed) * radius, cos(d * _weapon_stats.projectile_speed) * radius)
+		position = origin + Vector2(sin(d * _weapon_stats.projectile_speed) * radius, cos(d * _weapon_stats.projectile_speed) * radius)
 		var distance_this_frame = global_position.distance_to(previous_position)
 		# calculate distance taken every frame so that we can delete it when it exceeds max range (not the max range stat of the projectile)
 		distance_taken += distance_this_frame
@@ -39,3 +42,7 @@ func stop() -> void :
 		_sprite.hide()
 	else:
 		queue_free()
+
+#func attach(attach_to: Vector2, attach_idle_angle: float) -> void :
+#	position = attach_to - _attach.position
+#	_idle_angle = attach_idle_angle

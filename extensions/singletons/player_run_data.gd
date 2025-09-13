@@ -178,7 +178,8 @@ static func init_effects() -> Dictionary:
 		"effect_hyper_bomb_spawn": [],
 		"limited_weapon_pool" : [],
 		"charged_shot_periodical" : 0,
-		"weapon_energy_bar": 0
+		"weapon_energy_bar": 0,
+		"shield_form": []
 	}
 
 	all_effects.merge(all_stats)
