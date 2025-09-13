@@ -7,7 +7,6 @@ var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
-var original_projectile_speed
 var rng
 
 func init(parent: Node) -> Node:
@@ -18,7 +17,6 @@ func init(parent: Node) -> Node:
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
 	original_piercing = _parent.current_stats.piercing
-	original_projectile_speed = _parent.current_stats.projectile_speed
 	var rotating_effect
 	for effect in _parent.effects:
 		if effect.key == "projectile_rotate_on_shoot":
@@ -40,7 +38,6 @@ func shoot(_distance: float) -> void :
 				_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds 
 				_parent.current_stats.piercing_dmg_reduction = _parent.stats.piercing_dmg_reduction 
 				_parent.current_stats.can_bounce = true
-				_parent.current_stats.projectile_speed = _parent.stats.projectile_speed 
 				_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
 				_parent.current_stats.bounce = original_bounce
 			if _parent.stats.projectile_scene:
@@ -56,10 +53,10 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.piercing += rotating_effect.extra_piercing 
 			_parent.current_stats.piercing_dmg_reduction = 0
 			_parent.current_stats.bounce = 0
-			_parent.current_stats.projectile_speed = rotating_effect.rotating_speed
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
-			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction)
-			
+			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction, true)
+			rotating_projectile.rotating_speed = rotating_effect.rotating_speed
+			rotating_projectile.origin = _parent._parent.position
 #			# create a group for rotating projectiles and add them to a list
 #			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0].trim_prefix("@")
 #			rotating_projectile.add_to_group(group_name)
@@ -113,19 +110,30 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 
 
-func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
+func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO, rotating : bool = false) -> Node:
 	var args: = WeaponServiceSpawnProjectileArgs.new()
 	args.knockback_direction = knockback
 	args.effects = _parent.effects
 	args.from_player_index = _parent.player_index
 
-	var projectile = WeaponService.spawn_projectile(
-		_parent.muzzle.global_position, 
-		_parent.current_stats, 
-		rotation, 
-		_parent, 
-		args
-	)
+	var projectile
+
+	if rotating:
+		projectile = WeaponService.spawn_projectile(
+			_parent._parent.position, 
+			_parent.current_stats, 
+			rotation, 
+			_parent, 
+			args
+		)
+	else:
+		projectile = WeaponService.spawn_projectile(
+			_parent.muzzle.global_position, 
+			_parent.current_stats, 
+			rotation, 
+			_parent, 
+			args
+		)
 
 	emit_signal("projectile_shot", projectile)
 	return projectile

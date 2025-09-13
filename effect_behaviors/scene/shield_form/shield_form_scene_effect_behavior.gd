@@ -45,14 +45,17 @@ func _on_projectile_shot(projectile, rotating_effect, projectile_stats) -> void 
 			var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
 			var rotating_shield_projectile = shoot_projectile(last_shot_weapon, proj_rotation, knockback_direction)
 			var player_projectiles = Utils.get_scene_node().get_node("PlayerProjectiles")
-			var projectiles_container = rotating_shield_projectile.get_node("ProjectileContainer")
+			var projectiles_container = rotating_shield_projectile.get_node("ProjectileContainer/Projectiles")
 			for proj in shield_projectiles:
 				player_projectiles.remove_child(proj)
 				projectiles_container.add_child(proj)
-				proj.velocity *= projectile_stats.projectile_speed / rotating_effect.rotating_speed
-#				proj.rotating = false
-				proj.around_player_only = false
-			projectiles_container.update_projectiles_positions(shield_projectiles)
+				if proj != null:
+					proj.spawn_position = rotating_shield_projectile.spawn_position
+					proj.velocity *= 0
+					proj.position = Vector2.ZERO
+					proj.around_player_only = false
+					proj.origin = rotating_shield_projectile.position
+#			projectiles_container.update_projectiles_positions(shield_projectiles)
 #			for proj in shield_projectiles:
 #				proj.velocity *= projectile_stats.projectile_speed / rotating_effect.rotating_speed
 #				proj.rotating = false
@@ -81,14 +84,14 @@ func shoot_projectile(weapon, rotation, knockback: Vector2 = Vector2.ZERO) -> No
 	weapon.current_stats.projectile_scene = rotating_shield_scene
 
 	var projectile = WeaponService.spawn_projectile(
-		weapon.muzzle.global_position, 
+		weapon._parent.position, 
 		weapon.current_stats, 
-		weapon._shooting_behavior.rotation, 
+		rotation, 
 		weapon, 
 		args
 	)
 	
-	weapon.current_stats.projectile_scene = weapon.stats.projectile_scene
+#	weapon.current_stats.projectile_scene = weapon.stats.projectile_scene
 
 	emit_signal("projectile_shot", projectile)
 	return projectile

@@ -31,11 +31,11 @@ onready var _six_projectiles_attachment_6 = $Six / Attach6
 
 
 func update_projectiles_positions(projectiles: Array) -> void :
-#	print(projectiles)
+	print(projectiles)
 	for projectile in projectiles:
 		projectile.origin = get_parent().position
 	if projectiles.size() == 1:
-		projectiles[0].position = _one_projectile_attachment_1.position
+		projectiles[0].position = _one_projectile_attachment_1.global_position
 #		projectiles[0].attach(_one_projectile_attachment_1.position, 0)
 	elif projectiles.size() == 2:
 		projectiles[0].position = _two_projectiles_attachment_1.position
@@ -50,10 +50,12 @@ func update_projectiles_positions(projectiles: Array) -> void :
 #		projectiles[1].attach(_three_projectiles_attachment_2.position, 0)
 #		projectiles[2].attach(_three_projectiles_attachment_3.position, 0)
 	elif projectiles.size() == 4:
-		projectiles[0].position = _four_projectiles_attachment_1.position
-		projectiles[1].position = _four_projectiles_attachment_2.position
-		projectiles[2].position = _four_projectiles_attachment_3.position
-		projectiles[3].position = _four_projectiles_attachment_4.position
+		print("gfmosus")
+		projectiles[0].position = Vector2(500,500)
+		projectiles[1].position = Vector2.ZERO
+		projectiles[2].position = Vector2.ZERO
+		print(projectiles[0].position)
+		projectiles[3].position = _four_projectiles_attachment_4.position 
 #		projectiles[0].attach(_four_projectiles_attachment_1.position, 0)
 #		projectiles[1].attach(_four_projectiles_attachment_2.position, 0)
 #		projectiles[2].attach(_four_projectiles_attachment_3.position, 0)
