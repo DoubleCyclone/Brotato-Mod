@@ -8,13 +8,8 @@ var rotation_initialized = false
 var original_damage
 var original_bounce
 var original_piercing
-var rng
 var will_form_shield = false
 
-func init(parent: Node) -> Node:
-	_parent = parent
-	rng = RandomNumberGenerator.new()
-	return self
 
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
@@ -44,6 +39,7 @@ func shoot(_distance: float) -> void :
 				_parent.current_stats.can_bounce = true
 				_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
 				_parent.current_stats.bounce = original_bounce
+			# shoot original projectile
 			if _parent.stats.projectile_scene:
 				var projectile = shoot_projectile(proj_rotation, knockback_direction)
 				projectile._hitbox.player_attack_id = attack_id
@@ -58,31 +54,21 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.piercing_dmg_reduction = 0
 			_parent.current_stats.bounce = 0
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
+			# shoot rotating projectile
 			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction, true)
 			rotating_projectile.rotating_speed = rotating_effect.rotating_speed
+			# emit shield forming projectile shot signal
 			if will_form_shield:
-				emit_signal("shield_forming_projectile_shot", rotating_projectile)
-#			rotating_projectile.origin = _parent._parent.position
-#			# create a group for rotating projectiles and add them to a list
-#			var group_name = rotating_projectile.get_name().split("ShieldProjectile")[0].trim_prefix("@")
-#			rotating_projectile.add_to_group(group_name)
-#			var all_group_nodes = get_tree().get_nodes_in_group(group_name)
-#			# form the shield? or throw projectiles
-#			if rotating_effect.shield_form_count > 0:
-#				if all_group_nodes.size() >= rotating_effect.shield_form_count:
-#					for projectile in all_group_nodes:
-#						projectile.velocity *= rotating_effect.original_projectile_stats.projectile_speed / rotating_effect.rotating_speed
-#						projectile.rotating = false
-##						projectile.connect("hitbox_disabled",self,"_on_hitbox_disabled")
-#					all_group_nodes.clear()
-					
+				emit_signal("shield_forming_projectile_shot", rotating_projectile)	
 			if !rotation_initialized:
 				rotation_initialized = !rotation_initialized
 			rotating_projectile._hitbox.player_attack_id = attack_id
+			# return stats to original state
 			_parent.current_stats.damage = original_damage
 			_parent.current_stats.bounce = original_bounce
 			_parent.current_stats.piercing = original_piercing
-		else: # Failsafe
+		else: 
+			# Failsafe
 			var projectile = shoot_projectile(proj_rotation, knockback_direction)
 			projectile._hitbox.player_attack_id = attack_id
 	
