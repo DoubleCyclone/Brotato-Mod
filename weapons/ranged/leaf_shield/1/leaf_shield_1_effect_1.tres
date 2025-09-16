@@ -1,9 +1,7 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/projectile_rotate_on_shoot_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/1/leaf_shield_1_stats.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/leaf_shield_projectile/leaf_shield_shield_projectile.tscn" type="PackedScene" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/leaf_shield_projectile/leaf_shield_projectile.tscn" type="PackedScene" id=4]
 
 [resource]
 script = ExtResource( 1 )
@@ -14,11 +12,8 @@ custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
-original_weapon_stats = ExtResource( 2 )
 damage_multiplier = 1.0
 extra_piercing = 9999
 shooting_sounds = [  ]
 rotating_projectile_scene = ExtResource( 3 )
-non_rotating_projectile_scene = ExtResource( 4 )
-shield_form_count = 4
 rotating_speed = 20

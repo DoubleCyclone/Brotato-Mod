@@ -2,7 +2,9 @@ class_name ShieldFormSceneEffectBehavior
 extends SceneEffectBehavior
 
 export (PackedScene) var rotating_shield_scene
+export (PackedScene) var projectile_shield_scene
 var shield_projectiles = []
+var shield_projectiles_dict = {}
 var counter = 0
 
 signal projectile_shot(projectile)
@@ -29,14 +31,24 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 			if weapon.script:
 				for effect in weapon.effects:
 					if effect.key == "shield_form":
-						var _err = weapon._shooting_behavior.connect("shield_forming_projectile_shot", self, "_on_projectile_shot", [effect, weapon.stats])
+						var _err = weapon._shooting_behavior.connect("shield_forming_projectile_shot", self, "_on_projectile_shot", [effect, weapon])
+						if !_err:
+#							print(weapon.get_name() + )
+							if !player.get_node(weapon.get_name() + "ProjectileShield"):
+								var proj_shield = projectile_shield_scene.instance()
+								proj_shield.set_name(weapon.get_name() + "ProjectileShield")
+								proj_shield.max_projectile_count = effect.value
+								player.add_child(proj_shield)
+								shield_projectiles_dict[proj_shield.get_name()] = proj_shield.proj_array
+	
 
-
-func _on_projectile_shot(projectile, rotating_effect, projectile_stats) -> void :
+func _on_projectile_shot(projectile, rotating_effect, weapon) -> void :
+	var last_shot_weapon = projectile._hitbox.from
+	# TODO
+	shield_projectiles_dict[weapon.get_name() + "ProjectileShield"].append(projectile)
 	shield_projectiles.append(projectile)
 	if rotating_effect.value > 0:
 		if shield_projectiles.size() >= rotating_effect.value:
-			var last_shot_weapon = projectile._hitbox.from
 			var proj_rotation = rand_range(last_shot_weapon.rotation - last_shot_weapon.current_stats.projectile_spread, last_shot_weapon.rotation + last_shot_weapon.current_stats.projectile_spread)
 			var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
 			var rotating_shield_projectile = shoot_projectile(last_shot_weapon, proj_rotation, knockback_direction)
@@ -60,8 +72,7 @@ func shoot_projectile(weapon, rotation, knockback: Vector2 = Vector2.ZERO) -> No
 		weapon, 
 		args
 	)
-	
-#	weapon.current_stats.projectile_scene = weapon.stats.projectile_scene
 
-#	emit_signal("projectile_shot", projectile)
+
+	emit_signal("projectile_shot", projectile)
 	return projectile

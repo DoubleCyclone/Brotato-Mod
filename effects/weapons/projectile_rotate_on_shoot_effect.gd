@@ -5,7 +5,6 @@ export (float) var damage_multiplier
 export (int) var extra_piercing
 export (Array, AudioStream) var shooting_sounds
 export (PackedScene) var rotating_projectile_scene
-export (int) var shield_form_count
 export (int) var rotating_speed
 
 static func get_id() -> String:
