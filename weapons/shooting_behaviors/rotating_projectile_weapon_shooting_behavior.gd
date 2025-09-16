@@ -55,7 +55,7 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.bounce = 0
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
 			# shoot rotating projectile
-			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction, true)
+			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction)
 			rotating_projectile.rotating_speed = rotating_effect.rotating_speed
 			# emit shield forming projectile shot signal
 			if will_form_shield:
@@ -102,7 +102,7 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 
 
-func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO, rotating : bool = false) -> Node:
+func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
 	var args: = WeaponServiceSpawnProjectileArgs.new()
 	args.knockback_direction = knockback
 	args.effects = _parent.effects
@@ -110,22 +110,13 @@ func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = V
 
 	var projectile
 
-	if rotating:
-		projectile = WeaponService.spawn_projectile(
-			_parent._parent.position, 
-			_parent.current_stats, 
-			rotation, 
-			_parent, 
-			args
-		)
-	else:
-		projectile = WeaponService.spawn_projectile(
-			_parent.muzzle.global_position, 
-			_parent.current_stats, 
-			rotation, 
-			_parent, 
-			args
-		)
+	projectile = WeaponService.spawn_projectile(
+		_parent.muzzle.global_position, 
+		_parent.current_stats, 
+		rotation, 
+		_parent, 
+		args
+	)
 
 	emit_signal("projectile_shot", projectile)
 	return projectile
