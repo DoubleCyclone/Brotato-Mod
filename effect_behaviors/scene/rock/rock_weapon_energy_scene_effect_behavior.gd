@@ -200,6 +200,7 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 		
 		
 	var extra_projectile_effect
+#	var shield_form_effect #TODO
 	for effect in energy_tank.weapon.effects:
 		if effect.key == "EFFECT_PROJECTILES_ON_HIT":
 			extra_projectile_effect = effect

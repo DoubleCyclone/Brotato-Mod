@@ -1,23 +1,23 @@
 [gd_resource type="Resource" load_steps=10 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/2/leaf_shield_2_stats.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/3/leaf_shield_3_stats.tres" type="Resource" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/8bit_mt_leaf_shield_ico.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/leaf_shield.tscn" type="PackedScene" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/2/leaf_shield_2_effect_1.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/3/leaf_shield_3_effect_1.tres" type="Resource" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/leaf_shield_effect_1.tres" type="Resource" id=5]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=6]
 [ext_resource path="res://items/sets/primitive/primitive_set_data.tres" type="Resource" id=7]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/mega_man_2_set_data.tres" type="Resource" id=8]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/3/leaf_shield_3_data.tres" type="Resource" id=9]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/4/leaf_shield_4_data.tres" type="Resource" id=9]
 
 [resource]
 script = ExtResource( 6 )
-my_id = "weapon_leaf_shield_2"
+my_id = "weapon_leaf_shield_3"
 unlocked_by_default = true
 icon = ExtResource( 2 )
 name = "WEAPON_LEAF_SHIELD"
-tier = 1
-value = 26
+tier = 2
+value = 52
 effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
 tracking_text = ""
 is_lockable = true

@@ -1,7 +1,6 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/sideways_projectiles_on_shoot_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/thunder_beam/4/thunder_beam_4_stats.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/thunder_beam_projectile/thunder_beam_projectile_small.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/global/custom_arg.gd" type="Script" id=4]
 
@@ -38,7 +37,6 @@ custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
-original_weapon_stats = ExtResource( 2 )
 damage_multiplier = 1.25
 chance = 1.0
 side_projectile_scene = ExtResource( 3 )

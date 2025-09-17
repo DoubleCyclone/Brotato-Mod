@@ -1,24 +1,23 @@
-[gd_resource type="Resource" load_steps=10 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/2/leaf_shield_2_stats.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/4/leaf_shield_4_effect_1.tres" type="Resource" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/8bit_mt_leaf_shield_ico.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/leaf_shield.tscn" type="PackedScene" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/2/leaf_shield_2_effect_1.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/4/leaf_shield_4_stats.tres" type="Resource" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/leaf_shield_effect_1.tres" type="Resource" id=5]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=6]
 [ext_resource path="res://items/sets/primitive/primitive_set_data.tres" type="Resource" id=7]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/mega_man_2_set_data.tres" type="Resource" id=8]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/leaf_shield/3/leaf_shield_3_data.tres" type="Resource" id=9]
 
 [resource]
 script = ExtResource( 6 )
-my_id = "weapon_leaf_shield_2"
+my_id = "weapon_leaf_shield_4"
 unlocked_by_default = true
 icon = ExtResource( 2 )
 name = "WEAPON_LEAF_SHIELD"
-tier = 1
-value = 26
-effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+tier = 3
+value = 105
+effects = [ ExtResource( 1 ), ExtResource( 5 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
@@ -27,6 +26,5 @@ weapon_id = "8bit_mt_weapon_leaf_shield"
 type = 1
 sets = [ ExtResource( 7 ), ExtResource( 8 ) ]
 scene = ExtResource( 3 )
-stats = ExtResource( 1 )
-upgrades_into = ExtResource( 9 )
+stats = ExtResource( 4 )
 add_to_chars_as_starting = [  ]

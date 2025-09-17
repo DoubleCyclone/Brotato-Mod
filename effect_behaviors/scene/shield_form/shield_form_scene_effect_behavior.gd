@@ -53,12 +53,17 @@ func _on_projectile_shot(projectile, rotating_effect, weapon, player) -> void :
 		if grouped_projectiles.size() < rotating_effect.value:
 			grouped_projectiles.append(projectile)
 		if grouped_projectiles.size() >= rotating_effect.value:
-			var proj_rotation = rand_range(last_shot_weapon.rotation - last_shot_weapon.current_stats.projectile_spread, last_shot_weapon.rotation + last_shot_weapon.current_stats.projectile_spread)
-			var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
-			var rotating_shield_projectile = shoot_projectile(last_shot_weapon, proj_rotation, knockback_direction)
 			for proj in grouped_projectiles:
-				proj.origin_object = rotating_shield_projectile
-			grouped_projectiles.clear()
+				if proj == null or !is_instance_valid(proj):
+					grouped_projectiles.erase(proj)
+			if grouped_projectiles.size() >= rotating_effect.value:
+				var proj_rotation = rand_range(last_shot_weapon.rotation - last_shot_weapon.current_stats.projectile_spread, last_shot_weapon.rotation + last_shot_weapon.current_stats.projectile_spread)
+				var knockback_direction: = Vector2(cos(proj_rotation), sin(proj_rotation))
+				var rotating_shield_projectile = shoot_projectile(last_shot_weapon, proj_rotation, knockback_direction)
+				if grouped_projectiles.size() >= rotating_effect.value:
+					for proj in grouped_projectiles:
+						proj.origin_object = rotating_shield_projectile
+				grouped_projectiles.clear()
 				
 			
 
