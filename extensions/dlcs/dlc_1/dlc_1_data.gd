@@ -180,6 +180,7 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
 			elif effect.key == "projectile_rotate_on_shoot":
 				new_effect.damage_multiplier = max(_boost_effect_specific_value(effect.damage_multiplier, false, effect_modifier), 1)
+				new_effect.extra_piercing = effect.extra_piercing + 1
 			elif effect.key == "effect_hyper_bomb_spawn":
 				new_effect.timer_cooldown = min(_boost_effect_specific_value(effect.timer_cooldown, false, effect_modifier), effect.timer_cooldown)
 			elif effect.key == "charged_shot_periodical":
@@ -195,9 +196,11 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 			elif effect.key == "sideways_projectiles_on_shoot":
 				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
 				new_effect.damage_multiplier = max(_boost_effect_specific_value(effect.damage_multiplier, false, effect_modifier), 1)
-			# MOD SECTION END
+				
 			
-			new_effect.value = _boost_effect_value_positively(effect, effect_modifier, override, overriden_sign)
+			if !effect.key == "shield_form":
+				# MOD SECTION END
+				new_effect.value = _boost_effect_value_positively(effect, effect_modifier, override, overriden_sign)
 
 			if new_effect.custom_key == "consumable_stats_while_max":
 				new_effect.value2 = _boost_effect_value_positively(effect, effect_modifier, override, overriden_sign, true)
