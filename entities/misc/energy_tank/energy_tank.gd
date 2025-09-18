@@ -1,7 +1,7 @@
 class_name EnergyTank
 extends Node
 
-var capacity : float = 50.0
+var capacity : float = 5.0
 var current_value : float = 0.0
 var start_value : float = 0.0
 var weapon

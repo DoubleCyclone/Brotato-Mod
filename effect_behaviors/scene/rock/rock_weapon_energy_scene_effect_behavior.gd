@@ -193,11 +193,14 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 	if weapon_stats.projectile_scene:
 		if weapon_stats.projectile_scene.instance().get_script().get_path().rfind("structure_spawner_projectile.gd") != -1:
 			range_ban = true
-	
+	else:
+		for effect in energy_tank.weapon.effects:
+			if effect.key == "shield_form":
+				range_ban = true
+			
 	var lifesteal_ban = false
 	if weapon_current_stats.lifesteal >= 1.0:
 		lifesteal_ban = true
-		
 		
 	var extra_projectile_effect
 #	var shield_form_effect #TODO
