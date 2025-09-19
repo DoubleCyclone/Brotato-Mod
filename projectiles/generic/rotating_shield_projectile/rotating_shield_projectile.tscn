@@ -49,6 +49,7 @@ deals_damage = false
 
 [node name="Collision" parent="Hitbox" index="0"]
 position = Vector2( 0, 0 )
+disabled = true
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "fire"

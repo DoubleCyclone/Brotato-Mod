@@ -4,10 +4,10 @@ extends SceneEffectBehavior
 export (PackedScene) var rotating_shield_scene
 export (PackedScene) var projectile_shield_scene
 var shield_projectiles = []
-#var shield_projectiles_dict = {}
-#var counter = 0
+
 
 signal projectile_shot(projectile)
+
 
 func _ready() -> void :
 	if should_check():
@@ -23,6 +23,7 @@ func should_check() -> bool:
 		return true
 
 	return false
+
 
 func _on_EntitySpawner_players_spawned(players: Array) -> void :
 	for player in players:
@@ -40,7 +41,6 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 							proj_shield.set_name(weapon_name + "ProjectileShield")
 							proj_shield.max_projectile_count = effect.value
 							player.add_child(proj_shield)
-#							shield_projectiles_dict[proj_shield.get_name()] = proj_shield.proj_array
 	
 
 func _on_projectile_shot(projectile, rotating_effect, weapon, player) -> void :
