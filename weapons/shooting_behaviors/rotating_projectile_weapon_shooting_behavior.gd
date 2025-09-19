@@ -9,7 +9,6 @@ var original_damage
 var original_bounce
 var original_piercing
 var will_form_shield = false
-var original_piercing_dmg_reduction
 
 # TODO: maybe edit the projectile after it is shot 
 func shoot(_distance: float) -> void :
