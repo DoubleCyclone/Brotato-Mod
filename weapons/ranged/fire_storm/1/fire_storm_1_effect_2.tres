@@ -1,9 +1,8 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/projectile_rotate_on_shoot_effect.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/fire_storm_projectile/fire_storm_shield_projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/8bit_mt_fire_storm_1.wav" type="AudioStream" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/fire_storm/1/fire_storm_1_stats.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
@@ -14,10 +13,9 @@ custom_key = ""
 storage_method = 0
 effect_sign = 3
 custom_args = [  ]
-original_weapon_stats = ExtResource( 4 )
 damage_multiplier = 3.5
 extra_piercing = 9999
 shooting_sounds = [ ExtResource( 3 ) ]
 rotating_projectile_scene = ExtResource( 2 )
-shield_form_count = -1
 rotating_speed = 150
+piercing_dmg_reduction = 0.0

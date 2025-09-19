@@ -17,3 +17,4 @@ extra_piercing = 1
 shooting_sounds = [  ]
 rotating_projectile_scene = ExtResource( 3 )
 rotating_speed = 20
+piercing_dmg_reduction = 0.5

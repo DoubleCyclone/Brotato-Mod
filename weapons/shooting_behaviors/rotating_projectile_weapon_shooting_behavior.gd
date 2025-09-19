@@ -9,8 +9,9 @@ var original_damage
 var original_bounce
 var original_piercing
 var will_form_shield = false
+var original_piercing_dmg_reduction
 
-
+# TODO: maybe edit the projectile after it is shot 
 func shoot(_distance: float) -> void :
 	original_bounce = _parent.current_stats.bounce
 	original_piercing = _parent.current_stats.piercing
@@ -36,7 +37,6 @@ func shoot(_distance: float) -> void :
 			if _parent.stats.projectile_scene:
 				if rotation_initialized:
 					_parent.current_stats.shooting_sounds = _parent.stats.shooting_sounds 
-					_parent.current_stats.piercing_dmg_reduction = _parent.stats.piercing_dmg_reduction 
 					_parent.current_stats.can_bounce = true
 					_parent.current_stats.projectile_scene = _parent.stats.projectile_scene
 					_parent.current_stats.bounce = original_bounce
@@ -51,18 +51,17 @@ func shoot(_distance: float) -> void :
 			if rotating_effect.shooting_sounds.size() != 0:
 				_parent.current_stats.shooting_sounds = rotating_effect.shooting_sounds
 			_parent.current_stats.piercing += rotating_effect.extra_piercing 
-			_parent.current_stats.piercing_dmg_reduction = 0
 			_parent.current_stats.bounce = 0
 			_parent.current_stats.projectile_scene = rotating_effect.rotating_projectile_scene
 			# shoot rotating projectile
 			var rotating_projectile = shoot_projectile(proj_rotation, knockback_direction)
 			rotating_projectile.rotating_speed = rotating_effect.rotating_speed
+			rotating_projectile._hitbox.player_attack_id = attack_id
 			# emit shield forming projectile shot signal
 			if will_form_shield:
 				emit_signal("shield_forming_projectile_shot", rotating_projectile)	
 			if !rotation_initialized:
 				rotation_initialized = !rotation_initialized
-			rotating_projectile._hitbox.player_attack_id = attack_id
 			# return stats to original state
 			_parent.current_stats.damage = original_damage
 			_parent.current_stats.bounce = original_bounce
