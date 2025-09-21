@@ -203,12 +203,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 	if weapon_current_stats.lifesteal >= 1.0:
 		lifesteal_ban = true
 		
-	var extra_projectile_effect
-#	var shield_form_effect #TODO
-	for effect in energy_tank.weapon.effects:
-		if effect.key == "EFFECT_PROJECTILES_ON_HIT":
-			extra_projectile_effect = effect
-		
 	if !piercing_ban:
 		stats_list.append(weapon_current_stats.piercing)
 		
@@ -227,16 +221,10 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			weapon_current_stats.bounce += 1
 			give_feedback(1,"bounce", energy_tank.weapon.player_index)
 #			print("bounce ",weapon_current_stats.bounce)
-			if extra_projectile_effect:
-				extra_projectile_effect.weapon_stats.bounce += 1
-#				print(extra_projectile_effect.weapon_stats.bounce)
 		weapon_current_stats.piercing:
 			weapon_current_stats.piercing += 1
 			give_feedback(1,"piercing", energy_tank.weapon.player_index)
 #			print("piercing ",weapon_current_stats.piercing)
-			if extra_projectile_effect:
-				extra_projectile_effect.weapon_stats.piercing += 1
-#				print(extra_projectile_effect.weapon_stats.piercing)
 		weapon_current_stats.nb_projectiles:
 			weapon_current_stats.nb_projectiles += 1
 			weapon_current_stats.projectile_spread = min(weapon_current_stats.projectile_spread + 0.15, 3.14)
@@ -248,11 +236,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 #			print("projectiles ",weapon_current_stats.nb_projectiles)
 #			print("spread ",weapon_current_stats.projectile_spread)
 #			print("damage", weapon_current_stats.damage)
-			if extra_projectile_effect :
-				extra_projectile_effect.value += 1
-				extra_projectile_effect.weapon_stats.projectile_spread = min(extra_projectile_effect.weapon_stats.projectile_spread + 0.15, 3.14)
-				extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 0.7, 1)
-#				print(extra_projectile_effect.value)
 		weapon_current_stats.cooldown:
 			var cooldown_change = weapon_current_stats.cooldown - max(weapon_current_stats.cooldown * 0.9, WeaponService.MIN_COOLDOWN)
 			weapon_current_stats.cooldown -= cooldown_change
@@ -265,9 +248,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			give_feedback(damage_change * 10,"stat_percent_damage", energy_tank.weapon.player_index)
 #			print(damage_change)
 #			print("damage ",weapon_current_stats.damage)
-			if extra_projectile_effect :
-				extra_projectile_effect.weapon_stats.damage = max(extra_projectile_effect.weapon_stats.damage * 1.2, extra_projectile_effect.weapon_stats.damage + 1)
-#				print(extra_projectile_effect.weapon_stats.damage)
 		weapon_current_stats.crit_chance: # fire storm rotating, oil slider skate, super arm extra, thunder beam sideways
 			weapon_current_stats.crit_chance += 0.15
 			weapon_current_stats.crit_damage += 0.15
@@ -275,11 +255,6 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			give_feedback(15,"stat_crit_damage", energy_tank.weapon.player_index, Vector2(0,35))
 #			print("crit chance ",weapon_current_stats.crit_chance)
 #			print("crit damage ",weapon_current_stats.crit_damage)
-			if extra_projectile_effect :
-				extra_projectile_effect.weapon_stats.crit_chance += 0.15
-				extra_projectile_effect.weapon_stats.crit_damage += 0.15
-#				print(extra_projectile_effect.weapon_stats.crit_chance)
-#				print(extra_projectile_effect.weapon_stats.crit_damage)
 		weapon_current_stats.max_range:
 			var range_change = (weapon_current_stats.max_range * 1.1) - weapon_current_stats.max_range
 			weapon_current_stats.max_range += range_change
@@ -290,14 +265,7 @@ func _on_EnergyTank_tank_full(energy_tank) -> void:
 			weapon_current_stats.lifesteal += lifesteal_change 
 			give_feedback(lifesteal_change * 100,"stat_lifesteal", energy_tank.weapon.player_index)			
 #			print("lifesteal ",weapon_current_stats.lifesteal)
-			if extra_projectile_effect :
-				extra_projectile_effect.weapon_stats.lifesteal = min(extra_projectile_effect.weapon_stats.lifesteal + 0.1, 1.0)
-#				print(extra_projectile_effect.weapon_stats.lifesteal)
 
-	if extra_projectile_effect :
-		var on_hit_args: = WeaponServiceInitStatsArgs.new()
-		var effect_stats = WeaponService.init_ranged_stats(extra_projectile_effect.weapon_stats, energy_tank.weapon.player_index, true, on_hit_args)
-		energy_tank.weapon._hitbox.projectiles_on_hit = [extra_projectile_effect.value, effect_stats, extra_projectile_effect.auto_target_enemy]
 
 func give_feedback(value, stat_name : String, player_index : int, offset : Vector2 = Vector2(0,0), icon: Resource = null, always_display: bool = false, need_translate: bool = true) -> void : 
 	var floating_text_manager = Utils.get_scene_node().get_node("FloatingTextManager")
