@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=10 format=2]
+[gd_resource type="Resource" load_steps=11 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/time_slow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/1/time_slow_1_stats.tres" type="Resource" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/2/time_slow_2_data.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/8bit_mt_time_slow_ico.png" type="Texture" id=6]
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=7]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/radial/time_slow/time_slow_effect_1.tres" type="Resource" id=8]
 [ext_resource path="res://items/sets/explosive/explosive_set_data.tres" type="Resource" id=9]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=10]
 
@@ -18,7 +19,7 @@ icon = ExtResource( 6 )
 name = "WEAPON_TIME_SLOW"
 tier = 0
 value = 16
-effects = [ ExtResource( 4 ), ExtResource( 3 ) ]
+effects = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ) ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
