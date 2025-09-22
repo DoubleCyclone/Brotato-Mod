@@ -1,13 +1,14 @@
-﻿key;en;tr;ja;zh_Hans_CN;
-WEAPON_FIRE_STORM;Fire Storm;Ateş Fırtınası;ファイヤーストーム;火焰风暴;
-WEAPON_THUNDER_BEAM;Thunder Beam;Gök Gürültüsü Işını;サンダービーム;电击光束;
-WEAPON_ICE_SLASHER;Ice Slasher;Buz Kesici;アイススラッシャー;冰刃;
-WEAPON_TIME_SLOW;Time Slow;Zaman Yavaşlatıcı;タイムスロー;时间减缓;
-WEAPON_SUPER_ARM;Super Arm;Süper Kol;スーパーアーム;超级手臂;
-WEAPON_HYPER_BOMB;Hyper Bomb;Hiper Bomba;ハイパーボム;超级炸弹;
-WEAPON_OIL_SLIDER;Oil Slider;Yağ Kaykayı;オイルスライダー;油滑喷射;
-WEAPON_ROLLING_CUTTER;Rolling Cutter;Yuvarlanan Kesici;ローリングカッター;回转切割;
-WEAPON_MEGA_BUSTER;Mega Buster;Mega Yakalayıcı;ロックバスター;洛克飞弹;
-WEAPON_TIME_STOPPER;Time Stopper;Zaman Durdurucu;タイムストッパー;时间停止;
-WEAPON_AIR_SHOOTER;Air Shooter;Hortum Atıcı;エアーシューター;飓风产生器;
-WEAPON_LEAF_SHIELD;Leaf Shield;Yaprak Kalkanı;リーフシールド;树叶护盾;
+﻿key;en;tr;ja;zh_Hans_CN
+WEAPON_FIRE_STORM;Fire Storm;Ateş Fırtınası;ファイヤーストーム;火焰风暴
+WEAPON_THUNDER_BEAM;Thunder Beam;Gök Gürültüsü Işını;サンダービーム;电击光束
+WEAPON_ICE_SLASHER;Ice Slasher;Buz Kesici;アイススラッシャー;冰刃
+WEAPON_TIME_SLOW;Time Slow;Zaman Yavaşlatıcı;タイムスロー;时间减缓
+WEAPON_SUPER_ARM;Super Arm;Süper Kol;スーパーアーム;超级手臂
+WEAPON_HYPER_BOMB;Hyper Bomb;Hiper Bomba;ハイパーボム;超级炸弹
+WEAPON_OIL_SLIDER;Oil Slider;Yağ Kaykayı;オイルスライダー;油滑喷射
+WEAPON_ROLLING_CUTTER;Rolling Cutter;Yuvarlanan Kesici;ローリングカッター;回转切割
+WEAPON_MEGA_BUSTER;Mega Buster;Mega Yakalayıcı;ロックバスター;洛克飞弹
+WEAPON_TIME_STOPPER;Time Stopper;Zaman Durdurucu;タイムストッパー;时间停止
+WEAPON_AIR_SHOOTER;Air Shooter;Hortum Atıcı;エアーシューター;飓风产生器
+WEAPON_LEAF_SHIELD;Leaf Shield;Yaprak Kalkanı;リーフシールド;树叶护盾
+WEAPON_BUBBLE_LEAD;Bubble Lead;Baloncuk Öncü;バブルリード;导向泡泡
