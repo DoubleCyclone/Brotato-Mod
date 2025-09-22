@@ -6,19 +6,19 @@
 
 [resource]
 script = ExtResource( 3 )
-cooldown = 185
+cooldown = 140
 damage = 8
 accuracy = 1.0
 crit_chance = 0.01
 crit_damage = 1.5
 min_range = 0
-max_range = 270
+max_range = 240
 knockback = 0
 knockback_piercing = 0.0
 can_have_positive_knockback = true
 can_have_negative_knockback = false
 effect_scale = 1.0
-scaling_stats = [ [ "explosion_damage", 1.1 ], [ "stat_elemental_damage", 0.65 ] ]
+scaling_stats = [ [ "explosion_damage", 0.22 ], [ "stat_elemental_damage", 1.25 ] ]
 lifesteal = 0.0
 shooting_sounds = [ ExtResource( 2 ) ]
 sound_db_mod = -5

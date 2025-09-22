@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource( 3 )
-cooldown = 140
+cooldown = 115
 damage = 13
 accuracy = 1.0
 crit_chance = 0.01
@@ -18,10 +18,10 @@ knockback_piercing = 0.0
 can_have_positive_knockback = true
 can_have_negative_knockback = false
 effect_scale = 1.0
-scaling_stats = [ [ "explosion_damage", 1.1 ], [ "stat_elemental_damage", 0.9 ] ]
+scaling_stats = [ [ "explosion_damage", 0.22 ], [ "stat_elemental_damage", 1.4 ] ]
 lifesteal = 0.0
 shooting_sounds = [ ExtResource( 2 ) ]
-sound_db_mod = -10
+sound_db_mod = -15
 is_healing = false
 custom_on_cooldown_sprite = ExtResource( 1 )
 recoil = 0

@@ -39,7 +39,7 @@ func shoot(_distance: float) -> void :
 					if !explosion._hitbox.effects.has(effect):
 						explosion._hitbox.effects.append(effect)
 				explosion._hitbox.player_attack_id = attack_id	
-				emit_signal("projectile_shot",explosion) #TODO : experimental
+#				emit_signal("projectile_shot",explosion) #TODO : experimental
 
 	exploding_effect.scale = original_scale
 	
