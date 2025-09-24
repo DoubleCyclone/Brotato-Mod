@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_air_shooter_ico.png-8bbe90d642a900a5b2e9d7ae6933eabc.stex"
+path="res://.import/8bit_mt_crash_bomber_reloading.png-e7d712bde0aad4f45e85c2bba6afa9cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/bubble_lead/8bit_mt_air_shooter_ico.png"
-dest_files=[ "res://.import/8bit_mt_air_shooter_ico.png-8bbe90d642a900a5b2e9d7ae6933eabc.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/8bit_mt_crash_bomber_reloading.png"
+dest_files=[ "res://.import/8bit_mt_crash_bomber_reloading.png-e7d712bde0aad4f45e85c2bba6afa9cf.stex" ]
 
 [params]
 

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://items/sets/explosive/explosive_set_data.tres" type="Resource" id=1]
+[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/crash_bomber.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/1/crash_bomber_1_stats.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/8bit_mt_crash_bomber_ico.png" type="Texture" id=5]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_2/mega_man_2_set_data.tres" type="Resource" id=6]
+
+[resource]
+script = ExtResource( 2 )
+my_id = "weapon_crash_bomber_1"
+unlocked_by_default = true
+icon = ExtResource( 5 )
+name = "WEAPON_CRASH_BOMBER"
+tier = 0
+value = 16
+effects = [  ]
+tracking_text = ""
+is_lockable = true
+is_cursed = false
+curse_factor = 0.0
+weapon_id = "8bit_mt_weapon_crash_bomber"
+type = 1
+sets = [ ExtResource( 1 ), ExtResource( 6 ) ]
+scene = ExtResource( 3 )
+stats = ExtResource( 4 )
+add_to_chars_as_starting = [  ]
