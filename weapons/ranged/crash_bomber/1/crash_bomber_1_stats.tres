@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/bubble_lead_projectile/bubble_lead_projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/crash_bomber_projectile/crash_bomber_projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/8bit_mt_crash_bomber_reloading.png" type="Texture" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/8bit_mt_crash_bomber.wav" type="AudioStream" id=4]
 
