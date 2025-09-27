@@ -15,7 +15,7 @@ can_be_boosted = true
 to_be_removed_in_priority = true
 
 [node name="Animation" parent="." index="0"]
-position = Vector2( 0, -23.4309 )
+position = Vector2( 0, 4.9205 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Sprite" parent="Animation" index="0"]
