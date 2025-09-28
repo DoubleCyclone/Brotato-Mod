@@ -4,6 +4,7 @@ extends NullEffect
 export (Array,Resource) var effects
 export (PackedScene) var structure_scene
 export (float) var timer_cooldown
+export (AudioStream) var spawn_sound_effect
 
 static func get_id() -> String:
 	return "effect_bomb_spawn"

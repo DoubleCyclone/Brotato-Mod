@@ -5,12 +5,15 @@ signal projectile_shot(projectile)
 
 var structure_scene
 var structure_spawn_effect
+var sound_effect
 
 func shoot(_distance: float) -> void :
 	for effect in _parent.effects:
 		if effect.key == "effect_bomb_spawn":
 			structure_spawn_effect = effect
 			structure_scene = effect.structure_scene
+			if effect.spawn_sound_effect:	
+				sound_effect = effect.spawn_sound_effect
 			
 	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
 
@@ -69,6 +72,8 @@ func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
 	thing_hit.call_deferred("add_child", instance)
 	instance.thing_attached = thing_hit
 	instance.rotation_degrees = projectile.rotation_degrees - 90
+	if sound_effect:
+		SoundManager.play(sound_effect, -5, 0.2)
 	
 	
 func on_projectile_stopped(projectile):
@@ -83,6 +88,8 @@ func on_projectile_stopped(projectile):
 				instance.effects = effect.effects #TODO : maybe append
 		instance.position = projectile.position
 		Utils.get_scene_node().get_node("Entities").add_child(instance)
+		if sound_effect:
+			SoundManager.play(sound_effect, -5, 0.2)
 	
 
 func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
