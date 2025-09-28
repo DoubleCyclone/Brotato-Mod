@@ -3,16 +3,22 @@ extends Structure
 
 var cooldown = 0.25
 var from_weapon
+var thing_attached
 
 
 func _ready() -> void :
 	._ready()
 	get_tree().create_timer(cooldown,false).connect("timeout",self,"on_explosion_timer_run_out")
-	
+
 	
 func respawn() -> void :
 	.respawn()
 	get_tree().create_timer(cooldown,false).connect("timeout",self,"on_explosion_timer_run_out")
+
+
+func _physics_process(delta: float) -> void :
+	if thing_attached:
+		position = Vector2.ZERO
 
 
 func on_explosion_timer_run_out() -> void:

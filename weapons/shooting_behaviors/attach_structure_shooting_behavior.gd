@@ -25,7 +25,8 @@ func shoot(_distance: float) -> void :
 		var projectile = shoot_projectile(proj_rotation, knockback_direction)
 		projectile._hitbox.player_attack_id = attack_id
 		projectile.connect("hit_something",self,"on_projectile_hit_something", [projectile])
-
+		projectile.connect("projectile_stopped", self, "on_projectile_stopped")
+		
 	_parent.tween.interpolate_property(
 		_parent.sprite, 
 		"position", 
@@ -55,19 +56,33 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 	
 func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
-	if projectile._piercing != 0:
+	if projectile._piercing != 0 || thing_hit.dead:
 		return
 	var instance = structure_scene.instance()
 	instance.from_weapon = _parent
 	instance.player_index = _parent.player_index
-	var offset_pos = Vector2(projectile.position.x,projectile.position.y+22)
-	instance.position = offset_pos
 	instance.stats = _parent.current_stats
+	instance.cooldown = structure_spawn_effect.timer_cooldown
 	for effect in _parent.effects:
 		if effect.key == "effect_bomb_spawn":
 			instance.effects = effect.effects #TODO : maybe append
-	instance.cooldown = structure_spawn_effect.timer_cooldown
-	Utils.get_scene_node().get_node("Entities").call_deferred("add_child",instance)
+	thing_hit.call_deferred("add_child", instance)
+	instance.thing_attached = thing_hit
+	instance.rotation_degrees = projectile.rotation_degrees - 90
+	
+	
+func on_projectile_stopped(projectile):
+	if projectile._ticks_until_max_range == 0:
+		var instance = structure_scene.instance()
+		instance.from_weapon = _parent
+		instance.player_index = _parent.player_index
+		instance.stats = _parent.current_stats
+		instance.cooldown = structure_spawn_effect.timer_cooldown
+		for effect in _parent.effects:
+			if effect.key == "effect_bomb_spawn":
+				instance.effects = effect.effects #TODO : maybe append
+		instance.position = projectile.position
+		Utils.get_scene_node().get_node("Entities").add_child(instance)
 	
 
 func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
