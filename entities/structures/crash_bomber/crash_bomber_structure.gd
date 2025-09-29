@@ -1,6 +1,7 @@
 class_name CrashBomberStructure
 extends Structure
 
+var timer
 var cooldown = 0.25
 var from_weapon
 var thing_attached
@@ -8,12 +9,14 @@ var thing_attached
 
 func _ready() -> void :
 	._ready()
-	get_tree().create_timer(cooldown,false).connect("timeout",self,"on_explosion_timer_run_out")
+	timer = get_tree().create_timer(cooldown,false)
+	timer.connect("timeout",self,"on_explosion_timer_run_out")
 
 	
 func respawn() -> void :
 	.respawn()
-	get_tree().create_timer(cooldown,false).connect("timeout",self,"on_explosion_timer_run_out")
+	timer = get_tree().create_timer(cooldown,false)
+	timer.connect("timeout",self,"on_explosion_timer_run_out")
 
 
 func _physics_process(delta: float) -> void :

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=8 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/thrown_bomb_effect.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/1/crash_bomber_1_exploding_effect.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/2/crash_bomber_2_exploding_effect.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/entities/structures/crash_bomber/crash_bomber_structure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/global/custom_arg.gd" type="Script" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/crash_bomber/8bit_mt_crash_bomber_stick.wav" type="AudioStream" id=5]
@@ -33,5 +33,5 @@ effect_sign = 3
 custom_args = [ SubResource( 1 ), SubResource( 2 ) ]
 effects = [ ExtResource( 2 ) ]
 structure_scene = ExtResource( 3 )
-timer_cooldown = 2.0
+timer_cooldown = 1.7
 spawn_sound_effect = ExtResource( 5 )
