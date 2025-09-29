@@ -25,7 +25,7 @@ arg_key = ""
 [resource]
 script = ExtResource( 1 )
 key = "effect_bomb_spawn"
-text_key = ""
+text_key = "effect_crash_bomb"
 value = 0
 custom_key = ""
 storage_method = 0

@@ -59,7 +59,7 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 	
 func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
-	if projectile._piercing != 0 || thing_hit.dead:
+	if projectile._piercing != 0:
 		return
 	var instance = structure_scene.instance()
 	instance.from_weapon = _parent
@@ -71,7 +71,8 @@ func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
 			instance.effects = effect.effects #TODO : maybe append
 	thing_hit.call_deferred("add_child", instance)
 	instance.thing_attached = thing_hit
-	instance.rotation_degrees = projectile.rotation_degrees - 90
+	if !thing_hit.dead:
+		instance.rotation_degrees = projectile.rotation_degrees - 90
 	if sound_effect:
 		SoundManager.play(sound_effect, -5, 0.2)
 	
