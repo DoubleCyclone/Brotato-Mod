@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://projectiles/rocket/explosion.png" type="Texture" id=1]
 [ext_resource path="res://overlap/hitbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/radial_player_explosion.gd" type="Script" id=3]
 [ext_resource path="res://particles/explosion_smoke.tscn" type="PackedScene" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/hyper_bomb/8bit_mt_hyper_bomb_explosion.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 147.34
@@ -70,7 +69,6 @@ tracks/2/keys = {
 
 [node name="CrashBomberExplosion" type="Node2D"]
 script = ExtResource( 3 )
-explosion_sounds = [ ExtResource( 5 ) ]
 
 [node name="Sprite" type="Sprite" parent="."]
 unique_name_in_owner = true

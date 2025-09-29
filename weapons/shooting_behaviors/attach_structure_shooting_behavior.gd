@@ -28,7 +28,7 @@ func shoot(_distance: float) -> void :
 		var projectile = shoot_projectile(proj_rotation, knockback_direction)
 		projectile._hitbox.player_attack_id = attack_id
 		projectile.connect("hit_something",self,"on_projectile_hit_something", [projectile])
-#		projectile.connect("projectile_stopped", self, "on_projectile_stopped")
+		projectile.connect("projectile_stopped", self, "on_projectile_stopped")
 		
 	_parent.tween.interpolate_property(
 		_parent.sprite, 
@@ -59,7 +59,7 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 	
 func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
-	if projectile._piercing != 0:
+	if projectile._piercing != 0 && projectile._bounce != 0:
 		return
 	var instance = structure_scene.instance()
 	instance.from_weapon = _parent
@@ -74,7 +74,7 @@ func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
 	instance.rotation_degrees = projectile.rotation_degrees - 90
 	if sound_effect:
 		SoundManager.play(sound_effect, -5, 0.2)
-	thing_hit.connect("died", self, "on_thing_hit_died", [instance])
+#	thing_hit.connect("died", self, "on_thing_hit_died", [instance])
 	
 	
 func on_projectile_stopped(projectile):
@@ -91,17 +91,6 @@ func on_projectile_stopped(projectile):
 		Utils.get_scene_node().get_node("Entities").add_child(instance)
 		if sound_effect:
 			SoundManager.play(sound_effect, -5, 0.2)
-	
-	
-func on_thing_hit_died(entity, die_args, instance):
-	if is_instance_valid(instance):
-		var time_left = instance.timer.time_left
-		entity.remove_child(instance)
-		Utils.get_scene_node().get_node("Entities").call_deferred("add_child",instance)
-		instance.rotation_degrees = 0
-		instance.thing_attached = null
-		instance.position = entity.position
-		instance.timer.time_left = time_left
 	
 
 func shoot_projectile(rotation: float = _parent.rotation, knockback: Vector2 = Vector2.ZERO) -> Node:
