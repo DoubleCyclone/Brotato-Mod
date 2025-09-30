@@ -197,6 +197,7 @@ radius = 23.9999
 height = 0.0
 
 [node name="CrashBomberStructure" instance=ExtResource( 1 )]
+collision_layer = 0
 collision_mask = 0
 physics_material_override = SubResource( 6 )
 script = ExtResource( 3 )

@@ -37,20 +37,23 @@ func on_explosion_timer_run_out() -> void:
 
 	var explosion_effect = effects[0]
 	var args: = WeaponServiceExplodeArgs.new()
-	args.damage = stats.damage
+	args.damage = stats.damage * 8
 	args.accuracy = stats.accuracy
 	args.crit_chance = stats.crit_chance
 	args.crit_damage = stats.crit_damage
 	args.burning_data = stats.burning_data
-	args.scaling_stats = stats.scaling_stats
+#	args.scaling_stats = stats.scaling_stats
 	args.from_player_index = player_index
 	args.from = from_weapon
 #	args.damage_tracking_key = explosion_effect.tracking_key
-	for i in 8:
-		var random_offset = Vector2(global_position.x + rand_range(-80,80), global_position.y + rand_range(-80,80))
-		args.pos = random_offset
-		var _inst = WeaponService.explode(explosion_effect, args)
-		_inst.connect("hit_something",self,"_on_explosion_hit_something")
+	args.pos = global_position
+	var _inst = WeaponService.explode(explosion_effect, args)
+	_inst.connect("hit_something",self,"_on_explosion_hit_something")
+#	for i in 8:
+#		var random_offset = Vector2(global_position.x + rand_range(-80,80), global_position.y + rand_range(-80,80))
+#		args.pos = random_offset
+#		var _inst = WeaponService.explode(explosion_effect, args)
+#		_inst.connect("hit_something",self,"_on_explosion_hit_something")
 	SoundManager.play(Utils.get_rand_element(explosion_sounds), explosion_effect.sound_db_mod, 0.2)
 	die()
 
