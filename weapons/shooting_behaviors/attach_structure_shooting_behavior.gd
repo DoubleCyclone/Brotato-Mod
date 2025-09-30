@@ -59,8 +59,8 @@ func shoot(_distance: float) -> void :
 	_parent.set_shooting(false)
 	
 func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
-	if projectile._piercing != 0 && projectile._bounce != 0:
-		return
+#	if projectile._piercing != 0 && projectile._bounce != 0:
+#		return
 	var instance = structure_scene.instance()
 	instance.from_weapon = _parent
 	instance.player_index = _parent.player_index
