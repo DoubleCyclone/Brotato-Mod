@@ -68,18 +68,22 @@ func add_translations() -> void:
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_weapons.tr.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_weapons.ja.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_weapons.zh_Hans_CN.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_weapons.ru.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_effects.en.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_effects.tr.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_effects.ja.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_effects.zh_Hans_CN.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_effects.ru.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.en.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.tr.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.ja.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.zh_Hans_CN.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_characters.ru.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.en.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.tr.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.ja.translation"))
 	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.zh_Hans_CN.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("8bit_mt_sets.ru.translation"))
 
 func _ready() -> void:
 	# Get the ContentLoader class

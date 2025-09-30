@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.ja.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.zh_Hans_CN.translation" ]
+files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.ja.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.zh_Hans_CN.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.ru.translation" ]
 
 source_file="res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.csv"
-dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.ja.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.zh_Hans_CN.translation" ]
+dest_files=[ "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.en.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.tr.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.ja.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.zh_Hans_CN.translation", "res://mods-unpacked/8bithero-Megatato/translations/8bit_mt_sets.ru.translation" ]
 
 [params]
 
