@@ -181,7 +181,7 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 			elif effect.key == "projectile_rotate_on_shoot":
 				new_effect.damage_multiplier = max(_boost_effect_specific_value(effect.damage_multiplier, false, effect_modifier), 1)
 				new_effect.extra_piercing = effect.extra_piercing + 1
-			elif effect.key == "effect_hyper_bomb_spawn":
+			elif effect.key == "effect_bomb_spawn":
 				new_effect.timer_cooldown = min(_boost_effect_specific_value(effect.timer_cooldown, false, effect_modifier), effect.timer_cooldown)
 			elif effect.key == "charged_shot_periodical":
 				new_effect.extra_piercing = effect.extra_piercing + 1	
