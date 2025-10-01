@@ -39,9 +39,6 @@ tracks/0/keys = {
 }
 
 [node name="IceSlasherProjectile" instance=ExtResource( 2 )]
-destroy_on_leaving_screen = null
-stop_delay = null
-rotation_speed = null
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 0 )
