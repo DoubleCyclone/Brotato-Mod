@@ -78,7 +78,7 @@ func on_projectile_hit_something(thing_hit, damage_dealt, projectile):
 	
 	
 func on_projectile_stopped(projectile):
-	if projectile._ticks_until_max_range == 0:
+	if projectile._time_until_max_range == 0:
 		var instance = structure_scene.instance()
 		instance.from_weapon = _parent
 		instance.player_index = _parent.player_index
