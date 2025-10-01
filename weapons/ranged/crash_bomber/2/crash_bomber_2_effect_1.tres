@@ -33,5 +33,5 @@ effect_sign = 3
 custom_args = [ SubResource( 1 ), SubResource( 2 ) ]
 effects = [ ExtResource( 2 ) ]
 structure_scene = ExtResource( 3 )
-timer_cooldown = 1.7
+timer_cooldown = 1.2
 spawn_sound_effect = ExtResource( 5 )
