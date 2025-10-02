@@ -3,7 +3,7 @@
 [ext_resource path="res://resources/shaders/outline.gdshader" type="Shader" id=1]
 [ext_resource path="res://weapons/weapon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://weapons/ranged/ranged_weapon.gd" type="Script" id=3]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/bubble_lead/8bit_mt_bubble_lead.png" type="Texture" id=4]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/quick_boomerang/8bit_mt_quick_boomerang.png" type="Texture" id=4]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true

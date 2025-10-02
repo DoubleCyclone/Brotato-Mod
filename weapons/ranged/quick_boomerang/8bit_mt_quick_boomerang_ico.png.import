@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_bubble_lead.png-b6bb83cc52a52c810957391d5c02e8bd.stex"
+path="res://.import/8bit_mt_quick_boomerang_ico.png-e6027eda4a77aef67b3005e8a5f5d72b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/quick_boomerang/8bit_mt_bubble_lead.png"
-dest_files=[ "res://.import/8bit_mt_bubble_lead.png-b6bb83cc52a52c810957391d5c02e8bd.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/weapons/ranged/quick_boomerang/8bit_mt_quick_boomerang_ico.png"
+dest_files=[ "res://.import/8bit_mt_quick_boomerang_ico.png-e6027eda4a77aef67b3005e8a5f5d72b.stex" ]
 
 [params]
 
