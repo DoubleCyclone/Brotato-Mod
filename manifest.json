@@ -1,8 +1,8 @@
 {
 	"name": "Megatato",
 	"namespace": "8bithero",
-	"version_number": "1.1.7",
-	"description": "Adds 14 weapons and a character from Megaman 1, Megaman 2 and Megaman Powered Up!",
+	"version_number": "1.1.8",
+	"description": "Adds 15 weapons and a character from Megaman 1, Megaman 2 and Megaman Powered Up!",
 	"website_url": "https://github.com/DoubleCyclone/Brotato-Mod",
 	"dependencies": [
 
