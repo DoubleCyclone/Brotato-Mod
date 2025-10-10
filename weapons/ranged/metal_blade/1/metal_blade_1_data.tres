@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/metal_blade/metal_blade.tscn" type="PackedScene" id=1]
-[ext_resource path="res://items/sets/medical/medical_set_data.tres" type="Resource" id=2]
+[ext_resource path="res://items/sets/precise/precise_set_data.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/metal_blade/1/metal_blade_1_stats.tres" type="Resource" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/metal_blade/8bit_mt_metal_blade_ico.png" type="Texture" id=4]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/metal_blade/1/metal_blade_1_effect_1.tres" type="Resource" id=5]
