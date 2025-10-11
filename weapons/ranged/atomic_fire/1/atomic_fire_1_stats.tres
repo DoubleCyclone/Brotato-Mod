@@ -2,7 +2,7 @@
 
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/atomic_fire/8bit_mt_atomic_fire_reloading.png" type="Texture" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/atomic_fire/8bit_mt_atomic_fire.wav" type="AudioStream" id=2]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/bubble_lead_projectile/bubble_lead_projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/atomic_fire_projectile/atomic_fire_small_projectile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=4]
 
 [resource]
