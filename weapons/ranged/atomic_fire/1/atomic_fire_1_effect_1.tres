@@ -1,0 +1,44 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/weapons/multi_stage_charge_effect.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/atomic_fire_projectile/atomic_fire_big_projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/atomic_fire_projectile/atomic_fire_medium_projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/projectiles/atomic_fire_projectile/atomic_fire_small_projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items/global/custom_arg.gd" type="Script" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 5 )
+arg_index = 0
+arg_sign = 0
+arg_value = 0
+arg_format = 0
+arg_key = ""
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 5 )
+arg_index = 1
+arg_sign = 0
+arg_value = 0
+arg_format = 0
+arg_key = ""
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 5 )
+arg_index = 2
+arg_sign = 0
+arg_value = 0
+arg_format = 0
+arg_key = ""
+
+[resource]
+script = ExtResource( 1 )
+key = "multi_stage_charge_effect"
+text_key = "EFFECT_MULTI_STAGE_CHARGE"
+value = 0
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
+projectile_stages = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
+damage_multipliers = [ 1.0, 2.0, 3.0 ]
+extra_piercings = [ 0, 1, 2 ]
