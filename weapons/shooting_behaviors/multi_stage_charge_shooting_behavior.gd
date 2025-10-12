@@ -9,8 +9,11 @@ var original_damage
 var original_piercing
 
 func _ready():
-	charge_timer = get_tree().create_timer(charge_timer_max_value,false)
+	charge_timer = Timer.new()
+	charge_timer.wait_time = charge_timer_max_value
+	add_child(charge_timer)
 
+# TODO FIX TIMERS
 
 func shoot(_distance: float) -> void :
 	var multi_stage_charge_effect
@@ -35,6 +38,7 @@ func shoot(_distance: float) -> void :
 			_parent.current_stats.projectile_scene = multi_stage_charge_effect.projectile_stages[stage - 1]
 			_parent.current_stats.damage *= multi_stage_charge_effect.damage_multipliers[stage - 1]
 			_parent.current_stats.piercing += multi_stage_charge_effect.extra_piercings[stage - 1]
+			print(charge_timer.time_left)
 			var projectile = shoot_projectile(proj_rotation, knockback_direction)
 			projectile._hitbox.player_attack_id = attack_id
 			_parent.current_stats.damage = original_damage
@@ -42,8 +46,7 @@ func shoot(_distance: float) -> void :
 		else:
 			var projectile = shoot_projectile(proj_rotation, knockback_direction)
 			projectile._hitbox.player_attack_id = attack_id
-			
-	charge_timer.time_left = charge_timer_max_value
+		charge_timer.start()
 
 	_parent.tween.interpolate_property(
 		_parent.sprite, 
