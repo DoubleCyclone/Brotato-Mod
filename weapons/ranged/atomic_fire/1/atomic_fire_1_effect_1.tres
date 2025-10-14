@@ -40,5 +40,5 @@ storage_method = 0
 effect_sign = 3
 custom_args = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 projectile_stages = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
-damage_multipliers = [ 1.0, 2.0, 3.0 ]
+damage_multipliers = [ 1.0, 1.5, 2.0 ]
 extra_piercings = [ 0, 1, 2 ]
