@@ -14,7 +14,7 @@ func _ready():
 
 
 func fill(amount: float):
-	var fill_amount = min(amount/4, 10)
+	var fill_amount = min(amount/4, 20)
 	current_value += fill_amount
 #	print("+",amount,"  ",current_value,"/",capacity)
 	emit_signal("tank_filled", self, fill_amount)
