@@ -196,7 +196,15 @@ func curse_item(item_data: ItemParentData, player_index: int, turn_randomization
 			elif effect.key == "sideways_projectiles_on_shoot":
 				new_effect.chance = min(_boost_effect_specific_value(effect.chance, true, effect_modifier), 1)
 				new_effect.damage_multiplier = max(_boost_effect_specific_value(effect.damage_multiplier, false, effect_modifier), 1)
-				
+			elif effect.key == "multi_stage_charge_effect":
+				var damage_multipliers = []
+				var extra_piercings = []
+				for value in effect.damage_multipliers:
+					damage_multipliers.append(_boost_effect_specific_value(value, true, effect_modifier))
+				for value in effect.extra_piercings:
+					extra_piercings.append(value+1)
+				new_effect.damage_multipliers = damage_multipliers
+				new_effect.extra_piercings = extra_piercings
 			
 			if !effect.key == "shield_form":
 				# MOD SECTION END
