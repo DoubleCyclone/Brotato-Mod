@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://items/global/item_appearance_data.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/8bit_mt_rock_app_1.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/characters/blues/appearances/8bit_mt_blues_app_01.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
