@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mods-unpacked/8bithero-Megatato/effects/characters/blues_kill_effect.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+key = "blues_shield_gain_on_kill"
+text_key = "EFFECT_BLUES_SHIELD"
+value = 1
+custom_key = "blues_shield_gain_on_kill"
+storage_method = 1
+effect_sign = 0
+custom_args = [  ]
+chance = 0.03

@@ -179,7 +179,8 @@ static func init_effects() -> Dictionary:
 		"limited_weapon_pool" : [],
 		"charged_shot_periodical" : 0,
 		"weapon_energy_bar": 0,
-		"shield_form": []
+		"shield_form": [],
+		"blues_shield_gain_on_kill" : 0
 	}
 
 	all_effects.merge(all_stats)
