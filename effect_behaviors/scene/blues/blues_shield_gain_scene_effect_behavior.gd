@@ -25,16 +25,13 @@ func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 	
 	
 func _on_enemy_died(entity, die_args) -> void :
-#	if !Utils.get_chance_success(shield_gain_chance):
-#		return
-#	if die_args.killed_by_player_index < 0:
-#		return
-	# TODO
-	print(RunData.players_data[die_args.killed_by_player_index].effects["hit_protection"])
-	RunData.players_data[die_args.killed_by_player_index].effects["hit_protection"] += 1
-	print(RunData.players_data[die_args.killed_by_player_index].effects["hit_protection"])
-#	for player in 
-#	var player = die_args.
+	if !Utils.get_chance_success(shield_gain_chance):
+		return
+	if die_args.killed_by_player_index < 0:
+		return
+	# Get Player
+	var player = Utils.get_scene_node()._players[die_args.killed_by_player_index]
+	player._hit_protection += 1
 	
 
 func give_feedback(value, stat_name : String, player_index : int, offset : Vector2 = Vector2(0,0), icon: Resource = null, always_display: bool = false, need_translate: bool = true) -> void : 

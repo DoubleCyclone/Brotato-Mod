@@ -11,4 +11,4 @@ custom_key = "blues_shield_gain_on_kill"
 storage_method = 1
 effect_sign = 0
 custom_args = [  ]
-chance = 0.03
+chance = 0.5
