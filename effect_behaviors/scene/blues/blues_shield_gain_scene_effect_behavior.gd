@@ -1,14 +1,15 @@
 class_name BluesShieldGainSceneEffectBehavior
 extends SceneEffectBehavior
 
-export (PackedScene) var energy_tank
+export (AudioStream) var blues_whistle
 var shield_gain_chance
 
 func _ready() -> void :
 	if should_check():
 		var _err = _entity_spawner_ref.connect("players_spawned",self,"_on_EntitySpawner_players_spawned")
 		var _err2 = _entity_spawner_ref.connect("enemy_spawned",self,"_on_EntitySpawner_enemy_spawned")
-		
+		if RunData.current_wave == 1 :
+			SoundManager.play(blues_whistle, 0, 0)
 
 func should_check() -> bool:
 	if RunData.existing_weapon_has_effect("blues_shield_gain_on_kill"):
@@ -65,6 +66,7 @@ func on_player_took_damage(unit, value, knockback_direction, is_crit, is_dodge, 
 			weapon_stats.bounce = RunData.get_stat("bounce", player.player_index)
 			weapon_stats.bounce_dmg_reduction = 0.5 - RunData.get_stat("bounce_damage", player.player_index) / 100.0
 			weapon_stats.damage = scaled_damage
+			weapon_stats.max_range = 10000
 
 			var proj_args = WeaponServiceSpawnProjectileArgs.new()
 			proj_args.from_player_index = player.player_index
