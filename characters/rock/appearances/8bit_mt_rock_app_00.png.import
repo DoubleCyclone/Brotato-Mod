@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/8bit_mt_rock_app_1.png-ace79e38718db9bbdd0284523f599aaa.stex"
+path="res://.import/8bit_mt_rock_app_00.png-7705c4b48f63ac22a051c6259c5bc6b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/8bit_mt_rock_app_1.png"
-dest_files=[ "res://.import/8bit_mt_rock_app_1.png-ace79e38718db9bbdd0284523f599aaa.stex" ]
+source_file="res://mods-unpacked/8bithero-Megatato/characters/rock/appearances/8bit_mt_rock_app_00.png"
+dest_files=[ "res://.import/8bit_mt_rock_app_00.png-7705c4b48f63ac22a051c6259c5bc6b8.stex" ]
 
 [params]
 
