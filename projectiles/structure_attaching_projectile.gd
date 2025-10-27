@@ -7,7 +7,6 @@ signal projectile_stopped(projectile)
 
 func _physics_process(_delta: float) -> void :
 	# Prevent the projectile from leaving the screen
-	print(_time_until_max_range)
 	if position.x < ZoneService.current_zone_min_position.x or position.x > ZoneService.current_zone_max_position.x:
 		_time_until_max_range = -1
 	if position.y < ZoneService.current_zone_min_position.y or position.y > ZoneService.current_zone_max_position.y:

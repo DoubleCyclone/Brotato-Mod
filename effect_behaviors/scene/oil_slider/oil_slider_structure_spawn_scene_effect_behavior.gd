@@ -13,7 +13,7 @@ func should_check() -> bool:
 func _on_EntitySpawner_enemy_spawned(enemy: Enemy) -> void :
 	enemy.connect("took_damage",self,"_on_enemy_took_damage")
 	
-func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type) -> void :
+func _on_enemy_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type, is_oneshot) -> void :
 	var structure
 	var chance = 0
 	if args.hitbox:

@@ -43,7 +43,7 @@ func _on_EntitySpawner_players_spawned(players: Array) -> void :
 			var _err = player.connect("took_damage", self, "on_player_took_damage", [player])
 
 
-func on_player_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type, player) -> void :
+func on_player_took_damage(unit, value, knockback_direction, is_crit, is_dodge, is_protected, armor_did_something, args, hit_type, is_oneshot, player) -> void :
 	if !args.hitbox:
 		return
 	if !args.hitbox.from:
