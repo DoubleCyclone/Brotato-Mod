@@ -12,6 +12,7 @@
 script = ExtResource( 2 )
 my_id = "weapon_crash_bomber_4"
 unlocked_by_default = true
+can_be_looted = true
 icon = ExtResource( 5 )
 name = "WEAPON_CRASH_BOMBER"
 tier = 3
@@ -19,6 +20,7 @@ value = 132
 effects = [ ExtResource( 4 ) ]
 tracking_text = ""
 is_lockable = true
+unlock_codex_descr_after_get_it = 1
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "8bit_mt_weapon_crash_bomber"

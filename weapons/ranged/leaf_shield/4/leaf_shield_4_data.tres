@@ -13,6 +13,7 @@
 script = ExtResource( 6 )
 my_id = "weapon_leaf_shield_4"
 unlocked_by_default = true
+can_be_looted = true
 icon = ExtResource( 2 )
 name = "WEAPON_LEAF_SHIELD"
 tier = 3
@@ -20,6 +21,7 @@ value = 105
 effects = [ ExtResource( 1 ), ExtResource( 5 ) ]
 tracking_text = ""
 is_lockable = true
+unlock_codex_descr_after_get_it = 1
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "8bit_mt_weapon_leaf_shield"

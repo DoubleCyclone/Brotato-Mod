@@ -14,6 +14,7 @@
 script = ExtResource( 2 )
 my_id = "weapon_time_stopper_3"
 unlocked_by_default = true
+can_be_looted = true
 icon = ExtResource( 8 )
 name = "WEAPON_TIME_STOPPER"
 tier = 2
@@ -21,6 +22,7 @@ value = 62
 effects = [ ExtResource( 6 ), ExtResource( 7 ) ]
 tracking_text = ""
 is_lockable = true
+unlock_codex_descr_after_get_it = 1
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "8bit_mt_weapon_time_stopper"

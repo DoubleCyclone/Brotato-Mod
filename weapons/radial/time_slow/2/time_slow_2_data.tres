@@ -15,6 +15,7 @@
 script = ExtResource( 7 )
 my_id = "weapon_time_slow_2"
 unlocked_by_default = true
+can_be_looted = true
 icon = ExtResource( 6 )
 name = "WEAPON_TIME_SLOW"
 tier = 1
@@ -22,6 +23,7 @@ value = 34
 effects = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 10 ) ]
 tracking_text = ""
 is_lockable = true
+unlock_codex_descr_after_get_it = 1
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "8bit_mt_weapon_time_slow"

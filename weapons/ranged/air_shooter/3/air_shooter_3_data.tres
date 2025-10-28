@@ -12,6 +12,7 @@
 script = ExtResource( 4 )
 my_id = "weapon_air_shooter_3"
 unlocked_by_default = true
+can_be_looted = true
 icon = ExtResource( 2 )
 name = "WEAPON_AIR_SHOOTER"
 tier = 2
@@ -19,6 +20,7 @@ value = 66
 effects = [  ]
 tracking_text = ""
 is_lockable = true
+unlock_codex_descr_after_get_it = 1
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "8bit_mt_weapon_air_shooter"

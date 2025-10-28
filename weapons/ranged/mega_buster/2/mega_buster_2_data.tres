@@ -1,10 +1,9 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/sets/mega_man_1/mega_man_1_set_data.tres" type="Resource" id=2]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/mega_buster.tscn" type="PackedScene" id=3]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/8bit_mt_mega_buster_ico.png" type="Texture" id=4]
-[ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/2/mega_buster_2_effect_1.tres" type="Resource" id=5]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/2/mega_buster_2_stats.tres" type="Resource" id=6]
 [ext_resource path="res://mods-unpacked/8bithero-Megatato/weapons/ranged/mega_buster/3/mega_buster_3_data.tres" type="Resource" id=7]
 
@@ -12,13 +11,15 @@
 script = ExtResource( 1 )
 my_id = "weapon_mega_buster_2"
 unlocked_by_default = true
+can_be_looted = true
 icon = ExtResource( 4 )
 name = "WEAPON_MEGA_BUSTER"
 tier = 1
-value = 34
-effects = [ ExtResource( 5 ) ]
+value = 31
+effects = [  ]
 tracking_text = ""
 is_lockable = true
+unlock_codex_descr_after_get_it = 1
 is_cursed = false
 curse_factor = 0.0
 weapon_id = "8bit_mt_weapon_mega_buster"
